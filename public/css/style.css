@@ -1,0 +1,288 @@
+/*Nav Bar*/
+.navbar{
+  height: 100px;
+
+}
+.navbar-collapse{
+  margin-top: 2%;
+  color: #fff !important;
+  background-color: rgba (0, 0, 0, 0) !important;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-style: normal;
+  font-family: "Karla", "Helvetica Neue", helvetica, arial, sans-serif;
+}
+
+.container-fluid{
+  position: relative;
+  top: 8px;
+}
+
+.btn-primary {
+       color: #fff !important;
+    background-color: #b64747 !important;
+    border-color: #b64747 !important;
+    position: relative;
+    left: 547px;
+    top: 56px;
+    width: 102px
+}
+
+.filler-jumbotron7{
+  position: relative;
+    top: -90px;
+  height: 634px;
+  background-image: url(../images/car4.jpg);
+  /*background-size: 100%;*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+/*Body Styling*/
+
+body{
+  background-color: #4a98a5 !important;
+  overflow-y: hidden;
+}
+
+/*Sticky Footer*/
+
+html {
+    position: relative;
+    min-height: 100%;
+          overflow-x: hidden;
+}
+body {
+    margin: 0px 0px 100px; /* bottom = footer height */
+          overflow-x: hidden;
+}
+
+/* Adding styling for Map*/
+/* Always set the map height explicitly to define the size of the div
+element that contains the map. */
+/*#map {
+  height: 60%;
+  width:60%;
+  margin-left: 20%;
+  /*margin-top: 10%;*/
+/*}*/
+
+footer{
+  position: absolute;
+    left: 0px;
+    bottom: 0px;
+    height: 110px;
+    width: 100%;
+  background-color: #161616;
+  text-align: center;
+  line-height: 100px;
+  border-top: 7px solid #39707a;
+}
+
+.footer-text{
+  color: lightgray;
+  font-family: Arial;
+  line-height: 101px;
+  margin-bottom: -20px;
+}
+
+
+/*section 2*/
+/*Events Jumbotron*/
+.events-jumbotron{
+  height: 600px;
+  position: relative;
+    top: -170px;
+  background-image: url(../images/threewomandoingyoga.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.events-jumbotron1{
+  height: 500px;
+  position: relative;
+    top: -214px;
+  background-image: url(../images/threewomandoingyoga.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#search-filter{
+  height: 220px !important;
+}
+
+#search-widget{
+  position: relative;
+  top: 20px;
+  height: 1100px;
+}
+
+#search-fields{
+  position: relative;
+  left: 264px;
+}
+
+.events-box{
+  background-color: rgba(0,0,0,0.4);
+  text-align: center;
+  color: #fff;
+  padding: 30px;
+  float: right;
+  position: relative;
+    left: 12%;
+    top: 245px;
+  border-radius: 10px;
+}
+.events-text{
+	/*font-family: 'Abril Fatface', cursive;*/
+	/*font-family: 'Abril Fatface', cursive;*/
+font-family: 'Rosarivo', serif;
+	color: #c90f0f;
+	position: relative;
+	left: 26%;
+	font-size: 50px !important;
+}
+.tag{
+	position: relative;
+    left: 506px;
+    font-family: 'Rosarivo', serif;
+
+}
+.tag1{
+	position: relative;
+    left: 253px;
+    top: 36px;
+    font-family: 'Buda', cursive;
+	color: #625f5f;
+	font-size: 16px!important;
+}
+.Services{
+	font-family:  'Rubik Mono One', sans-serif;
+	color: black;
+	position: relative;
+	left: 40%;
+	top: 26px;
+	font-size: 33px !important;
+}
+.events-image-col{
+  position: relative;
+    left: 40px;
+}
+
+.searchEvent{
+  margin-top: 15px;
+}
+
+
+
+.container{
+    width: 100%;
+}
+#thumbnail-slider {
+    margin:0 auto; /*center-aligned*/
+    width:120%;
+    max-width:1500px;
+    padding:0;
+    box-sizing:border-box;
+    position:relative;
+    left: -104px;
+    -webkit-user-select: none;
+    user-select:none;
+}
+
+#thumbnail-slider div.inner {    
+    /*the followings should not be changed */
+    position:relative;
+    overflow:hidden;
+    padding:0;
+    margin:0;
+    top: 10px;
+    /*width: 500px;*/
+}
+ 
+#thumbnail-slider div.inner ul {    
+    /*the followings should not be changed */
+    white-space:nowrap;
+    position:relative;
+    left:0; top:0;
+    list-style:none;
+    font-size:0;
+    padding:0;
+    margin:0;
+    float:left!important;
+    width:auto!important;
+    /*height:auto!important;*/
+}
+
+#thumbnail-slider ul li {
+    display:inline-block;
+    margin-top:20px;
+    margin-bottom:90px;
+    margin-left:-30px; margin-right:-30px; /* Spacing between thumbs*/
+    -webkit-transform:scale(0.9);
+    transform:scale(0.9); /*Note: The scale down will increase the spacing between slides. You can set negative margins as did above to roll back the spacing. */
+    -webkit-transition:-webkit-transform 0.5s;
+    transition:transform 0.5s;
+    box-sizing:content-box;
+    text-align:center;
+    vertical-align:middle;
+    padding:0;
+    position:relative;
+    list-style:none;
+    backface-visibility:hidden;
+    
+    /*-webkit-filter: grayscale(100%);
+    filter: grayscale(100%);*/
+    
+}
+.dd{
+	/*background-color: red;*/
+	/*width: 500px;*/
+}
+#thumbnail-slider ul li.active {
+    /*-webkit-transform:scale(1.15); */
+    /*transform:scale(1.15); Note: if scale is greater than 1, the margin-top and margin-bottom in the selector "#thumbnail-slider li" must be set with a sufficient value so the enlarged image will be shown within the margins.*/
+    background-color:transparent;
+    
+    /*-webkit-filter: initial;
+    filter: initial;*/
+}
+
+#thumbnail-slider .thumb {
+    width:100%;
+    height: 100%;
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center center;
+    display:block;
+    position:absolute;
+    font-size:0;
+    cursor:inherit;
+    /*-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(10%, transparent), to(rgba(255,255,255,0.4)));*/
+    /*transition:all linear 10s;*/
+}
+
+
+/*-- Start 3D --*/
+   /* #thumbnail-slider .thumb {
+        -webkit-transform: perspective(500px) translateX(1px) translateZ(-30px) rotateY(30deg);
+        transform: perspective(500px) translateX(1px) translateZ(-30px) rotateY(30deg);
+    }
+
+    #thumbnail-slider .active .thumb {
+        -webkit-transform: translateX(0px) translateZ(0px) rotateY(0deg); 
+        transform: translateX(0px) translateZ(0px) rotateY(0deg); 
+    }
+
+    #thumbnail-slider li.active ~ li .thumb {
+        -webkit-transform: perspective(500px) translateX(-1px) translateZ(-30px) rotateY(-30deg); 
+        transform: perspective(500px) translateX(-1px) translateZ(-30px) rotateY(-30deg); 
+    }*/
+/*-- End 3D --*/
+
+/* --------- navigation controls ------- */   
+/* The nav id should be: slider id + ("-prev", "-next", and "-pause-play") */
+
+#thumbnail-slider-pause-play {display:none;} /*.pause*/
+#thumbnail-slider-prev, #thumbnail-slider-next {display:none;}
