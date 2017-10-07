@@ -14,7 +14,8 @@ module.exports = function(app) {
 
   // index route loads home.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
+    //res.sendFile(path.join(__dirname, "../views/layouts/main.handlebars"));
+    res.render("index.handlebars");
   });
 
   // about route loads about.html

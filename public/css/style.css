@@ -57,16 +57,6 @@ body {
           overflow-x: hidden;
 }
 
-/* Adding styling for Map*/
-/* Always set the map height explicitly to define the size of the div
-element that contains the map. */
-/*#map {
-  height: 60%;
-  width:60%;
-  margin-left: 20%;
-  /*margin-top: 10%;*/
-/*}*/
-
 footer{
   position: absolute;
     left: 0px;
@@ -191,7 +181,7 @@ font-family: 'Rosarivo', serif;
     user-select:none;
 }
 
-#thumbnail-slider div.inner {    
+#thumbnail-slider div.inner {
     /*the followings should not be changed */
     position:relative;
     overflow:hidden;
@@ -200,8 +190,8 @@ font-family: 'Rosarivo', serif;
     top: 10px;
     /*width: 500px;*/
 }
- 
-#thumbnail-slider div.inner ul {    
+
+#thumbnail-slider div.inner ul {
     /*the followings should not be changed */
     white-space:nowrap;
     position:relative;
@@ -231,10 +221,10 @@ font-family: 'Rosarivo', serif;
     position:relative;
     list-style:none;
     backface-visibility:hidden;
-    
+
     /*-webkit-filter: grayscale(100%);
     filter: grayscale(100%);*/
-    
+
 }
 .dd{
 	/*background-color: red;*/
@@ -244,7 +234,7 @@ font-family: 'Rosarivo', serif;
     /*-webkit-transform:scale(1.15); */
     /*transform:scale(1.15); Note: if scale is greater than 1, the margin-top and margin-bottom in the selector "#thumbnail-slider li" must be set with a sufficient value so the enlarged image will be shown within the margins.*/
     background-color:transparent;
-    
+
     /*-webkit-filter: initial;
     filter: initial;*/
 }
@@ -271,17 +261,17 @@ font-family: 'Rosarivo', serif;
     }
 
     #thumbnail-slider .active .thumb {
-        -webkit-transform: translateX(0px) translateZ(0px) rotateY(0deg); 
-        transform: translateX(0px) translateZ(0px) rotateY(0deg); 
+        -webkit-transform: translateX(0px) translateZ(0px) rotateY(0deg);
+        transform: translateX(0px) translateZ(0px) rotateY(0deg);
     }
 
     #thumbnail-slider li.active ~ li .thumb {
-        -webkit-transform: perspective(500px) translateX(-1px) translateZ(-30px) rotateY(-30deg); 
-        transform: perspective(500px) translateX(-1px) translateZ(-30px) rotateY(-30deg); 
+        -webkit-transform: perspective(500px) translateX(-1px) translateZ(-30px) rotateY(-30deg);
+        transform: perspective(500px) translateX(-1px) translateZ(-30px) rotateY(-30deg);
     }*/
 /*-- End 3D --*/
 
-/* --------- navigation controls ------- */   
+/* --------- navigation controls ------- */
 /* The nav id should be: slider id + ("-prev", "-next", and "-pause-play") */
 
 #thumbnail-slider-pause-play {display:none;} /*.pause*/
