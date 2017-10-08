@@ -41,7 +41,7 @@ html {
 /*Main Jumbotron*/
 .main-jumbotron{
   height: 650px;
-  border-bottom: 15px solid #202120;
+  border-bottom: 5px solid #202120;
   background-image: url(../images/keysindoor.jpeg);
   background-position: 0 -210px;
   background-size: cover;
@@ -51,9 +51,9 @@ html {
 
 .header-container{
   position: relative;
-    top: 39%;
+    top: 38%;
     left: 13%;
-  color: #fffdef;
+  color: #fefffc;
 }
 
 .headline{
@@ -65,35 +65,138 @@ html {
 .tagline{
   font-family: 'Quicksand', cursive;
   font-size: 24px !important;
-  width: 65%;
+  width: 63%;
   text-align: center;
 }
 
 /*Services Section*/
-.btn-primary {
-    color: #fff !important;
-    background-color: #b64747 !important;
-    border-color: #b64747 !important;
-    position: relative;
-    left: 547px;
-    top: 56px;
-    width: 102px
+.book-now{
+  line-height: 45px;
+  width: 250px;
+  color: #fff;
+  background-color: #657539;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.book-now:hover{
+  background-color: #53602d;
+  color: #fff;
+  font-size: 18px;
+}
+
+.book-now:active{
+  background-color: #414c23 !important;
+  color: #fff !important;
+  font-size: 18px !important;
+}
+
+.jumbotron{
+  margin-bottom: 0px !important;
 }
 
 .services-jumbotron{
   background-color: transparent !important;
+  background-image: url(../images/absurditytile.png);
+  background-repeat: repeat;
 }
 
 .service-header{
   text-align: center;
+  margin-top: 30px;
+  padding-bottom: 15px;
+  font-size: 48px;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: bold;
+}
+
+.expect-jumbotron{
+  background-color: transparent !important;
+}
+
+.featurette-heading{
+  font-family: 'Poppins', sans-serif;
+}
+
+.lead{
+  font-family: 'Quicksand', sans-serif;
+}
+
+.button-divider{
+  padding-top: 50px;
+}
+.line{
+    position: relative;
+    top: 40px;
+    display:block;
+    border:none;
+    color:white;
+    height:1px;
+    background:black;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#202120), to(#f2f2f2));
+}
+
+.expect-divider{
+  position: relative;
+  top: 20px;
+}
+
+.expect-header{
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: bold !important;
+}
+
+.icon{
+  padding: 20px;
+  position: relative;
+  top: 3px;
 }
 
 /*Reviews Section*/
 .reviews-jumbotron{
-  height: 700px;
+  height: 500px;
+  background-color: transparent !important;
+  background-image: url(../images/absurditytile.png);
+  background-repeat: repeat;
+  position: relative;
+  top: 40px;
+}
+
+.carousel-caption{
+  color: #000000;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.reviews-header{
+  text-align: center;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: bold;
+}
+
+.first-slide, .second-slide, .third-slide{
+  height: 350px !important;
+  width: 400px !important;
+}
+
+.fa-quote-left {
+    position: relative;
+    top: -222px;
+    font-size: 46px;
+}
+
+.fa-quote-right{
+  float: right;
+    position: relative;
+    top: -222px;
+  font-size: 46px;
 }
 
 /*Carousel Section*/
+.carousel-section{
+  margin-bottom: 50px;
+}
 .thumb{
   height: 500px;
   width: 500px;
@@ -207,14 +310,54 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 200px;
-  background-color: #313d22;
+  background-color: #414c23;
 }
 
 .second-footer-container{
   position: relative;
   top: 55%;
   height: 90px;
-  background-color: #6c8c46;
+  background-color: #657539;
   width: 100%;
+}
+
+.footer-text{
+  text-align: center;
+  position: relative;
+  top: 30px;
+  font-size: 20px;
+  font-family: 'Nixie One', cursive;
+  color: #fff;
+}
+
+.icon-container{
+  position: relative;
+  top: -20px;
+}
+
+.address{
+  width: 157px;
+  font-family: 'Quicksand',cursive;
+}
+
+.fa-map-marker{
+  text-align: center;
+  font-size: 19px;
+  color: #fff;
+}
+
+.fa-envelope{
+  float: right;
+  text-align: center;
+  font-size: 17px;
+  color: #fff;
+}
+
+.text-muted-two{
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Nixie One', cursive;
+  color: #fff;
+  line-height: 80px;
+
 }
