@@ -1,25 +1,77 @@
+/*Body Styling*/
+body{
+  overflow-y: hidden;
+  background-color: #f2f2f2;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+      overflow-x: hidden;
+}
+
 /*Nav Bar*/
 .navbar{
-  height: 100px;
+  height: 60px;
 
 }
 .navbar-collapse{
-  margin-top: 2%;
   color: #fff !important;
-  background-color: rgba (0, 0, 0, 0) !important;
   font-size: 1.5rem;
-  line-height: 1.5;
+  margin-top: 3px;
   font-style: normal;
   font-family: "Karla", "Helvetica Neue", helvetica, arial, sans-serif;
 }
 
 .container-fluid{
   position: relative;
-  top: 8px;
+  top: 4px;
 }
 
+.admin-nav{
+  position: relative;
+    left: -9.5%;
+}
+
+.fa-key{
+  position: relative;
+    top: 13px;
+}
+
+/*Main Jumbotron*/
+.main-jumbotron{
+  height: 650px;
+  border-bottom: 15px solid #202120;
+  background-image: url(../images/keysindoor.jpeg);
+  background-position: 0 -210px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.header-container{
+  position: relative;
+    top: 39%;
+    left: 13%;
+  color: #fffdef;
+}
+
+.headline{
+  font-family: 'Candal', sans-serif;
+  font-weight: bold !important;
+  font-size: 68px !important;
+}
+
+.tagline{
+  font-family: 'Quicksand', cursive;
+  font-size: 24px !important;
+  width: 65%;
+  text-align: center;
+}
+
+/*Services Section*/
 .btn-primary {
-       color: #fff !important;
+    color: #fff !important;
     background-color: #b64747 !important;
     border-color: #b64747 !important;
     position: relative;
@@ -28,74 +80,27 @@
     width: 102px
 }
 
-.filler-jumbotron7{
-  position: relative;
-    top: -90px;
-  height: 634px;
-  background-image: url(../images/car4.jpg);
-  /*background-size: 100%;*/
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-/*Body Styling*/
-
-body{
-  background-color: #4a98a5 !important;
-  overflow-y: hidden;
+.services-jumbotron{
+  background-color: transparent !important;
 }
 
-/*Sticky Footer*/
-
-html {
-    position: relative;
-    min-height: 100%;
-          overflow-x: hidden;
-}
-body {
-    margin: 0px 0px 100px; /* bottom = footer height */
-          overflow-x: hidden;
-}
-
-footer{
-  position: absolute;
-    left: 0px;
-    bottom: 0px;
-    height: 110px;
-    width: 100%;
-  background-color: #161616;
+.service-header{
   text-align: center;
-  line-height: 100px;
-  border-top: 7px solid #39707a;
 }
 
-.footer-text{
-  color: lightgray;
-  font-family: Arial;
-  line-height: 101px;
-  margin-bottom: -20px;
+/*Reviews Section*/
+.reviews-jumbotron{
+  height: 700px;
 }
 
-
-/*section 2*/
-/*Events Jumbotron*/
-.events-jumbotron{
-  height: 600px;
-  position: relative;
-    top: -170px;
-  background-image: url(../images/threewomandoingyoga.jpg);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-.events-jumbotron1{
+/*Carousel Section*/
+.thumb{
   height: 500px;
-  position: relative;
-    top: -214px;
-  background-image: url(../images/threewomandoingyoga.jpg);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  width: 500px;
+}
+
+.carousel-jumbotron{
+  background-color: transparent !important;
 }
 
 #search-filter{
@@ -113,62 +118,6 @@ footer{
   left: 264px;
 }
 
-.events-box{
-  background-color: rgba(0,0,0,0.4);
-  text-align: center;
-  color: #fff;
-  padding: 30px;
-  float: right;
-  position: relative;
-    left: 12%;
-    top: 245px;
-  border-radius: 10px;
-}
-.events-text{
-	/*font-family: 'Abril Fatface', cursive;*/
-	/*font-family: 'Abril Fatface', cursive;*/
-font-family: 'Rosarivo', serif;
-	color: #c90f0f;
-	position: relative;
-	left: 26%;
-	font-size: 50px !important;
-}
-.tag{
-	position: relative;
-    left: 506px;
-    font-family: 'Rosarivo', serif;
-
-}
-.tag1{
-	position: relative;
-    left: 253px;
-    top: 36px;
-    font-family: 'Buda', cursive;
-	color: #625f5f;
-	font-size: 16px!important;
-}
-.Services{
-	font-family:  'Rubik Mono One', sans-serif;
-	color: black;
-	position: relative;
-	left: 40%;
-	top: 26px;
-	font-size: 33px !important;
-}
-.events-image-col{
-  position: relative;
-    left: 40px;
-}
-
-.searchEvent{
-  margin-top: 15px;
-}
-
-
-
-.container{
-    width: 100%;
-}
 #thumbnail-slider {
     margin:0 auto; /*center-aligned*/
     width:120%;
@@ -202,7 +151,6 @@ font-family: 'Rosarivo', serif;
     margin:0;
     float:left!important;
     width:auto!important;
-    /*height:auto!important;*/
 }
 
 #thumbnail-slider ul li {
@@ -222,21 +170,12 @@ font-family: 'Rosarivo', serif;
     list-style:none;
     backface-visibility:hidden;
 
-    /*-webkit-filter: grayscale(100%);
-    filter: grayscale(100%);*/
-
 }
 .dd{
-	/*background-color: red;*/
-	/*width: 500px;*/
+
 }
 #thumbnail-slider ul li.active {
-    /*-webkit-transform:scale(1.15); */
-    /*transform:scale(1.15); Note: if scale is greater than 1, the margin-top and margin-bottom in the selector "#thumbnail-slider li" must be set with a sufficient value so the enlarged image will be shown within the margins.*/
     background-color:transparent;
-
-    /*-webkit-filter: initial;
-    filter: initial;*/
 }
 
 #thumbnail-slider .thumb {
@@ -249,30 +188,33 @@ font-family: 'Rosarivo', serif;
     position:absolute;
     font-size:0;
     cursor:inherit;
-    /*-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(10%, transparent), to(rgba(255,255,255,0.4)));*/
-    /*transition:all linear 10s;*/
 }
-
-
-/*-- Start 3D --*/
-   /* #thumbnail-slider .thumb {
-        -webkit-transform: perspective(500px) translateX(1px) translateZ(-30px) rotateY(30deg);
-        transform: perspective(500px) translateX(1px) translateZ(-30px) rotateY(30deg);
-    }
-
-    #thumbnail-slider .active .thumb {
-        -webkit-transform: translateX(0px) translateZ(0px) rotateY(0deg);
-        transform: translateX(0px) translateZ(0px) rotateY(0deg);
-    }
-
-    #thumbnail-slider li.active ~ li .thumb {
-        -webkit-transform: perspective(500px) translateX(-1px) translateZ(-30px) rotateY(-30deg);
-        transform: perspective(500px) translateX(-1px) translateZ(-30px) rotateY(-30deg);
-    }*/
-/*-- End 3D --*/
-
-/* --------- navigation controls ------- */
-/* The nav id should be: slider id + ("-prev", "-next", and "-pause-play") */
 
 #thumbnail-slider-pause-play {display:none;} /*.pause*/
 #thumbnail-slider-prev, #thumbnail-slider-next {display:none;}
+
+/*Sticky Footer*/
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background-color: #313d22;
+}
+
+.second-footer-container{
+  position: relative;
+  top: 55%;
+  height: 90px;
+  background-color: #6c8c46;
+  width: 100%;
+}

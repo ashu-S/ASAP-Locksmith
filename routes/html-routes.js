@@ -18,19 +18,19 @@ module.exports = function(app) {
     res.render("index.handlebars");
   });
 
-  // about route loads about.html
-  app.get("/about", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/about.html"));
-  });
+  // services route loads services.html
+  // app.get("/services", function(req, res) {
+  //   res.render("services.handlebars");
+  // });
 
   // services route loads services.html
-  app.get("/services", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/services.html"));
+  app.get("/contact", function(req, res) {
+    res.render("contact.handlebars");
   });
 
   // admin route loads admin.html
   app.get("/admin", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/admin.html"));
+    res.render("admin.handlebars");
   });
 
 };
