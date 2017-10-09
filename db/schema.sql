@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS ASAP_Locksmith_db;
+CREATE DATABASE ASAP_Locksmith_db;
