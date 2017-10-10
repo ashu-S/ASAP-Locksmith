@@ -53,11 +53,7 @@
 
 					<div class="button-divider">
 						<center>
-							<a href="#" type="button" class="btn btn-default book-now">Book Now</a>
-							<br />
-							<p>
-								OR call 832-404-0102
-							</p>
+							<button type="submit" class="btn btn-default book-now" id="service-btn" data-toggle="modal" data-delay = "50" data-target="#service-modal">Request a Service</button>
 						</center>
 					</div><!--End button-divider-->
 
@@ -66,6 +62,80 @@
 			</div> <!-- END CONTAINER -->
 		</div> <!-- END SERVICES JUMBOTRON-->
 	</section> <!-- END SERVICES SECTION -->
+
+
+	<!-- services modal -->
+	<div class="modal fade" id="service-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+	    aria-hidden="true">
+	    <div class="modal-dialog modal-lg">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: #000">
+	                    ×</button>
+	                <h4 class="modal-title" id="services-modal-label">
+	                    REQUEST A SERVICE</h4>
+	            </div>
+	            <div class="modal-body">
+	                <div class="row reg-body">
+	                    <div class="col-md-8">
+	                        <!-- Tab panes -->
+	                        <div class="tab-content">
+	                            <div class="tab-pane active" id="services-form">
+	                                <form role="form" class="form-horizontal">
+	                                <div class="form-group">
+	                                    <label for="inputClient" class="col-sm-2 control-label">
+	                                        Client Name</label>
+	                                    <div class="col-sm-10">
+	                                        <input type="text" class="form-control inputClient" placeholder="Enter Full Name Here"/>
+	                                    </div>
+	                                </div>
+	                                <div class="form-group">
+	                                    <label for="inputLocation" class="col-sm-2 control-label">
+	                                        Location</label>
+	                                    <div class="col-sm-10">
+	                                        <input type="text" class="form-control inputLocation" placeholder="e.g. Houston" />
+	                                    </div>
+	                                </div>
+	                                <div class="form-group">
+	                                    <label for="inputContact" class="col-sm-2 control-label">
+	                                        Contact Number</label>
+	                                    <div class="col-sm-10">
+	                                        <input type="number" class="form-control inputContact" placeholder="e.g. 555-555-5554" />
+	                                    </div>
+	                                </div>
+	                                <div class="form-group">
+	                                    <label for="inputConfirmAccountPassword" class="col-sm-2 control-label">
+	                                        Service Type Needed</label>
+	                                    <div class="col-sm-10">
+																				<div class="form-group">
+																					 <label for="sel1">Select list (select one):</label>
+																					 <select class="form-control" id="sel1">
+																						 <option>Residential</option>
+																						 <option>Automotive</option>
+																						 <option>Commercial</option>
+																					 </select>
+																				</div>
+	                                    </div>
+	                                </div>
+	                                <div class="row">
+	                                    <div class="col-sm-2">
+	                                    </div>
+	                                    <div class="col-sm-10">
+	                                        <button type="button" class="btn btn-primary btn-sm" id="saveReg" data-dismiss="modal">
+	                                            Save & Continue</button>
+	                                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">
+	                                            Cancel</button>
+	                                    </div>
+	                                </div>
+	                                </form>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div> <!--End Row-->
+	            </div> <!--End Modal Body-->
+	        </div><!--End Modal Content-->
+	    </div> <!--End Modal Dialogue-->
+	</div> <!--End Modal-->
 
 	<section class="expect-section">
 		<div class="jumbotron expect-jumbotron">

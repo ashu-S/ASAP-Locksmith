@@ -5,9 +5,9 @@ body{
 }
 
 html {
-    position: relative;
-    min-height: 100%;
-      overflow-x: hidden;
+  position: relative;
+  min-height: 100%;
+    overflow-x: hidden;
 }
 
 /*Nav Bar*/
@@ -191,6 +191,13 @@ html {
     position: relative;
     top: -222px;
   font-size: 46px;
+}
+
+/*Modal CSS*/
+.modal-title{
+  text-align: center;
+  font-family: 'Quicksand', cursive;
+  font-weight: bold;
 }
 
 /*Carousel Section*/
