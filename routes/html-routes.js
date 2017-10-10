@@ -18,11 +18,7 @@ module.exports = function(app) {
     res.render("index.handlebars");
   });
 
-  // services route loads services.html
-  // app.get("/services", function(req, res) {
-  //   res.render("services.handlebars");
-  // });
-
+  
   // services route loads services.html
   app.get("/contact", function(req, res) {
     res.render("contact.handlebars");

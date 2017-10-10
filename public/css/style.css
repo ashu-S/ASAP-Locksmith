@@ -25,17 +25,34 @@ html {
 
 .container-fluid{
   position: relative;
-  top: 4px;
+  margin-top: 3px !important;
 }
 
 .admin-nav{
   position: relative;
-    left: -9.5%;
+  left: -7.5%;
+  margin-top: -5px;
 }
 
-.fa-key{
+/* Admin login */
+#adminLogin {
+  padding-left: 18px !important;
+  padding-right: 18px !important;
   position: relative;
-    top: 13px;
+  margin-top: 10px;
+  color: #9d9d9d;
+  background-color: transparent !important;
+  border-color: #414c23;
+  border-style: solid;
+  border-width: 2px;
+}   
+
+.fa-user-circle:before {
+    /*content: "\f2bd";*/
+    font-size: 30px ! important;
+    color: white ! important;
+    margin-top: -2px;
+    margin-left: 5px;
 }
 
 /*Main Jumbotron*/
@@ -368,3 +385,4 @@ body {
   line-height: 80px;
 
 }
+
