@@ -77,60 +77,44 @@
 	            </div>
 	            <div class="modal-body">
 	                <div class="row reg-body">
-	                    <div class="col-md-8">
-	                        <!-- Tab panes -->
-	                        <div class="tab-content">
-	                            <div class="tab-pane active" id="services-form">
-	                                <form role="form" class="form-horizontal">
-	                                <div class="form-group">
-	                                    <label for="inputClient" class="col-sm-2 control-label">
-	                                        Client Name</label>
-	                                    <div class="col-sm-10">
-	                                        <input type="text" class="form-control inputClient" placeholder="Enter Full Name Here"/>
-	                                    </div>
-	                                </div>
-	                                <div class="form-group">
-	                                    <label for="inputLocation" class="col-sm-2 control-label">
-	                                        Location</label>
-	                                    <div class="col-sm-10">
-	                                        <input type="text" class="form-control inputLocation" placeholder="e.g. Houston" />
-	                                    </div>
-	                                </div>
-	                                <div class="form-group">
-	                                    <label for="inputContact" class="col-sm-2 control-label">
-	                                        Contact Number</label>
-	                                    <div class="col-sm-10">
-	                                        <input type="number" class="form-control inputContact" placeholder="e.g. 555-555-5554" />
-	                                    </div>
-	                                </div>
-	                                <div class="form-group">
-	                                    <label for="inputConfirmAccountPassword" class="col-sm-2 control-label">
-	                                        Service Type Needed</label>
-	                                    <div class="col-sm-10">
-																				<div class="form-group">
-																					 <label for="sel1">Select list (select one):</label>
-																					 <select class="form-control" id="sel1">
-																						 <option>Residential</option>
-																						 <option>Automotive</option>
-																						 <option>Commercial</option>
-																					 </select>
-																				</div>
-	                                    </div>
-	                                </div>
-	                                <div class="row">
-	                                    <div class="col-sm-2">
-	                                    </div>
-	                                    <div class="col-sm-10">
-	                                        <button type="button" class="btn btn-primary btn-sm" id="saveReg" data-dismiss="modal">
-	                                            Save & Continue</button>
-	                                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">
-	                                            Cancel</button>
-	                                    </div>
-	                                </div>
-	                                </form>
-	                            </div>
-	                        </div>
-	                    </div>
+											<div class="col-md-12">
+												<form class="full-services-form">
+												  <div class="form-group">
+												    <label for="inputClient">Client Name</label>
+												    <input type="text" class="form-control service-form" id="inputClient" placeholder="Enter Full Name">
+												  </div>
+												  <div class="form-group">
+												    <label for="inputLocation">Location</label>
+												    <input type="text" class="form-control service-form" id="inputLocation" placeholder="e.g. Houston">
+												  </div>
+													<div class="form-group">
+												    <label for="inputContact">Contact Number</label>
+												    <input type="tel" class="form-control service-form" id="inputContact" placeholder="e.g. 555-555-5556">
+												  </div>
+													<div class="form-group">
+											      <label for="selService">Select Service (select one):</label>
+											      <select class="form-control chosen-select" id="services" name="services">
+															<option value=""></option>
+											        <option value="Residential">Residential</option>
+											        <option value="Automotive">Automotive</option>
+											        <option value="Commercial">Commercial</option>
+											      </select>
+											    </div>
+													<div class="form-group">
+											      <label for="selSpecific">Select Service (select one):</label>
+											      <select class="form-control chosen-select" id="specific" name="specific">
+											      </select>
+											    </div>
+													<div class="row">
+															<div class="col-sm-10">
+																	<button type="button" class="btn btn-primary btn-sm" id="submitRequest" data-dismiss="modal">
+																			Submit</button>
+																	<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">
+																			Cancel</button>
+															</div>
+													</div>
+												</form>
+											</div>
 	                </div> <!--End Row-->
 	            </div> <!--End Modal Body-->
 	        </div><!--End Modal Content-->
@@ -257,7 +241,7 @@
 	</section> <!--End carousel section-->
 	<!-- Login modal -->
 	<section>
-	
+
 		<div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myLoginModalLabel"
 		    aria-hidden="true">
 		    <div class="modal-dialog modal-lg">
@@ -314,3 +298,114 @@
 	</section> <!--End Login Modal-->
 
 </div> <!-- End WEBPAGE BODY -->
+
+<script>
+
+		var specifics = {
+				'Residential': ['Lock Repair', 'Lock Installation', 'Alarm System Installation', 'Garage Door Locks', 'Gates and Fencing Lock', 'Peephole Installation'],
+				'Automotive': ['Emergency Car Lockout', 'Ignition Repair', 'Ignition Unlock', 'Broken Key Extration', 'Transponder Chip Key Production'],
+				'Commercial': ['Safe Installation', 'Full Service Alarm Installation', 'Panic Doors','File Cabinet Locks', 'Access Control Systems'],
+		}
+
+		var $specifics = $('#specific');
+		$('#services').change(function () {
+				var services = $(this).val(), spcs = specifics[services] || [];
+
+				var html = $.map(spcs, function(spc){
+						return '<option value="' + spc + '">' + spc + '</option>'
+				}).join('');
+				$specifics.html(html);
+		});
+
+		// Capture the form inputs
+		$("#submitRequest").on("click", function(){
+			// Form validation
+			function validateForm() {
+			var isValid = true;
+			$('.service-form').each(function() {
+				if ( $(this).val() === '' )
+						isValid = false;
+			});
+			$('.chosen-select').each(function() {
+				if( $(this).val() === "")
+					isValid = false
+			})
+			return isValid;
+		}
+		// If all required fields are filled
+		if (validateForm() == true)
+		{
+			// Create an object for the user's data
+				var userData = {
+					name: $("#inputClient").val(),
+					location: $("#inputLocation").val(),
+					contact: $('#inputContact').val(),
+					service: $('#services').val(),
+					specific_service: $('#specific').val()
+				}
+				// // Grab the URL of the website
+				// var currentURL = window.location.origin;
+				// // AJAX post the data to the API.
+				// $.post(currentURL + "/api/jobs", userData, function(data){
+				//
+				// });
+				console.log(userData);
+				alert("Your request is being processed. Thank you!");
+				$('.full-services-form').trigger('reset');
+				$('#service-modal').modal('hide');
+
+		}
+		else
+		{
+			alert("Please fill out all fields before submitting!");
+		}
+			return false;
+		});
+
+		// // Cache selectors
+		// var lastId,
+		// 		topMenu = $("#top-menu"),
+		// 		topMenuHeight = topMenu.outerHeight()+15,
+		// 		// All list items
+		// 		menuItems = topMenu.find("a"),
+		// 		// Anchors corresponding to menu items
+		// 		scrollItems = menuItems.map(function(){
+		// 			var item = $($(this).attr("href"));
+		// 			if (item.length) { return item; }
+		// 		});
+		//
+		// // Bind click handler to menu items
+		// // so we can get a fancy scroll animation
+		// menuItems.click(function(e){
+		// 	var href = $(this).attr("href"),
+		// 			offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+		// 	$('html, body').stop().animate({
+		// 			scrollTop: offsetTop
+		// 	}, 900);
+		// 	e.preventDefault();
+		// });
+		//
+		// // Bind to scroll
+		// $(window).scroll(function(){
+		// 	 // Get container scroll position
+		// 	 var fromTop = $(this).scrollTop()+topMenuHeight;
+		//
+		// 	 // Get id of current scroll item
+		// 	 var cur = scrollItems.map(function(){
+		// 		 if ($(this).offset().top < fromTop)
+		// 			 return this;
+		// 	 });
+		// 	 // Get the id of the current element
+		// 	 cur = cur[cur.length-1];
+		// 	 var id = cur && cur.length ? cur[0].id : "";
+		//
+		// 	 if (lastId !== id) {
+		// 			 lastId = id;
+		// 			 // Set/remove active class
+		// 			 menuItems
+		// 				 .parent().removeClass("active")
+		// 				 .end().filter("[href=#"+id+"]").parent().addClass("active");
+		// 	 }
+		// });
+
+</script>
