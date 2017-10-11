@@ -1,11 +1,17 @@
-// Model structure for Authentication 
+// Model structure for User
 
 module.exports = function(sequelize, DataTypes) {
-  var Authentication = sequelize.define("Authentication", {
+  var User = sequelize.define("Authentication",{
     // 'user_name' field stores User's name
+    prefix: DataTypes.CHAR CHAR(30) NOT NULL,
     user_name: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    // 'Password' field stores the password
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     // 'role' field stores user's role
     role: {
@@ -18,8 +24,12 @@ module.exports = function(sequelize, DataTypes) {
     access_level:{
       type:DataTypes.NUMBER,
       allowNull: false;
-    }
+    },
+    last_login: {
+      type: DataTypes.DATE
+    },
+
   });
 
-  return Authentication;
+  return User;
 };
