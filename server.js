@@ -6,6 +6,11 @@
 // ==============================================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var dotenv = require("dotenv");
+var session = require("express-session");
+const path = require("path");
+const methodOverride = require("method-override");
+var passport = require("./config/passport");
 // ==============================================================================
 // Sets up the Express App
 // ==============================================================================
@@ -13,13 +18,17 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 // Requiring our models for syncing
-// var db = require("./models");
+var db = require("./models");
 
-// Sets up the Express app to handle data parsing
+// Creating express app and configuring middleware needed for authentication
+var app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(express.static("public"));
+// We need to use sessions to keep track of our user's login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Static directory
 app.use(express.static("public"));
@@ -32,12 +41,14 @@ app.set("view engine", "handlebars");
 // Routes
 // =============================================================
 require("./routes/html-routes.js")(app);
-// require("./routes/api-routes.js")(app);
+require("./routes/api-routes.js")(app);
+
+
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-// db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
+    console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
-// });
+});

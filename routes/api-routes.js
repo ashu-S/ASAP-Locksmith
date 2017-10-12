@@ -6,17 +6,17 @@
 // =============================================================
 
 // Requiring our models
-//var db = require("../models");
+var db = require("../models");
 
 // Routes
 // =============================================================
-// module.exports = function(app) {
+module.exports = function(app) {
 //
-//   // GET route for getting all of the jobs
-//   app.get("/api/jobs", function(req, res) {
-//
-//   });
-//
+  // GET route for getting all of the jobs
+  app.get("/api/jobs", function(req, res) {
+   
+  });
+
 //   // Get rotue for retrieving a single job
 //   app.get("/api/jobs/:id", function(req, res) {
 //
@@ -36,4 +36,4 @@
 //   app.put("/api/jobs", function(req, res) {
 //
 //   });
-// };
+};

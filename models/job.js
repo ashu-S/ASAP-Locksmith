@@ -5,21 +5,25 @@ module.exports = function(sequelize, DataTypes) {
     // 'description' field stores Job description
     description: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
+    },
+    assigned: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     },
     // 'client_location' field stores Client location
     client_location: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     // 'client_name' field stores Client name
     client_name: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: true
     },
     client_contact: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: true
     },
   });
 
@@ -27,10 +31,10 @@ module.exports = function(sequelize, DataTypes) {
 
   
   Job.associate = function(models){
-    .belongsTo(models.Technician, {foreignKey: { 
+    Job.belongsTo(models.Technician, {foreignKey: { 
        allowNull: false 
       }
-    }); // closes belong to
+     }); // closes belong to
   }
 
   return Job;

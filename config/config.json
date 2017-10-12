@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "",
-    "database": "",
+    "password": "sqldev11",
+    "database": "asap_locksmith_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
