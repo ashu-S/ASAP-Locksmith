@@ -6,7 +6,7 @@ html {
 body {
   /* Margin bottom by footer height */
   background-color: #f2f2f2;
-  margin-bottom: 60px;
+  margin: 0px 0px 100px; /* bottom = footer height */
 }
 
 /*Nav Bar*/
@@ -349,15 +349,18 @@ body {
 /*Sticky Footer*/
 .footer {
   position: absolute;
-  bottom: 0;
-  width: 100%;
+    left: 0px;
+    bottom: 0px;
+    height: 134px;
+    width: 100%;
   background-color: #414c23;
 }
 
 .second-footer-container{
-  position: relative;
-  top: 55%;
+  position: absolute;
+    top: 97%;
   height: 90px;
+  line-height: 90px;
   background-color: #657539;
   width: 100%;
 }
@@ -382,12 +385,16 @@ body {
 }
 
 .fa-map-marker{
+  position: relative;
+  top: -12px;
   text-align: center;
   font-size: 19px;
   color: #fff;
 }
 
 .fa-envelope{
+  position: relative;
+  top: -2px;
   float: right;
   text-align: center;
   font-size: 17px;
