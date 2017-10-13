@@ -1,7 +1,7 @@
 {
-  "name": "ASAP-Locksmith",
+  "name": "asap-locksmith",
   "version": "1.0.0",
-  "description": "",
+  "description": "This repository is for Houston Coding Bootcamp - Project-2",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,10 +12,25 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "method-override": "^2.3.10",
     "mysql": "^2.15.0",
     "mysql2": "^1.4.2",
-    "sequelize": "^4.13.5"
-  }
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "sequelize": "^4.13.8"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashu-S/ASAP-Locksmith.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ashu-S/ASAP-Locksmith/issues"
+  },
+  "homepage": "https://github.com/ashu-S/ASAP-Locksmith#readme"
 }

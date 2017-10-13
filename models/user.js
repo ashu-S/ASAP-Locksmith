@@ -1,9 +1,9 @@
-// Model structure for Authentication 
+// Model structure for User
 
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User",{
     // 'user_name' field stores User's name
-    user_name: {
+      user_name: {
       type: DataTypes.STRING,
       allowNull: false
     },
