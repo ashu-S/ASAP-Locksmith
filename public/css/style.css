@@ -1,7 +1,7 @@
 html {
   position: relative;
   min-height: 100%;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
 }
 body {
   /* Margin bottom by footer height */
@@ -243,7 +243,8 @@ body {
 
 /*Carousel Section*/
 .carousel-section{
-  margin-bottom: 50px;
+  position: relative;
+    top: 50px;
 }
 .thumb{
   height: 500px;
@@ -348,6 +349,7 @@ body {
 .footer {
   position: absolute;
     left: 0px;
+    top: 100%;
     bottom: 0px;
     height: 134px;
     width: 100%;

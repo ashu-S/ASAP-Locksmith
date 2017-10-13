@@ -37,6 +37,30 @@ module.exports = function(app) {
         });
     });
 
+  // Delete a Job
+  app.post("/api/delete", function(req, res) {
+    console.log("Job Data:");
+    console.log(req.body);
+    db.Job.destroy({
+      where: {
+        id: req.body.id
+      }
+    })
+    .then(function(result) {
+      res.redirect("/api/accept/")
+    })
+  });
+
+  app.post("/api/update", function(req, res) {
+    db.Job.update({
+       assigned: true
+     },
+     {
+      where: req.body.id
+     }
+  )
+});
+
 //   // DELETE route for deleting jobs
 //   app.delete("/api/jobs/:id", function(req, res) {
 //
