@@ -106,7 +106,7 @@
 	            <div class="modal-body">
 	                <div class="row reg-body">
 											<div class="col-md-12">
-												<form id="clientForm" action="/api/accept" method="POST" class="full-services-form">
+												<form id="clientForm" action="" method="POST" class="full-services-form">
 												  <div class="form-group">
 												    <label for="inputClient">Client Name</label>
 												    <input type="text" name = "client_name" class="form-control service-form" id="client_name" placeholder="Enter Full Name">
@@ -362,19 +362,21 @@ $(document).ready(function() {
 		{
 			// Create an object for the user's data
 				var userData = {
-					name: $("#client_name").val(),
-					location: $("#client_location").val(),
-					contact: $('#client_contact').val(),
-					service: $('#services').val(),
+					client_name: $("#client_name").val(),
+					client_location: $("#client_location").val(),
+					client_contact: $('#client_contact').val(),
+					services: $('#services').val(),
 					specific_service: $('#specific_service').val()
 				}
-				// // Grab the URL of the website
-				// var currentURL = window.location.origin;
-				// // AJAX post the data to the API.
-				// $.post(currentURL + "/api/jobs", userData, function(data){
-				//
-				// });
-				console.log(userData);
+
+        // send an AJAX POST-request with jQuery
+        $.post("/api/new", userData)
+          // on success, run this callback
+          .done(function(data) {
+            // log the data we found
+            console.log(data);
+          });
+
 				alert("Your request is being processed. Thank you!");
 				$('.full-services-form').trigger('reset');
 				$('#service-modal').modal('hide');

@@ -12,27 +12,35 @@ var db = require("../models");
 // Routes
 // =============================================================
 module.exports = function(app) {
-//
-//   // GET route for getting all of the jobs
-//   app.get("/api/jobs", function(req, res) {
-//
-//   });
-//
-  // POST route for saving a new job
-  app.post("/api/accept", function(req, res) {
-    console.log(req.body);
+
+  // If a user sends data to add a new job...
+  app.post("/api/new", function(req, res) {
+
+    // Then add the job to the database using sequelize
     db.Job.create({
       client_name: req.body.client_name,
       client_location: req.body.client_location,
       client_contact: req.body.client_contact,
       services: req.body.services,
       specific_service: req.body.specific_service,
-      assigned: req.body.assigned
     })
     .then(function(result) {
-      res.redirect("/api/accept");
+      res.redirect("/api/accept/");
     });
   });
+
+  //   db.Job.create({
+  //     client_name: req.body.client_name,
+  //     client_location: req.body.client_location,
+  //     client_contact: req.body.client_contact,
+  //     services: req.body.services,
+  //     specific_service: req.body.specific_service,
+  //     assigned: req.body.assigned
+  //   })
+  //   .then(function(result) {
+  //     res.redirect("/api/accept");
+  //   });
+  // });
 
   app.get("/api/accept/", function(req, res) {
              db.Job.findAll({})
@@ -41,41 +49,6 @@ module.exports = function(app) {
             res.render("accept", {Job:result});
         });
     });
-
-  //
-  // app.get("/api/jobs", function(req, res) {
-  //     console.log('admin view')
-  //      var query = {};
-  //   if (req.query.id) {
-  //     query.TechnicianId = req.query.id;
-  //   }
-  //
-  //      db.Job.findAll({
-  //        attributes:['description'],
-  //      include: [{ model: db.Technician, attributes: ['current_job']}],
-  //
-  //    }).then(function(dbJob) {
-  //         console.log('line 28',dbJob)
-  //         console.log("...................")
-  //         // console.log(dataValues.description)
-  //     res.json(dbJob);
-  //     // res.render("viewjob.handlebars",dbJob);
-  //   });
-  // });
-
-  //
-  // // post route -> back to index
-  // app.post("/burgers/create", function(req, res) {
-  //   // takes the request object using it as input for buger.addBurger
-  //   db.Jobs.create(req.body.client_name, function(error) {
-  //     if (error) {
-  //       console.log("Please enter a name then hit submit!");
-  //     }
-  //     // render back to index with handle
-  //     res.redirect("/");
-  //   });
-  // });
-
 
 //   // DELETE route for deleting jobs
 //   app.delete("/api/jobs/:id", function(req, res) {
