@@ -29,19 +29,6 @@ module.exports = function(app) {
     });
   });
 
-  //   db.Job.create({
-  //     client_name: req.body.client_name,
-  //     client_location: req.body.client_location,
-  //     client_contact: req.body.client_contact,
-  //     services: req.body.services,
-  //     specific_service: req.body.specific_service,
-  //     assigned: req.body.assigned
-  //   })
-  //   .then(function(result) {
-  //     res.redirect("/api/accept");
-  //   });
-  // });
-
   app.get("/api/accept/", function(req, res) {
              db.Job.findAll({})
           .then(function(result) {
