@@ -1,11 +1,19 @@
-// Model structure for Jobs 
+// Model structure for Jobs
 
 module.exports = function(sequelize, DataTypes) {
   var Job = sequelize.define("Job", {
     // 'description' field stores Job description
-    description: {
+    services: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    specific_service: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    assigned: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
     },
     // 'client_location' field stores Client location
     client_location: {
@@ -18,19 +26,19 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
     },
     client_contact: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
   });
 
 //A Job belongsTo Technician
 
-  
+
   Job.associate = function(models){
-    .belongsTo(models.Technician, {foreignKey: { 
-       allowNull: false 
+    Job.belongsTo(models.Technician, {foreignKey: {
+       allowNull: true
       }
-    }); // closes belong to
+     }); // closes belong to
   }
 
   return Job;

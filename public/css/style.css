@@ -1,13 +1,12 @@
-/*Body Styling*/
-body{
-  overflow-y: hidden;
-  background-color: #f2f2f2;
-}
-
 html {
   position: relative;
   min-height: 100%;
     overflow-x: hidden;
+}
+body {
+  /* Margin bottom by footer height */
+  background-color: #f2f2f2;
+  margin-bottom: 60px;
 }
 
 /*Nav Bar*/
@@ -45,7 +44,7 @@ html {
   border-color: #414c23;
   border-style: solid;
   border-width: 2px;
-}   
+}
 
 .fa-user-circle:before {
     /*content: "\f2bd";*/
@@ -321,15 +320,6 @@ html {
 #thumbnail-slider-prev, #thumbnail-slider-next {display:none;}
 
 /*Sticky Footer*/
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
 .footer {
   position: absolute;
   bottom: 0;
@@ -385,4 +375,3 @@ body {
   line-height: 80px;
 
 }
-
