@@ -1,19 +1,27 @@
-$(document).on('click','form.Login', function() {
-  // Getting references to our form and inputs
-  var loginForm = $("form.Login");
-  var userNameInput = $("input#userName");
-  var passwordInput = $("input#password");
-
+$(document).ready(function(){
   // When the form is submitted, we validate there's an email and password entered
-  loginForm.on("submit", function(event) {
+
+  console.log("in document.ready");
+
+  $('#loginButton').on("click",function(event) {
+    // Getting references to our form and inputs
+    console.log("inside submit click");
+
+    var loginForm = $("form#Login");
+    console.log(loginForm);
+    var userNameInput = $("input#userName");
+    console.log(userNameInput);
+    var passwordInput = $("input#password");
+    console.log(passwordInput);
     console.log("clicked submit");
-    event.preventDefault();
+    event.preventDefault(); 
     var userData = {
-      user_name: userNameInput.val().trim(),
-      password: passwordInput.val().trim()
+        user_name: userNameInput.val().trim(),
+        password: passwordInput.val().trim()
     };
 
-    if (!userData.user_name || !userData.password) {
+    if (!userData.user_name || !userData.password)
+    {
       return;
     }
 
@@ -23,17 +31,19 @@ $(document).on('click','form.Login', function() {
     passwordInput.val("");
   });
 
-  // loginUser does a post to our "api/login" route and if successful, redirects us the the admin page
-  function loginUser(user_name, password) {
-    $.post("/api/login", {
-      user_name: user_name,
-      password: password
-    }).then(function(data) {
-      window.location.replace(data);
-            // If there's an error, log the error
-    }).catch(function(err) {
-      console.log(err);
-    });
-  }
+    // loginUser does a post to our "api/login" route and if successful, redirects us the the admin page
+    function loginUser(user_name, password) {
+      $.post("/api/login", {
+        user_name: user_name,
+        password: password
+      }).then(function(data) {
+        console.log("res data of loginUser function:" + data);
+        window.location.replace(data);
+              // If there's an error, log the error
+      }).catch(function(err) {
+        console.log(err);
+      });
+    }
 
 });
+
