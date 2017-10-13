@@ -41,19 +41,19 @@ passport.serializeUser(function(user, cb) {
   cb(null, user);
 });
 
-// passport.deserializeUser(function(obj, cb) {
-//   cb(null, obj);
-// });
+passport.deserializeUser(function(obj, cb) {
+  cb(null, obj);
+});
 
 // deserialize user
-passport.deserializeUser(function(id, done) {
-  User.findById(id).then(function(user) {
-    if (user) {
-      done(null, user.get());
-    } else {
-      done(user.errors, null);
-    }
-  });
-});
+// passport.deserializeUser(function(id, done) {
+//   User.findById(id).then(function(user) {
+//     if (user) {
+//       done(null, user.get());
+//     } else {
+//       done(user.errors, null);
+//     }
+//   });
+// });
 // Exporting our configured passport
 module.exports = passport;

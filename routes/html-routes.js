@@ -25,6 +25,11 @@ module.exports = function(app) {
   });
 
   // admin route loads admin.html
+  app.get("/login", function(req, res) {
+    res.render("login.handlebars");
+  });
+
+  // admin route loads admin.html
   app.get("/admin", function(req, res) {
     res.render("admin.handlebars");
   });
