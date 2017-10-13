@@ -29,4 +29,7 @@ module.exports = function(app) {
     res.render("admin.handlebars");
   });
 
+   app.get("/admin/view", function(req, res) {
+    res.render("viewjob.handlebars");
+  });
 };

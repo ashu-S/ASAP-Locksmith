@@ -1,5 +1,5 @@
 // Model structure for Jobs 
-
+'use strict';
 module.exports = function(sequelize, DataTypes) {
   var Job = sequelize.define("Job", {
     // 'description' field stores Job description
@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
 
   
   Job.associate = function(models){
-    .belongsTo(models.Technician, {foreignKey: { 
+    Job.belongsTo(models.Technician, {foreignKey: { 
        allowNull: false 
       }
     }); // closes belong to

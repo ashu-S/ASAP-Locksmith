@@ -1,5 +1,5 @@
 // Model structure for Technicians 
-
+'use strict';
 module.exports = function(sequelize, DataTypes) {
   var Technician = sequelize.define("Technician", {
     // 'name' field stores Technician's name
@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     // 'phNo' field stores Technician's phone number
     phNo: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     // 'current_job' field stores Technician's phone number
@@ -33,8 +33,12 @@ module.exports = function(sequelize, DataTypes) {
 
   
   Technician.associate = function(models){
-    Technician.hasMany(models.Job);
-    Technician.hasMany(models.Skillset);
+    Technician.hasMany(models.Job,{
+      onDelete:"cascade"
+    });
+    Technician.hasMany(models.Skillset,{
+      onDelete:"cascade"
+    });
   };
 
   return Technician;
