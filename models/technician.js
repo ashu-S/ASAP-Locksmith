@@ -31,7 +31,7 @@ module.exports = function(sequelize, DataTypes) {
 
 // Technician has many jobs and many skills
 
-  
+
   Technician.associate = function(models){
     Technician.hasMany(models.Job,{
       onDelete:"cascade"

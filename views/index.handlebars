@@ -1,3 +1,15 @@
+<!--Navigation Bar-->
+  <nav class="navbar  navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+     </div>
   <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="navbar-collapse">
         <ul class="nav navbar-nav" id="top-menu">
@@ -7,7 +19,7 @@
         </ul>
 				<ul class="nav navbar-nav navbar-right admin-nav">
 					<!-- Login Button -->
-					<button type="submit" class="btn btn-primary" id="adminLogin" data-toggle="modal" data-delay = "50" data-target="#LoginModal">LOG IN<i class="fa fa-sign-in" aria-hidden="true" ></i></button>
+					<button type="submit" class="btn btn-primary" id="adminLogin" data-toggle="modal" data-delay = "50" data-target="#LoginModal"> LOG IN <i class="fa fa-sign-in" aria-hidden="true" ></i></button>
 					<!-- User icon -->
 					<!-- <i class="fa fa-user-circle " id="userIcon" data-toggle="tooltip" data-placement="bottom" aria-hidden="true" title="User Profile" ></i> -->
 			 	</ul>
@@ -94,18 +106,18 @@
 	            <div class="modal-body">
 	                <div class="row reg-body">
 											<div class="col-md-12">
-												<form class="full-services-form">
+												<form id="clientForm" action="/api/accept" method="POST" class="full-services-form">
 												  <div class="form-group">
 												    <label for="inputClient">Client Name</label>
-												    <input type="text" class="form-control service-form" id="inputClient" placeholder="Enter Full Name">
+												    <input type="text" name = "client_name" class="form-control service-form" id="client_name" placeholder="Enter Full Name">
 												  </div>
 												  <div class="form-group">
 												    <label for="inputLocation">Location</label>
-												    <input type="text" class="form-control service-form" id="inputLocation" placeholder="e.g. Houston">
+												    <input type="text" name="client_location" class="form-control service-form" id="client_location" placeholder="e.g. Houston">
 												  </div>
 													<div class="form-group">
 												    <label for="inputContact">Contact Number</label>
-												    <input type="tel" class="form-control service-form" id="inputContact" placeholder="e.g. 555-555-5556">
+												    <input type="tel" name="client_contact" class="form-control service-form" id="client_contact" placeholder="e.g. 555-555-5556">
 												  </div>
 													<div class="form-group">
 											      <label for="selService">Select Service (select one):</label>
@@ -118,7 +130,7 @@
 											    </div>
 													<div class="form-group">
 											      <label for="selSpecific">Select Service (select one):</label>
-											      <select class="form-control chosen-select" id="specific" name="specific">
+											      <select class="form-control chosen-select" id="specific_service" name="specific_service">
 											      </select>
 											    </div>
 													<div class="row">
@@ -261,29 +273,29 @@
 		<div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myLoginModalLabel"
 		    aria-hidden="true">
 		    <div class="modal-dialog modal-lg">
-		        <div class="modal-content">
+		        <div class="modal-content" id="login-content">
 		            <div class="modal-header">
 		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 		                    ×</button>
-		                <h4 class="modal-title" id="myModalloginLabel">
+		                <h4 class="modal-title" id="login-title">
 		                    ASAP-Locksmith </a></h4>
 		            </div>
-		            <div class="modal-body modal-body-login">
+		            <div class="modal-body modal-body-login" id="login-body">
 		                <div class="row">
 		                    <div class="col-md-8" >
 		                        <!-- Nav tabs -->
 		                        <ul class="nav nav-tabs">
-		                            <li class="active"><a href="#Login" data-toggle="tab"> Login</a></li>
+		                            <li class="active"><a href="#Login" data-toggle="tab"> Admin Login</a></li>
 		                        </ul>
 		                        <!-- Tab panes -->
 		                        <div class="tab-content">
 		                            <div class="tab-pane active" id="Login">
-		                                <form role="form" class="form-horizontal login-body">
+		                                <form role="form" class="form-horizontal login-body" id=>
 		                                <div class="form-group">
-		                                    <label for="userId" class="col-sm-2 control-label">
-		                                        User Id</label>
+		                                    <label for="userName" class="col-sm-2 control-label">
+		                                        User Name</label>
 		                                    <div class="col-sm-10">
-		                                        <input type="text" class="form-control" id="userId" placeholder="Email" />
+		                                        <input type="text" class="form-control" id="userId" placeholder="User Name" />
 		                                    </div>
 		                                </div>
 		                                <div class="form-group">
@@ -316,23 +328,20 @@
 </div> <!-- End WEBPAGE BODY -->
 
 <script>
-
+$(document).ready(function() {
 		var specifics = {
 				'Residential': ['Lock Repair', 'Lock Installation', 'Alarm System Installation', 'Garage Door Locks', 'Gates and Fencing Lock', 'Peephole Installation'],
 				'Automotive': ['Emergency Car Lockout', 'Ignition Repair', 'Ignition Unlock', 'Broken Key Extration', 'Transponder Chip Key Production'],
 				'Commercial': ['Safe Installation', 'Full Service Alarm Installation', 'Panic Doors','File Cabinet Locks', 'Access Control Systems'],
 		}
-
-		var $specifics = $('#specific');
+		var $specifics = $('#specific_service');
 		$('#services').change(function () {
 				var services = $(this).val(), spcs = specifics[services] || [];
-
 				var html = $.map(spcs, function(spc){
 						return '<option value="' + spc + '">' + spc + '</option>'
 				}).join('');
 				$specifics.html(html);
 		});
-
 		// Capture the form inputs
 		$("#submitRequest").on("click", function(){
 			// Form validation
@@ -353,11 +362,11 @@
 		{
 			// Create an object for the user's data
 				var userData = {
-					name: $("#inputClient").val(),
-					location: $("#inputLocation").val(),
-					contact: $('#inputContact').val(),
+					name: $("#client_name").val(),
+					location: $("#client_location").val(),
+					contact: $('#client_contact').val(),
 					service: $('#services').val(),
-					specific_service: $('#specific').val()
+					specific_service: $('#specific_service').val()
 				}
 				// // Grab the URL of the website
 				// var currentURL = window.location.origin;
@@ -369,7 +378,6 @@
 				alert("Your request is being processed. Thank you!");
 				$('.full-services-form').trigger('reset');
 				$('#service-modal').modal('hide');
-
 		}
 		else
 		{
@@ -378,50 +386,5 @@
 			return false;
 		});
 
-		// // Cache selectors
-		// var lastId,
-		// 		topMenu = $("#top-menu"),
-		// 		topMenuHeight = topMenu.outerHeight()+15,
-		// 		// All list items
-		// 		menuItems = topMenu.find("a"),
-		// 		// Anchors corresponding to menu items
-		// 		scrollItems = menuItems.map(function(){
-		// 			var item = $($(this).attr("href"));
-		// 			if (item.length) { return item; }
-		// 		});
-		//
-		// // Bind click handler to menu items
-		// // so we can get a fancy scroll animation
-		// menuItems.click(function(e){
-		// 	var href = $(this).attr("href"),
-		// 			offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
-		// 	$('html, body').stop().animate({
-		// 			scrollTop: offsetTop
-		// 	}, 900);
-		// 	e.preventDefault();
-		// });
-		//
-		// // Bind to scroll
-		// $(window).scroll(function(){
-		// 	 // Get container scroll position
-		// 	 var fromTop = $(this).scrollTop()+topMenuHeight;
-		//
-		// 	 // Get id of current scroll item
-		// 	 var cur = scrollItems.map(function(){
-		// 		 if ($(this).offset().top < fromTop)
-		// 			 return this;
-		// 	 });
-		// 	 // Get the id of the current element
-		// 	 cur = cur[cur.length-1];
-		// 	 var id = cur && cur.length ? cur[0].id : "";
-		//
-		// 	 if (lastId !== id) {
-		// 			 lastId = id;
-		// 			 // Set/remove active class
-		// 			 menuItems
-		// 				 .parent().removeClass("active")
-		// 				 .end().filter("[href=#"+id+"]").parent().addClass("active");
-		// 	 }
-		// });
-
+});
 </script>
