@@ -44,8 +44,6 @@ require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 require("./routes/auth-routes.js")(app);
 
-
-
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({ force: false }).then(function() {

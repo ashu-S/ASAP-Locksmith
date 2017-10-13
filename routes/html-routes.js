@@ -18,7 +18,7 @@ module.exports = function(app) {
     res.render("index.handlebars");
   });
 
-  
+
   // services route loads services.html
   app.get("/contact", function(req, res) {
     res.render("contact.handlebars");
@@ -28,5 +28,9 @@ module.exports = function(app) {
   app.get("/admin", function(req, res) {
     res.render("admin.handlebars");
   });
+
+  app.get("/admin/accept", function(req, res){
+    res.render("accept.handlebars");
+  })
 
 };
