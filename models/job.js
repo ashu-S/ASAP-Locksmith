@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    // 'description' field stores Job description
+    // 'services' field stores Job description
     services: {
       type: DataTypes.STRING,
       allowNull: false
@@ -26,9 +26,9 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    assigned: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
+    job_status: {
+      type: DataTypes.STRING,
+      defaultValue: "unaccepted",
     },
 
   });

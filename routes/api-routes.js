@@ -32,7 +32,7 @@ module.exports = function(app) {
   app.get("/api/accept/", function(req, res) {
              db.Job.findAll({
                where: {
-                 assigned: false
+                 job_status: "unaccepted"
                }
              })
           .then(function(result) {
@@ -57,7 +57,7 @@ module.exports = function(app) {
 
   app.post("/api/update", function(req, res) {
     db.Job.update({
-       assigned: true
+       job_status: "accepted"
      },
      {
        where: {
