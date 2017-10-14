@@ -35,31 +35,9 @@ module.exports = function(app) {
      	 res.render("viewjob",{Job:dbJob});
     });
   });
-//
-  // Get rotue for retrieving a single job
-  // app.get("/api/j/", function(req, res) {
-  //          db.Technician.findAll({ })
-  //       .then(function(result) {
-  //         return res.json(result);
-  //       });
-  // });
-//
-//   // POST route for saving a new job
-//   app.post("/api/jobs", function(req, res) {
-//
-//   });
-// 
 
-//   // GET route for getting all of the jobs
-//   app.get("/api/jobs", function(req, res) {
-//
-//   });
-//
   // POST route for saving a new job
-  app.post("/api/accept", function(req, res) {
-    console.log(req.body);
-
-
+ 
   // If a user sends data to add a new job...
   app.post("/api/new", function(req, res) {
 
@@ -118,23 +96,11 @@ module.exports = function(app) {
   });
 
 
-//   // DELETE route for deleting jobs
-//   app.delete("/api/jobs/:id", function(req, res) {
-//
-//   });
-//
-//   // PUT route for updating jobs
-//   app.put("/api/jobs", function(req, res) {
-//
-//   });
-
-// Get Route for weekly report
-
 app.get("/api/getDate", function(req, res) {
   console.log('req.body');
   db.Job.findAll({
 
-   attributes:['TechnicianId','client_name','description','createdAt'],
+   attributes:['TechnicianId','client_name','services','createdAt'],
      where : {
      createdAt: {
         $between: [req.query.startdate, req.query.endDate]
@@ -153,16 +119,11 @@ app.get("/api/getDate", function(req, res) {
  // Get for monthly report 
   app.get("/api/getDetails", function(req, res) {
     var sequelize=require('sequelize');
-    //var date1= $("#date3").val().trim();
-    console.log('MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM');
-    console.log(req.body.date3)
-console.log(req.query);
- console.log('MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM');
-  db.Job.findAll({
-   attributes:['TechnicianId','client_name','description',[sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'),'%m-%d-%Y'),'createdAt']],
+    db.Job.findAll({
+     attributes:['TechnicianId','client_name','services',[sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'),'%m-%d-%Y'),'createdAt']],
      where: 
      //{createdAt:'2016-01-11T00:00:00.000Z'},
-     sequelize.where(sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'),'%b-%Y'),req.query.date3),
+       sequelize.where(sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'),'%b-%Y'),req.query.date3),
        include: [{ model: db.Technician, attributes: ['location','current_job','job_status']}]
       }).then(function(result) {
         console.log('line 28',result)
@@ -173,6 +134,6 @@ console.log(req.query);
 
     });
   });
-});
+
 };
 
