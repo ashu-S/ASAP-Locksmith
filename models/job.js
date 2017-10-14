@@ -7,48 +7,49 @@
 
 module.exports = function(sequelize, DataTypes) {
   var Job = sequelize.define("Job", {
-    // 'description' field stores Job description
-    services: {
+    // 'client_name' field stores Client name
+    client_name: {
       type: DataTypes.STRING,
-      allowNull: false
-    },
-    assigned: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false
-    },
-    specific_service: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    assigned: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
+      allowNull: true
     },
     // 'client_location' field stores Client location
     client_location: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    // 'client_name' field stores Client name
-    client_name: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
+
     client_contact: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
+    // 'services' field stores Job description
+    services: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    specific_service: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    job_status: {
+      type: DataTypes.STRING,
+      defaultValue: "unaccepted",
+    },
+
   });
 
 //A Job belongsTo Technician
 
-
   Job.associate = function(models){
+
     Job.belongsTo(models.Technician, {foreignKey: { 
 
        allowNull: false 
 
        // allowNull: false
+
+    Job.belongsTo(models.Technician, {foreignKey: {
+       allowNull: true
 
       }
      }); // closes belong to

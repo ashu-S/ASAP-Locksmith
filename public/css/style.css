@@ -1,12 +1,12 @@
 html {
   position: relative;
   min-height: 100%;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
 }
 body {
   /* Margin bottom by footer height */
   background-color: #f2f2f2;
-  margin-bottom: 60px;
+  margin: 0px 0px 100px; /* bottom = footer height */
 }
 
 /*Nav Bar*/
@@ -79,6 +79,8 @@ body {
 .form-horizontal{
   padding-top: 15px;
 }
+
+/**/
 /*Main Jumbotron*/
 .main-jumbotron{
   height: 650px;
@@ -251,7 +253,8 @@ body {
 
 /*Carousel Section*/
 .carousel-section{
-  margin-bottom: 50px;
+  position: relative;
+    top: 50px;
 }
 .thumb{
   height: 500px;
@@ -352,18 +355,40 @@ body {
 #thumbnail-slider-pause-play {display:none;} /*.pause*/
 #thumbnail-slider-prev, #thumbnail-slider-next {display:none;}
 
+/*Accept Page Styling*/
+.job-panel{
+  background-color: #fff !important;
+  width: 60% !important;
+  margin: auto !important;
+  margin-top: 55px !important;
+  margin-bottom: 40px !important;
+}
+
+.accept-row{
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.accept-form{
+text-align: center !important;
+}
+
 /*Sticky Footer*/
 .footer {
   position: absolute;
-  bottom: 0;
-  width: 100%;
+    left: 0px;
+    top: 100%;
+    bottom: 0px;
+    height: 134px;
+    width: 100%;
   background-color: #414c23;
 }
 
 .second-footer-container{
-  position: relative;
-  top: 55%;
+  position: absolute;
+    top: 97%;
   height: 90px;
+  line-height: 90px;
   background-color: #657539;
   width: 100%;
 }
@@ -388,12 +413,16 @@ body {
 }
 
 .fa-map-marker{
+  position: relative;
+  top: -12px;
   text-align: center;
   font-size: 19px;
   color: #fff;
 }
 
 .fa-envelope{
+  position: relative;
+  top: -2px;
   float: right;
   text-align: center;
   font-size: 17px;
@@ -408,6 +437,7 @@ body {
   line-height: 80px;
 
 }
+
 /*css for monthly report*/
 .month-row{
   position: relative;
@@ -507,3 +537,68 @@ body {
 .th{
   width: 150px;
 }
+
+
+ /*  Stylying for the contact page*/
+
+#men1{
+
+
+    background-color:#f2f2f2 ;
+    width:465px;
+    padding:20px;
+    margin: 50px auto;
+    margin-left: 100px;
+    border: 3px solid #657539 ;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+    border-radius:15px;
+    position:relative;
+
+ }
+
+.contact-text {
+  font-size: 30px;
+  font-family: 'Lobster Two', cursive;
+  margin-bottom: 20px;
+  margin-left: 150px;
+
+}
+
+
+.panel{
+  margin-left: 50px;
+  margin-top: 50px;
+  border-radius:15px;
+  background-color: transparent;
+
+}
+
+#bud{
+
+  text-align: left;
+}
+
+
+.panel-title{
+
+  font-size: 30px;
+  font-family: 'Lobster Two', cursive;
+  margin-left: -80px;
+
+}
+
+
+#first {
+padding-right: 30px;
+height: 38px;
+padding-top: 5px;
+
+}
+
+.contact-submit {
+  margin-left: 8px;
+  margin-top: 4px;
+
+}
+

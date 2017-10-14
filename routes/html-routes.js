@@ -24,6 +24,17 @@ module.exports = function(app) {
     res.render("contact.handlebars");
   });
 
+  // login route loads admin.html
+  app.get("/login", function(req, res) {
+    res.render("login.handlebars");
+  });
+
+  // signup route loads admin.html
+  app.get("/signup", function(req, res) {
+    res.render("signup.handlebars");
+  });
+
+
   // admin route loads admin.html
   app.get("/admin", function(req, res) {
     res.render("admin.handlebars");
