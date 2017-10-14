@@ -32,15 +32,15 @@ module.exports = function(sequelize, DataTypes) {
     },
 
   });
-//
-// //A Job belongsTo Technician
-//
-//   Job.associate = function(models){
-//     Job.belongsTo(models.Technician, {foreignKey: {
-//        allowNull: false
-//       }
-//      }); // closes belong to
-//   }
+
+//A Job belongsTo Technician
+
+  Job.associate = function(models){
+    Job.belongsTo(models.Technician, {foreignKey: {
+       allowNull: true
+      }
+     }); // closes belong to
+  }
 
   return Job;
 };
