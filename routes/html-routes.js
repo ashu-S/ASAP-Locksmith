@@ -29,6 +29,11 @@ module.exports = function(app) {
     res.render("login.handlebars");
   });
 
+  //logout route 
+  app.get("/logout", function(req, res) {
+    res.render("index.handlebars");
+  });
+
   // signup route loads admin.html
   app.get("/signup", function(req, res) {
     res.render("signup.handlebars");
@@ -40,8 +45,14 @@ module.exports = function(app) {
     res.render("admin.handlebars");
   });
 
+  // accept route loads accept.html
   app.get("/admin/accept", function(req, res){
     res.render("accept.handlebars");
+  })
+
+  // assign route loads accept.html
+  app.get(" /admin/assign", function(req, res){
+    res.render("assign.handlebars");
   })
 
 };

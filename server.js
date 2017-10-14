@@ -11,7 +11,6 @@ var dotenv = require("dotenv");
 var session = require("express-session");
 const path = require("path");
 const methodOverride = require("method-override");
-var passport = require("./config/passport.js");
 // ==============================================================================
 // Sets up the Express App
 // ==============================================================================
@@ -39,6 +38,7 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+require("./config/passport.js")(passport);
 // Routes
 // =============================================================
 require("./routes/html-routes.js")(app);

@@ -12,6 +12,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    skills:{
+      type: DataTypes.STRING,
+      allowNull:false
+    },
     // 'phNo' field stores Technician's phone number
     phNo: {
       type: DataTypes.INTEGER,

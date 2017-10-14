@@ -478,3 +478,77 @@ h5 {
   margin-top: 4px;
 
 }
+
+/*Assign job page*/
+
+.assignForm-group{
+  margin-right: 50%;
+  position: relative;
+
+}
+#assignJobs{
+  background-color: transparent;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: #657539;
+  position: relative; 
+  top: 60px;
+  padding: 2%;
+}
+
+#getJobDetails{
+  background-color: transparent;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: #657539;
+  position: relative; 
+  top: 60px;
+  margin-bottom: 5%;
+  padding: 2%;
+}
+
+#jobId{
+  width: 30%;
+}
+
+.formHeader{
+  float: left;
+  margin-left: 0%;
+  margin-bottom: 5%:;
+  font-size: 30px;
+  font-family: 'Poppins', sans-serif;
+}
+
+fieldset{
+  display: block;
+  margin-left: 17%;
+  border-width: 2px;
+  border-style: groove;
+  border-color: threedface;
+  border-image: initial;
+  width: 30%;
+  margin-bottom: 5%;
+}
+
+legend {
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+    margin-left: 5%;
+    border-radius: 0;
+    border: 0;
+    font-size: 14px;
+    width: 50%;
+}
+
+#fieldsetData {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 35px;
+    margin-bottom: 5px;
+}
+
+#fieldsetData1 {
+    margin-left: 30px;
+    margin-bottom: 5px;
+}

@@ -7,9 +7,9 @@ $(document).ready(function(){
         console.log("inside submit click");
         var loginForm = $("form#Login");
         console.log(loginForm);
-        var userNameInput = $("input#userName");
+        var userNameInput = $("#user_name");
         console.log(userNameInput);
-        var passwordInput = $("input#password");
+        var passwordInput = $("#password");
         console.log(passwordInput);
         
       // When the form is submitted, we validate there's an email and password entered

@@ -69,6 +69,9 @@ module.exports = function(app) {
      })
   });
 
+  // Signup
+  
+
 //   // DELETE route for deleting jobs
 //   app.delete("/api/jobs/:id", function(req, res) {
 //
