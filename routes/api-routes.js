@@ -23,7 +23,7 @@ module.exports = function(app) {
     }
 
   	  db.Job.findAll({
-  	   attributes:['client_name','description'],
+  	   attributes:['TechnicianId','client_name','description'],
        include: [{ model: db.Technician, attributes: ['id','location','current_job','job_status']}],
       
       }).then(function(dbJob) {
@@ -123,4 +123,51 @@ module.exports = function(app) {
 //   app.put("/api/jobs", function(req, res) {
 //
 //   });
+
+// Get Route for weekly report
+
+app.get("/api/getDate", function(req, res) {
+  console.log('req.body');
+  db.Job.findAll({
+
+   attributes:['TechnicianId','client_name','description','createdAt'],
+     where : {
+     createdAt: {
+        $between: [req.query.startdate, req.query.endDate]
+        }},
+       include: [{ model: db.Technician, attributes: ['location','current_job','job_status']}]
+      }).then(function(result) {
+        console.log("...................")
+        console.log('line 28',result)
+        console.log("...................")
+      res.render("report",{Job:result});
+
+    });
+});
+
+
+ // Get for monthly report 
+  app.get("/api/getDetails", function(req, res) {
+    var sequelize=require('sequelize');
+    //var date1= $("#date3").val().trim();
+    console.log('MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM');
+    console.log(req.body.date3)
+console.log(req.query);
+ console.log('MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM');
+  db.Job.findAll({
+   attributes:['TechnicianId','client_name','description',[sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'),'%m-%d-%Y'),'createdAt']],
+     where: 
+     //{createdAt:'2016-01-11T00:00:00.000Z'},
+     sequelize.where(sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'),'%b-%Y'),req.query.date3),
+       include: [{ model: db.Technician, attributes: ['location','current_job','job_status']}]
+      }).then(function(result) {
+        console.log('line 28',result)
+        console.log("...................") 
+      // res.redirect("/api/month/");
+      res.render("monthlyReport",{Job:result});
+      // res.render("report",{Job:result});
+
+    });
+  });
 };
+

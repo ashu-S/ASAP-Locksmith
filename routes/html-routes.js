@@ -36,6 +36,11 @@ module.exports = function(app) {
   app.get("/admin/accept", function(req, res){
     res.render("accept.handlebars");
   })
-
+  app.get("/admin/report", function(req, res) {
+    res.render("report.handlebars");
+  });
+  app.get("/admin/monthly", function(req, res) {
+    res.render("monthlyReport.handlebars");
+  });
 
 };

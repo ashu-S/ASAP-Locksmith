@@ -1,6 +1,6 @@
-<!-------------------------->
+
 <!-- Still Working on this -->
-<!-------------------------->
+
 <!-- Restructuring Navbar here to accomodate Admin View. Not including Services and contact in navbar instead including New Jobs, assign jobs, reports. -->
  <div class="collapse navbar-collapse" id="navbar-collapse">
 
@@ -42,29 +42,49 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav> <!--End Nav-->
+<div class="body-webpage">
+<div class="text-right">
+<div class="container form-container">
+    <div class="form-group row" >
 
-<!--Webpage Body-->
-<!-- <div class="body-webpage"> -->
+   <form method="GET" action="/api/getDate" class="button-size">
+     <label for="example-datetime-local-input" class=" col-form-label">Start Date</label>
+  <!-- <div class="col-4"> -->
+    <input class="form-control " type="datetime-local" value="2011-08-19T13:45:00" id="date1" name="startdate" style="position: relative;left: 340px;top: -10px;width: 260px">
+    </div>
+    <div class="form-group row">
+    <label for="example-date-input" class="col-form-label1">End Date</label>
+  <!-- <div class="col-4"> -->
+    <input class="form-control " type="datetime-local" value="2011-08-19T13:45:00" id="date2" name="endDate" style="position: relative;left: 740px;top: -178px;width: 260px">
+    </div>
+
+    <div class="text-right">
+    <button type="submit" class="btn btn-default button-report" style="position: relative;top: -226px;left: 198px">Generate Report</button>
+    </div>
+    </form>
+    </div>
+ </div>
+
 <div class="container">
-			
-         <div class="row featurette job-row">
-            <div class="panel panel-primary filterable">
+    <div class="row featurette view-row" >
+      <div class="panel panel-primary filterable">
         <div class="panel-heading">
-          <h3 class="panel-title">All Jobs</h3>
+          <h3 class="panel-title">Periodic Report</h3>
             <div class="pull-right">
               
             </div>
         </div>
-              {{description}}
-                <table class="table ">
-                <thead>
-                <tr>
-                    <th>Technician Id</th>
-                    <th>Client Name</th>
-                    <th>Description</th>
-                    <th>Location</th>
-                    <th>Current Job</th>
-                    <th>Job Status</th>
+        {{description}}
+         <table class="table ">
+            <thead>
+                <tr class="filters">
+                    <th class="th">Technician Id</th>
+                    <th class="th">Client Name</th>
+                    <th class="th">Date</th>
+                    <th class="th">Description</th>
+                    <th class="th">Location</th>
+                    <th class="th">Current Job</th>
+                    <th class="th">Job Status</th>
                     <!-- <th>Subject</th> -->
                 </tr>
                 </thead>
@@ -73,6 +93,7 @@
                 <tr>
                     <td>{{this.dataValues.TechnicianId}}</td>
                     <td>{{this.dataValues.client_name}}</td>
+                    <td>{{this.dataValues.createdAt}}</td> 
                     <td>{{this.dataValues.description}}</td>
                     <td>{{this.dataValues.Technician.location}}</td>
                     <td>{{this.dataValues.Technician.current_job}}</td>
@@ -83,18 +104,27 @@
                 {{/each}}
                 </tbody> 
             </table>
-
-
-              </div>
+        </div>
 
               <hr class="featurette-divider">
 
 
-    </div> <!-- END SERVICES JUMBOTRON
-    </div><!-- /.container-fluid -->
-  <!-- </nav> -->
-<!--End Nav-->
-<!-- <div class="container"> -->
-		     
-</div> <!-- End WEBPAGE BODY -->
+    </div> <!-- END SERVICES JUMBOTRON-->
 </div>
+
+<script type="text/javascript">
+    // Question: What does this code do?
+    $("#add-btn").on("click", function(event) {
+      event.preventDefault();
+      var newCharacter = {
+        date1: $("#date1").val().trim(),
+        date2: $("#date2").val().trim(),
+      };
+      // Question: What does this code do??
+      $.post("/api/new", newCharacter)
+      .done(function(data) {
+        console.log(data);
+        // alert("Adding character...");
+      });
+    });
+  </script>
