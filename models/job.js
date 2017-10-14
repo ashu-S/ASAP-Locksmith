@@ -42,9 +42,6 @@ module.exports = function(sequelize, DataTypes) {
 
   Job.associate = function(models){
 
-    Job.belongsTo(models.Technician, {foreignKey: { 
-
-       allowNull: false 
 
        // allowNull: false
 
