@@ -6,11 +6,12 @@
 // ==============================================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var passport = require("passport");
 var dotenv = require("dotenv");
 var session = require("express-session");
 const path = require("path");
 const methodOverride = require("method-override");
-var passport = require("./config/passport");
+var passport = require("./config/passport.js");
 // ==============================================================================
 // Sets up the Express App
 // ==============================================================================

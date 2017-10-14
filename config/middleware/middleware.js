@@ -1,10 +1,13 @@
-// This is middleware for restrictng routes a user is not allowed to visit if not logged in
-module.exports = function(req, res, next) {
-  // If the user is logged in, continue with the request to the restricted route
-  if (req.user) {
-    return next();
-  }
+const passport = require("passport");
+const models = require("../models");
+require("../config/passport.js")(passport, models.User);
 
-  // If the user isnt' logged in, redirect them to the login page
-  return res.redirect("/");
+var middleware = {
+    isLoggedIn: function(req, res, next) {
+        if (req.isAuthenticated()) return next();
+        res.redirect("/");
+    }
 };
+
+
+module.exports = middleware;
