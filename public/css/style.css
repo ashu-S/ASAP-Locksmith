@@ -457,7 +457,7 @@ text-align: center !important;
 }
 
 
-.panel{
+.contact-panel{
   margin-left: 50px;
   margin-top: 50px;
   border-radius:15px;
@@ -471,7 +471,7 @@ text-align: center !important;
 }
 
 
-.panel-title{
+.contact-title{
 
   font-size: 30px;
   font-family: 'Lobster Two', cursive;

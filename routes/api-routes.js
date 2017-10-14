@@ -69,13 +69,4 @@ module.exports = function(app) {
      })
   });
 
-//   // DELETE route for deleting jobs
-//   app.delete("/api/jobs/:id", function(req, res) {
-//
-//   });
-//
-//   // PUT route for updating jobs
-//   app.put("/api/jobs", function(req, res) {
-//
-//   });
 };
