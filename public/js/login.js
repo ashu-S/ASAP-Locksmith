@@ -38,7 +38,7 @@ $(document).ready(function(){
           user_name: user_name,
           password: password
         }).then(function(data) {
-          console.log("res data of loginUser function:" + data);
+        
           window.location.replace(data);
                 // If there's an error, log the error
         }).catch(function(err) {
