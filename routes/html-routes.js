@@ -46,9 +46,19 @@ module.exports = function(app) {
   });
 
   // accept route loads accept.html
+  app.get("/admin/view", function(req, res) {
+    res.render("viewjob.handlebars");
+  });
+
   app.get("/admin/accept", function(req, res){
     res.render("accept.handlebars");
   })
+  app.get("/admin/report", function(req, res) {
+    res.render("report.handlebars");
+  });
+  app.get("/admin/monthly", function(req, res) {
+    res.render("monthlyReport.handlebars");
+  });
 
   // assign route loads accept.html
   app.get(" /admin/assign", function(req, res){

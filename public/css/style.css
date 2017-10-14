@@ -142,8 +142,16 @@ body {
   background-color: transparent !important;
   background-image: url(../images/absurditytile.png);
   background-repeat: repeat;
-}
+ 
 
+}
+.report-jumbotron{
+  background-color: transparent !important;
+  background-image: url(../images/absurditytile.png);
+  background-repeat: repeat;
+  position: relative;
+  left:10px;
+}
 .service-header{
   text-align: center;
   margin-top: 30px;
@@ -347,6 +355,24 @@ body {
 #thumbnail-slider-pause-play {display:none;} /*.pause*/
 #thumbnail-slider-prev, #thumbnail-slider-next {display:none;}
 
+/*Accept Page Styling*/
+.job-panel{
+  background-color: #fff !important;
+  width: 60% !important;
+  margin: auto !important;
+  margin-top: 55px !important;
+  margin-bottom: 40px !important;
+}
+
+.accept-row{
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.accept-form{
+text-align: center !important;
+}
+
 /*Sticky Footer*/
 .footer {
   position: absolute;
@@ -412,6 +438,108 @@ body {
 
 }
 
+/*css for monthly report*/
+.month-row{
+  position: relative;
+  left: 6px;
+  top: 50px;
+  color: black;
+}
+.job-row{
+      position: relative;
+    left: 6px;
+    top: 58px;
+    color: black;
+}
+.month-size{
+  position: relative;
+    top: -75px;
+    left: 56px;
+    width: 260px;
+    color: black;
+}
+/*CSS Style for view page*/
+.
+.view-row{
+  position: relative;
+  left: 6px;
+  top: -30px;
+  color: black;
+}
+.view-jumbotron{
+  position: relative;
+  left: 1px;
+  height: 1000px;
+  top: 77px;
+  background-color: dimgrey;
+}
+/*css style for report date input form*/
+/*.report-container{
+    background-color: dimgrey;
+
+}*/
+.col-form-label{
+  width: 200px;
+  left:56px;
+  position: relative;
+  top: 21px;
+  color: black;
+}
+.col-form-label1{
+  width: 200px;
+  left:-252px;
+  position: relative;
+  top: -144px;
+  color: black;
+}
+/*.rowData{
+  position: relative;
+  top: -193px;
+}*/
+/*.form1{
+  position: relative;
+  left:162px;
+  top: -105px;
+  width: 260px;
+}
+.form2{
+  position: relative;
+  left:577px;
+  top: -179px;
+  width: 260px;
+}*/
+.button-size{
+    position: relative;
+    top: -96px;
+    width: 260px;
+}
+.label-name{
+      position: relative;
+    top: 5px;
+}
+.button-report{
+      position: relative;
+    top: -56px;
+    left: 430px;
+    height: 30px;
+}
+.form-container{
+    position: relative;
+    top: 153px;
+    left: -218px;
+}
+.create{
+   position: relative;
+    top: -26px;
+    width: 260px;
+    left: 281px;
+    width: 212px;
+}
+.th{
+  width: 150px;
+}
+
+
  /*  Stylying for the contact page*/
 
 #men1{
@@ -430,11 +558,7 @@ body {
 
  }
 
-
-
-
-
-h3 {
+.contact-text {
   font-size: 30px;
   font-family: 'Lobster Two', cursive;
   margin-bottom: 20px;
@@ -473,7 +597,7 @@ padding-top: 5px;
 
 }
 
-h5 {
+.contact-submit {
   margin-left: 8px;
   margin-top: 4px;
 
@@ -552,3 +676,4 @@ legend {
     margin-left: 30px;
     margin-bottom: 5px;
 }
+

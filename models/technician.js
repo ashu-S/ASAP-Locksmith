@@ -1,5 +1,5 @@
 // Model structure for Technicians 
-
+'use strict';
 module.exports = function(sequelize, DataTypes) {
   var Technician = sequelize.define("Technician", {
     // 'name' field stores Technician's name

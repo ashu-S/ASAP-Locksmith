@@ -13,10 +13,36 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
+//
+
+  // GET route for getting all of the jobs
+  app.get("/api/jobs", function(req, res) {
+  	console.log('admin view')
+  	 var query = {};
+    if (req.query.id) {
+      query.TechnicianId = req.query.id;
+    }
+
+  	  db.Job.findAll({
+  	   attributes:['TechnicianId','client_name','description'],
+       include: [{ model: db.Technician, attributes: ['id','location','current_job','job_status']}],
+      
+      }).then(function(dbJob) {
+      	console.log('line 28',dbJob)
+      	console.log("...................")
+      	// console.log(dataValues.description)
+      // res.json(dbJob);
+     	 res.render("viewjob",{Job:dbJob});
+    });
+  });
+
+  // POST route for saving a new job
+ 
   // If a user sends data to add a new job...
   app.post("/api/new", function(req, res) {
 
     // Then add the job to the database using sequelize
+
     db.Job.create({
       client_name: req.body.client_name,
       client_location: req.body.client_location,
@@ -69,16 +95,44 @@ module.exports = function(app) {
      })
   });
 
-  // Signup
-  
+app.get("/api/getDate", function(req, res) {
+  console.log('req.body');
+  db.Job.findAll({
 
-//   // DELETE route for deleting jobs
-//   app.delete("/api/jobs/:id", function(req, res) {
-//
-//   });
-//
-//   // PUT route for updating jobs
-//   app.put("/api/jobs", function(req, res) {
-//
-//   });
+   attributes:['TechnicianId','client_name','services','createdAt'],
+     where : {
+     createdAt: {
+        $between: [req.query.startdate, req.query.endDate]
+        }},
+       include: [{ model: db.Technician, attributes: ['location','current_job','job_status']}]
+      }).then(function(result) {
+        console.log("...................")
+        console.log('line 28',result)
+        console.log("...................")
+      res.render("report",{Job:result});
+
+    });
+});
+
+
+ // Get for monthly report 
+  app.get("/api/getDetails", function(req, res) {
+    var sequelize=require('sequelize');
+    db.Job.findAll({
+     attributes:['TechnicianId','client_name','services',[sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'),'%m-%d-%Y'),'createdAt']],
+     where: 
+     //{createdAt:'2016-01-11T00:00:00.000Z'},
+       sequelize.where(sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'),'%b-%Y'),req.query.date3),
+       include: [{ model: db.Technician, attributes: ['location','current_job','job_status']}]
+      }).then(function(result) {
+        console.log('line 28',result)
+        console.log("...................") 
+      // res.redirect("/api/month/");
+      res.render("monthlyReport",{Job:result});
+      // res.render("report",{Job:result});
+
+    });
+  });
+
 };
+

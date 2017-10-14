@@ -1,0 +1,100 @@
+<!-------------------------->
+<!-- Still Working on this -->
+<!-------------------------->
+<!-- Restructuring Navbar here to accomodate Admin View. Not including Services and contact in navbar instead including New Jobs, assign jobs, reports. -->
+ <div class="collapse navbar-collapse" id="navbar-collapse">
+
+<!--Navigation Bar-->
+  <nav class="navbar  navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+     </div>
+     <div class="collapse navbar-collapse" id="navbar-collapse">
+
+      <ul class="nav navbar-nav">
+         <li><a href="/">HOME</a></li>
+                  <!-- <li><a href="/api/accept">NEW JOBS</a></li> -->
+         <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">JOBS <b class="caret"></b></a>
+
+             <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
+                <li ><a href="/api/accept" style="text-decoration: none;">NEW JOBS</a></li>
+                <li><a href="">ASSIGN JOBS </a></li>
+                <li><a href="/api/jobs">VIEW JOBS</a></li> 
+             </ul>
+         </li>
+         <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">REPORTS <b class="caret"></b></a>
+             <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
+                <li ><a href="" style="text-decoration: none;"> Periodic Report</a></li>
+                <li><a href="/api/getDetails">Weekly Report </a></li>
+             </ul>
+         </li>
+     </ul>
+     <ul class="nav navbar-nav navbar-right admin-nav">
+         <button type="submit" class="btn btn-primary" id="adminLogin" data-toggle="modal" data-delay = "50" data-target="/">Log Out<i class="fa fa-key" aria-hidden="true"></i></button>
+     </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav> <!--End Nav-->
+
+<!--Webpage Body-->
+<!-- <div class="body-webpage"> -->
+<div class="container">
+			
+         <div class="row featurette job-row">
+            <div class="panel panel-primary filterable">
+        <div class="panel-heading">
+          <h3 class="panel-title">All Jobs</h3>
+            <div class="pull-right">
+              
+            </div>
+        </div>
+              {{description}}
+                <table class="table ">
+                <thead>
+                <tr>
+                    <th>Technician Id</th>
+                    <th>Client Name</th>
+                    <th>Description</th>
+                    <th>Location</th>
+                    <th>Current Job</th>
+                    <th>Job Status</th>
+                    <!-- <th>Subject</th> -->
+                </tr>
+                </thead>
+                <tbody>
+                {{#each Job}}
+                <tr>
+                    <td>{{this.dataValues.TechnicianId}}</td>
+                    <td>{{this.dataValues.client_name}}</td>
+                    <td>{{this.dataValues.description}}</td>
+                    <td>{{this.dataValues.Technician.location}}</td>
+                    <td>{{this.dataValues.Technician.current_job}}</td>
+                    <td>{{this.dataValues.Technician.job_status}}</td>
+                    
+                     <!-- <td>{{ this.subject }}</td> -->
+                </tr>
+                {{/each}}
+                </tbody> 
+            </table>
+
+
+              </div>
+
+              <hr class="featurette-divider">
+
+
+    </div> <!-- END SERVICES JUMBOTRON
+    </div><!-- /.container-fluid -->
+  <!-- </nav> -->
+<!--End Nav-->
+<!-- <div class="container"> -->
+		     
+</div> <!-- End WEBPAGE BODY -->
+</div>
