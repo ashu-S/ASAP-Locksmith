@@ -411,3 +411,70 @@ body {
   line-height: 80px;
 
 }
+
+ /*  Stylying for the contact page*/
+
+#men1{
+
+
+    background-color:#f2f2f2 ;
+    width:465px;
+    padding:20px;
+    margin: 50px auto;
+    margin-left: 100px;
+    border: 3px solid #657539 ;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+    border-radius:15px;
+    position:relative;
+
+ }
+
+
+
+
+
+h3 {
+  font-size: 30px;
+  font-family: 'Lobster Two', cursive;
+  margin-bottom: 20px;
+  margin-left: 150px;
+
+}
+
+
+.panel{
+  margin-left: 50px;
+  margin-top: 50px;
+  border-radius:15px;
+  background-color: transparent;
+
+}
+
+#bud{
+
+  text-align: left;
+}
+
+
+.panel-title{
+
+  font-size: 30px;
+  font-family: 'Lobster Two', cursive;
+  margin-left: -80px;
+
+}
+
+
+#first {
+padding-right: 30px;
+height: 38px;
+padding-top: 5px;
+
+}
+
+h5 {
+  margin-left: 8px;
+  margin-top: 4px;
+
+}
