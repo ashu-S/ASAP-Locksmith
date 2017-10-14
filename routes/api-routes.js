@@ -30,7 +30,11 @@ module.exports = function(app) {
   });
 
   app.get("/api/accept/", function(req, res) {
-             db.Job.findAll({})
+             db.Job.findAll({
+               where: {
+                 assigned: false
+               }
+             })
           .then(function(result) {
             // return res.json(result);
             res.render("accept", {Job:result});
@@ -43,11 +47,11 @@ module.exports = function(app) {
     console.log(req.body);
     db.Job.destroy({
       where: {
-        id: req.body.id
+        id: req.body.job_id
       }
     })
     .then(function(result) {
-      res.redirect("/api/accept/")
+      res.redirect("/api/accept")
     })
   });
 
@@ -56,10 +60,14 @@ module.exports = function(app) {
        assigned: true
      },
      {
-      where: req.body.id
-     }
-  )
-});
+       where: {
+         id: req.body.job_id
+       }
+     })
+     .then(function(result) {
+       res.redirect("/api/accept")
+     })
+  });
 
 //   // DELETE route for deleting jobs
 //   app.delete("/api/jobs/:id", function(req, res) {
