@@ -27,6 +27,7 @@ module.exports = function(app) {
             role: req.body.role,
         }).then(function() {
             res.redirect(301, "/login");
+            // res.json('/login');
         }).catch(function(err) {
             console.log(err);
             res.json(err);

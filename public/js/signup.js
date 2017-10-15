@@ -3,6 +3,31 @@ $(document).ready(function() {
     $('#signupModal').modal('show');
 
     $("#signupButton").on("click", function(event) {
+
+        // Validate signup form
+        function validateForm() {
+            var isValid = true;
+            $('#signup').each(function() {
+                if ($(this).val() === '')
+                    isValid = false;
+            });
+            // $('.form-control').each(function() {
+            //     if ($(this).val() === "")
+            //         isValid = false
+            // })
+            return isValid;
+        }
+        // If all required fields are filled
+        if (validateForm() == true) {
+            // Create an object for the user's data
+            var userData = {
+                user_name: $("#user_name").val().trim(),
+                password: $("#password").val().trim(),
+                role: $("#role").val().trim()
+            }
+        }
+
+
         // Getting references to our form and inputs
         console.log("inside submit click");
         var signupForm = $("form#signup");
@@ -53,7 +78,6 @@ $(document).ready(function() {
             // If there's an error, handle it by throwing up a boostrap alert
         }).catch(handleLoginErr);
     }
-
     function handleLoginErr(err) {
         $("#alert .msg").text(err.responseJSON);
         $("#alert").fadeIn(500);
