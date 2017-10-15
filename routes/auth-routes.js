@@ -5,7 +5,7 @@ var bCrypt = require("bcrypt-nodejs");
 var bodyParser = require("body-parser");
 var passport = require("passport");
 module.exports = function(app) {
-    
+
     // post Login route
     app.post('/api/login',
         passport.authenticate('local'),
@@ -25,9 +25,9 @@ module.exports = function(app) {
             user_name: req.body.user_name,
             password: pass,
             role: req.body.role,
-            access_level: req.body.access_level
         }).then(function() {
             res.redirect(301, "/login");
+            // res.json('/login');
         }).catch(function(err) {
             console.log(err);
             res.json(err);

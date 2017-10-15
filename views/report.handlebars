@@ -26,10 +26,10 @@
                 <li><a href="/api/jobs">VIEW JOBS</a></li>
              </ul>
          </li>
-         <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">REPORTS <b class="caret"></b></a>
+        <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">REPORTS <b class="caret"></b></a>
              <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
-                <li ><a href="" style="text-decoration: none;"> PERIODIC REPORT</a></li>
-                <li><a href="/api/getDetails">WEEKLY REPORT </a></li>
+                <li ><a href="/api/getDate" > PERIODIC REPORT</a></li>
+                <li><a href="/api/getDetails">MONTHLY REPORT </a></li>
              </ul>
          </li>
      </ul>
@@ -39,21 +39,20 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav> <!--End Nav-->
-  
   <div class="body-webpage">
   <div class="text-right">
-  <div class="container form-container">
+  <div class="container form-container report-form-container">
       <div class="form-group row" >
 
-     <form method="GET" action="/api/getDate" class="button-size">
-       <label for="example-datetime-local-input" class=" col-form-label">Start Date</label>
+     <form method="GET" action="/api/getDate" class="form-align">
+       <label for="example-datetime-local-input" class=" col-form-label startDateLabel">Start Date</label>
     <!-- <div class="col-4"> -->
       <input class="form-control " type="datetime-local" value="2011-08-19T13:45:00" id="date1" name="startdate" style="position: relative;left: 340px;top: -10px;width: 260px">
       </div>
       <div class="form-group row">
-      <label for="example-date-input" class="col-form-label1">End Date</label>
+      <label for="example-date-input" class="col-form-label endDateLabel">End Date</label>
     <!-- <div class="col-4"> -->
-      <input class="form-control " type="datetime-local" value="2011-08-19T13:45:00" id="date2" name="endDate" style="position: relative;left: 740px;top: -178px;width: 260px">
+      <input class="form-control " type="datetime-local" value="2011-08-19T13:45:00" id="date2" name="endDate" style="position: relative;left: 740px;top: -180px;width: 260px">
       </div>
 
       <div class="text-right">
@@ -64,10 +63,10 @@
    </div>
 
   <div class="container">
-      <div class="row featurette view-row" >
+      <div class="row featurette report-row" >
         <div class="panel panel-primary filterable">
           <div class="panel-heading">
-            <h3 class="panel-title">Periodic Report</h3>
+            <h3 class="panel-title report-panel-title">Periodic Report</h3>
               <div class="pull-right">
 
               </div>
@@ -76,13 +75,13 @@
            <table class="table ">
               <thead>
                   <tr class="filters">
-                      <th class="th">Technician Id</th>
-                      <th class="th">Client Name</th>
-                      <th class="th">Date</th>
-                      <th class="th">services</th>
-                      <th class="th">Location</th>
-                      <th class="th">Current Job</th>
-                      <th class="th">Job Status</th>
+                      <th class="thWidth">Technician Id</th>
+                      <th class="thWidth">Client Name</th>
+                      <th class="thWidth">Date</th>
+                      <th class="thWidth">services</th>
+                      <th class="thWidth">Location</th>
+                      <th class="thWidth">Current Job</th>
+                      <th class="thWidth">Job Status</th>
                       <!-- <th>Subject</th> -->
                   </tr>
                   </thead>

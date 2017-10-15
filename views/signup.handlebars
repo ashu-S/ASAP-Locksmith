@@ -1,5 +1,5 @@
 <!--Navigation Bar-->
- <nav class="navbar  navbar-inverse navbar-fixed-top">
+  <nav class="navbar  navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -17,15 +17,256 @@
 
           <li><a href="#service">SERVICES</a></li>
           <li><a href="/contact">CONTACT</a></li>
-         </ul>
+        </ul>
+        <ul class="nav navbar-nav navbar-right admin-nav">
+          <!-- Login Button -->
+          <button type="submit" class="btn btn-primary" id="adminLogin" data-delay = "50" onclick="location.href = '/login'"> LOG IN <i class="fa fa-sign-in" aria-hidden="true" ></i></button>
+        </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
-</nav> <!--End Nav-->
-
+  </nav> <!--End Nav-->
 <!--Webpage Body-->
 <div class="body-webpage">
-  <div class="jumbotron services-jumbotron">
-    <div class="container">
+
+  <section class="section-one">
+    <div class="jumbotron main-jumbotron">
+        <div class="container header-container">
+          <h3 class="headline">ASAP Locksmith Inc</h3>
+          <h4 class="tagline">Locked out? Need installations? ASAP Locksmith is a 24/7 service with quality technicians, and affordable prices.</h4>
+        </div> <!--End Header container -->
+      </div> <!-- End main Jumbotron -->
+  </section> <!--End Section one -->
+
+  <section class="services-section" id="service">
+    <div class="jumbotron services-jumbotron">
+      <div class="container">
+        <h2 class="service-header">OUR SERVICES INCLUDE</h2>
+          <!-- START THE FEATURETTES -->
+          <hr class="featurette-divider">
+
+          <div class="row featurette">
+            <div class="col-md-7">
+              <h2 class="featurette-heading">Residential. <span class="text-muted">Keep your home protected.</span></h2>
+              <p class="lead">Whether new or longtime homeowners, we can find the right choice for you to best protect your home. We offer lock repair and installation, alarm system installation, garage door locks, fencing & gate locks, and peephole installation</p>
+            </div>
+            <div class="col-md-5">
+              <img class="featurette-image img-responsive center-block" src="images/keyinlock.jpeg" alt="A key in a lock">
+            </div>
+          </div>
+
+          <hr class="featurette-divider">
+
+          <div class="row featurette">
+            <div class="col-md-7 col-md-push-5">
+              <h2 class="featurette-heading">Automotive. <span class="text-muted">Get driving sooner.</span></h2>
+              <p class="lead">The unexpected happens, and lost or broken keys stop anyone's day. Our automotive services include emergency car lock outs, ignition repair & unlock, broken key extraction, and transponder chip key production. We're quick to respond and that way you, you can get back on the road sooner.</p>
+            </div>
+            <div class="col-md-5 col-md-pull-7">
+              <img class="featurette-image img-responsive center-block" src="images/man-people-hand-driving-6097.jpg" alt= "A man handing a set of keys">
+            </div>
+          </div>
+
+          <hr class="featurette-divider">
+
+          <div class="row featurette">
+            <div class="col-md-7">
+              <h2 class="featurette-heading">Commericial. <span class="text-muted">Secure your business.</span></h2>
+              <p class="lead">Small business owners and large corporate offices alike need a way to ensure the security of their workspace. We offer safe installation, full service alarm installation, panic doors, file cabinet locks, access control systems</p>
+            </div>
+            <div class="col-md-5">
+              <img class="featurette-image img-responsive center-block" src="images/doorlock.jpeg" alt="A heavy door lock system">
+            </div>
+          </div>
+
+          <div class="button-divider">
+            <center>
+              <button type="submit" class="btn btn-default book-now" id="service-btn" data-toggle="modal" data-delay = "50" data-target="#service-modal">Request a Service</button>
+            </center>
+          </div><!--End button-divider-->
+
+          <hr class="featurette-divider">
+          <!-- /END THE FEATURETTES -->
+      </div> <!-- END CONTAINER -->
+    </div> <!-- END SERVICES JUMBOTRON-->
+  </section> <!-- END SERVICES SECTION -->
+
+
+  <!-- services modal -->
+  <div class="modal fade" id="service-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: #000">
+                      ×</button>
+                  <h4 class="modal-title" id="services-modal-label">
+                      REQUEST A SERVICE</h4>
+              </div>
+              <div class="modal-body">
+                  <div class="row reg-body">
+                      <div class="col-md-12">
+                        <form id="clientForm" action="" method="POST" class="full-services-form">
+                          <div class="form-group">
+                            <label for="inputClient">Client Name</label>
+                            <input type="text" name = "client_name" class="form-control service-form" id="client_name" placeholder="Enter Full Name">
+                          </div>
+                          <div class="form-group">
+                            <label for="inputLocation">Location</label>
+                            <input type="text" name="client_location" class="form-control service-form" id="client_location" placeholder="e.g. Houston">
+                          </div>
+                          <div class="form-group">
+                            <label for="inputContact">Contact Number</label>
+                            <input type="tel" name="client_contact" class="form-control service-form" id="client_contact" placeholder="e.g. 555-555-5556">
+                          </div>
+                          <div class="form-group">
+                            <label for="selService">Select Service (select one):</label>
+                            <select class="form-control chosen-select" id="services" name="services">
+                              <option value=""></option>
+                              <option value="Residential">Residential</option>
+                              <option value="Automotive">Automotive</option>
+                              <option value="Commercial">Commercial</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="selSpecific">Select Service (select one):</label>
+                            <select class="form-control chosen-select" id="specific_service" name="specific_service">
+                            </select>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-10">
+                                  <button type="button" class="btn btn-primary btn-sm" id="submitRequest" data-dismiss="modal">
+                                      Submit</button>
+                                  <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">
+                                      Cancel</button>
+                              </div>
+                          </div>
+                        </form>
+                      </div>
+                  </div> <!--End Row-->
+              </div> <!--End Modal Body-->
+          </div><!--End Modal Content-->
+      </div> <!--End Modal Dialogue-->
+  </div> <!--End Modal-->
+
+  <section class="expect-section">
+    <div class="jumbotron expect-jumbotron">
+      <div class="container expect-container">
+        <!--Expect Services-->
+        <div class="expect-divider">
+          <center>
+            <h2 class="expect-header">WHAT YOU CAN EXPECT</h2>
+          </center>
+          <div class="row"> <!--Begin Row 1-->
+            <div class="col-sm-6"> <!--Begin column 1-->
+              <img class="icon" src="images/icon2.png" alt="a 24/7 sign" align='left'/>
+              <h3>24 Hour Emergency</h3>
+              <p>Call us anytime any day we will be there for your needs</p>
+            </div> <!-- End column 1-->
+            <div class="col-sm-6"> <!--Begin column 2-->
+              <img class="icon" src="images/icon3.png" alt="a fast delivery sign with a lightening bolt" align='left'/>
+              <h3>Fast Response Time</h3>
+              <p> We strive to solve your problem no matter how big or small it is as fast as we can. </p>
+            </div> <!-- End column 2-->
+          </div> <!-- End Row 1-->
+          <div class="row"> <!--Begin Row 2-->
+            <div class="col-sm-6"> <!-- begin row 2, col 1-->
+              <img class="icon" src="images/icon4.png" alt="a dollar sign" align='left'/>
+              <h3>Competitive Price</h3>
+              <p>
+                We might have an online special or a discount so call us today to find out about our pricing.
+              </p>
+            </div> <!-- end row 2, col 1-->
+            <div class="col-sm-6"> <!-- begin row 2, col 2 -->
+              <img class="icon" src="images/icon1.png" alt="a clipboard with a checkmark sign" align='left'/>
+              <h3>Customer Support</h3>
+              <p>
+                Our customer support is always here for you, read our testimonials to see what customers say about us.
+              </p>
+            </div> <!-- end row 2, col 2-->
+          </div> <!--End Row 2-->
+        </div> <!-- END EXPECT-DIVIDER-->
+      </div> <!-- END EXPECT CONTAINER-->
+    </div> <!-- END EXPECT JUMBOTRON -->
+  </section> <!-- END EXPECT SECTION-->
+
+  <section class="reviews-section">
+    <div class="jumbotron reviews-jumbotron">
+      <div class="container reviews-container">
+        <h2 class="reviews-header">SATISFIED CUSTOMERS</h2>
+         <div id="myCarousel" class="carousel slide" data-ride="carousel">
+           <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img class="first-slide" src="/images/transparentsquare.png" alt="First slide">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <p>I definitely recommend ASAP Locksmith!!! The customer service from the very beginning was exceptional!!  John, the team member who was sent, is amazing -- he ensured all the locks were working appropriately regardless if one was not cooperating.
+
+                    I have never seen someone have the patience, initiative and great customer service all at once but John proved to have it all!! If you need someone to change out locks - even install a smart lock for you... choose ASAP Locksmith!!!</p>
+                    <h4>Sheliza Rosenthal</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <img class="second-slide" src="/images/transparentsquare.png" alt="Second slide">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <p>Arrived on time, quick response. Very  unknowledgeable and respectable service salesman. Did the job very quickly and work with me on the price. Offer me the lowest price which I called 10 other locksmith and they wanted  out rages prices.  If I require any service in the future I would definitely rehired him for their service.
+
+                    Please believe you need to hire this company for your service if you need to replace your key. Thank you very much for your honest service. God bless you and your company. Great workmanship and communication</p>
+                    <h4>Discount Roofing and Tree Service</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <img class="third-slide" src="/images/transparentsquare.png" alt="Third slide">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <p>Marco arrive quickly to where I was stranded. I lost my key and ended up calling ASAP Locksmith. I was informed that it would be awhile and I said okay as I could not go anywhere. But Marco called soon after saying he would be with me in 10 minutes. True to his word he was here. He was very pleasant and professional. I will definitely refer ASAP Locksmith as well as Marco to anyone who needs help. They are very reasonable in prices! Thank you Marco!!!!!</p>
+                    <h4>Evaristo Leal</h4>
+                  </div>
+                </div>
+              </div>
+                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                <i class="fa fa-quote-right" aria-hidden="true"></i>
+            </div> <!-- END CAROUSEL INNER -->
+         </div> <!-- END MY CAROUSEL -->
+      </div> <!-- END REVIEWS CONTAINER -->
+    </div> <!--End REVIEWS Jumbotron -->
+  </section> <!--END REVIEWS SECTION -->
+
+  <section class="carousel-section">
+      <div class="jumbotron carousel-jumbotron">
+        <div class="container">
+          <div class="carousel">
+             <div id="thumbnail-slider">
+                <div class="inner">
+                    <ul class="dd">
+                      <li>
+                        <img class="thumb" src="images/house.jpeg">
+                      </li>
+                      <li>
+                        <img class="thumb" src="images/car.jpg">
+                      </li>
+                      <li>
+                        <img class="thumb" src="images/makingkeys.jpeg">
+                      </li>
+                      <li>
+                        <img class="thumb" src="images/company.jpeg">
+                      </li>
+                    </ul> <!--End of carousel images -->
+                </div> <!-- End of innner class-->
+             </div> <!-- End of Thumbnail-Slider -->
+          </div> <!-- End of carousel -->
+        </div> <!-- End container -->
+      </div> <!-- End Jumbotron -->
+  </section> <!--End carousel section-->
+  <!-- SIGNUP MODAL -->
       <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="mysignupModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content" id="signup-content">
@@ -79,6 +320,67 @@
             </div>
         </div>
       </div><!--End signup Modal-->
-    </div> <!-- /.container -->
-  </div> <!-- END SERVICES JUMBOTRON-->
 </div> <!-- End WEBPAGE BODY -->
+
+<script>
+$(document).ready(function() {
+    var specifics = {
+        'Residential': ['Lock Repair', 'Lock Installation', 'Alarm System Installation', 'Garage Door Locks', 'Gates and Fencing Lock', 'Peephole Installation'],
+        'Automotive': ['Emergency Car Lockout', 'Ignition Repair', 'Ignition Unlock', 'Broken Key Extration', 'Transponder Chip Key Production'],
+        'Commercial': ['Safe Installation', 'Full Service Alarm Installation', 'Panic Doors','File Cabinet Locks', 'Access Control Systems'],
+    }
+    var $specifics = $('#specific_service');
+    $('#services').change(function () {
+        var services = $(this).val(), spcs = specifics[services] || [];
+        var html = $.map(spcs, function(spc){
+            return '<option value="' + spc + '">' + spc + '</option>'
+        }).join('');
+        $specifics.html(html);
+    });
+    // Capture the form inputs
+    $("#submitRequest").on("click", function(){
+      // Form validation
+      function validateForm() {
+      var isValid = true;
+      $('.service-form').each(function() {
+        if ( $(this).val() === '' )
+            isValid = false;
+      });
+      $('.chosen-select').each(function() {
+        if( $(this).val() === "")
+          isValid = false
+      })
+      return isValid;
+    }
+    // If all required fields are filled
+    if (validateForm() == true)
+    {
+      // Create an object for the user's data
+        var userData = {
+          client_name: $("#client_name").val(),
+          client_location: $("#client_location").val(),
+          client_contact: $('#client_contact').val(),
+          services: $('#services').val(),
+          specific_service: $('#specific_service').val()
+        }
+
+        // send an AJAX POST-request with jQuery
+        $.post("/api/new", userData)
+          // on success, run this callback
+          .done(function(data) {
+            // log the data we found
+            console.log(data);
+          });
+
+        alert("Your request is being processed. Thank you!");
+        $('.full-services-form').trigger('reset');
+        $('#service-modal').modal('hide');
+    }
+    else
+    {
+      alert("Please fill out all fields before submitting!");
+    }
+      return false;
+    });
+});
+</script>
