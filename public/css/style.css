@@ -547,6 +547,43 @@ input[type=text] {
 text-align: center !important;
 }
 
+.accepting-btn{
+  position: relative;
+  top: -10.5px;
+}
+
+.ac-btn{
+    color: #fff;
+    background-color: #657539;
+}
+
+.ac-btn:hover{
+    background-color: #53602d;
+    color: #fff;
+}
+
+.ac-btn:active{
+    background-color: #414c23 !important;
+    color: #fff !important;
+}
+
+.accept-table-whole{
+  border: .5px solid #c5d6ba;
+}
+
+.table-head-accept{
+  background-color: #bad1a7;
+}
+
+.table-accept{
+  background-color: #e9f2e3;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #fff;
+ }
+
 /*Sticky Footer*/
 .footer {
   position: absolute;

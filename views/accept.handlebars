@@ -42,30 +42,43 @@
   </nav> <!--End Nav-->
 
 <!--Webpage Body-->
-<div class="container" style="position: relative; top: 45px;">
-  {{#each Job}}
-  <div class="panel panel-default job-panel">
-    <div class="panel-body">
-      <div class="row accept-row">
-        <div class="col-xs-6">
-          <p><strong>NAME:</strong> {{this.client_name}}</p>
-          <p><strong>LOCATION:</strong> {{this.client_location}}</p>
-          <p><strong>CONTACT:</strong> {{this.client_contact}}</p>
-          <p><strong>SERVICE TYPE:</strong> {{this.services}}</p>
-          <p><strong>DESCRIPTION:</strong> {{this.specific_service}}</p>
-        </div>
-        <div class="col-xs-6 accept-form">
+<div class="container" style="position: relative; top: 85px;">
+  <table class="table table-striped accept-table-whole">
+    <thead class="table-head-accept">
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>LOCATION</th>
+        <th>CONTACT</th>
+        <th>SERVICES</th>
+        <th>DESCRIPTION</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody class="table-accept">
+      {{#each Job}}
+      <tr>
+        <td>{{this.id}}</td>
+        <td>{{this.client_name}}</td>
+        <td>{{this.client_location}}</td>
+        <td>{{this.client_contact}}</td>
+        <td>{{this.services}}</td>
+        <td>{{this.specific_service}}</td>
+        <td>
           <form method="POST" action="/api/update">
             <input input type="hidden" type="text" name="job_id" value={{this.id}}><br>
-            <button type="submit" class="btn btn-default">Accept</button>
+            <button type="submit" class="btn btn-default accepting-btn ac-btn">Accept</button>
           </form>
+        </td>
+        <td>
           <form method="POST" action="/api/delete">
             <input input type="hidden" type="text" name="job_id" value={{this.id}}><br>
-            <button type="submit" class="btn btn-default">Reject</button>
+            <button type="submit" class="btn btn-danger accepting-btn">Reject</button>
           </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  {{/each}}
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
 </div>
