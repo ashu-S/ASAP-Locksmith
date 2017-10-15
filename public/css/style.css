@@ -442,13 +442,13 @@ text-align: center !important;
 .month-row{
   position: relative;
   left: 6px;
-  top: 50px;
+  top: 35px;
   color: black;
 }
 
 .month-size{
   position: relative;
-    top: 68px;
+    top: 80px;
     left: -149px;
     width: 260px;
     color: black;
