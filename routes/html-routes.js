@@ -14,7 +14,6 @@ module.exports = function(app) {
 
   // index route loads home.html
   app.get("/", function(req, res) {
-    //res.sendFile(path.join(__dirname, "../views/layouts/main.handlebars"));
     res.render("index.handlebars");
   });
 
@@ -29,7 +28,7 @@ module.exports = function(app) {
     res.render("login.handlebars");
   });
 
-  //logout route 
+  //logout route
   app.get("/logout", function(req, res) {
     res.render("index.handlebars");
   });

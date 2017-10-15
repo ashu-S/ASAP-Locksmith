@@ -9,8 +9,6 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
-<div class="collapse navbar-collapse" id="navbar-collapse">
-
 <!--Navigation Bar-->
   <nav class="navbar  navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -26,20 +24,20 @@
      <div class="collapse navbar-collapse" id="navbar-collapse">
 
       <ul class="nav navbar-nav">
-         <li><a href="/">HOME</a></li>
+         <li><a href="/admin">HOME</a></li>
                   <!-- <li><a href="/api/accept">NEW JOBS</a></li> -->
          <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">JOBS <b class="caret"></b></a>
 
              <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
-                <li ><a href="/api/accept" style="text-decoration: none;">NEW JOBS</a></li>
-                <li><a href="">ASSIGN JOBS </a></li>
-                <li><a href="/api/jobs">VIEW JOBS</a></li> 
+                <li ><a href="/api/accept" style="text-decoration: none;">ACCEPT JOBS</a></li>
+                <li><a href="">ASSIGN JOBS</a></li>
+                <li><a href="/api/jobs">VIEW JOBS</a></li>
              </ul>
          </li>
          <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">REPORTS <b class="caret"></b></a>
              <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
-                <li ><a href="" style="text-decoration: none;"> Periodic Report</a></li>
-                <li><a href="/api/getDetails">Weekly Report </a></li>
+             	<li ><a href="/api/getDate" > PERIODIC REPORTS</a></li>
+                <li><a href="/api/getDetails">MONTHLY REPORTS </a></li>
              </ul>
          </li>
      </ul>
@@ -68,7 +66,7 @@
     <div class="row featurette month-row" >
       <div class="panel panel-primary filterable">
         <div class="panel-heading month-heading">
-          <h3 class="panel-title" style="position: relative;left: -830px">Monthly Report</h3>
+          <h3 class="panel-title Monthly-panel-title" style="position: relative;left: -830px">Monthly Report</h3>
             <div class="pull-right">
                 <!-- <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button> -->
             </div>
@@ -77,31 +75,31 @@
          <table class="table ">
             <thead>
                 <tr class="filters">
-                    <th class="th">Technician Id</th>
-                    <th class="th">Client Name</th>
-                    <th class="th">Date</th>
-                    <th class="th">Services</th>
-                    <th class="th">Location</th>
-                    <th class="th">Current Job</th>
-                    <th class="th">Job Status</th>
+                    <th class="thWidth">Technician Id</th>
+                    <th class="thWidth">Client Name</th>
+                    <th class="thWidth">Date</th>
+                    <th class="thWidth">Services</th>
+                    <th class="thWidth">Location</th>
+                    <th class="thWidth">Current Job</th>
+                    <th class="thWidth">Job Status</th>
                     <!-- <th>Subject</th> -->
                 </tr>
                 </thead>
                 <tbody>
                 {{#each Job}}
                 <tr>
-                    <td>{{this.dataValues.TechnicianId}}</td>
-                    <td>{{this.dataValues.client_name}}</td>
-                    <td>{{this.dataValues.createdAt}}</td> 
-                    <td>{{this.dataValues.services}}</td>
-                    <td>{{this.dataValues.Technician.location}}</td>
-                    <td>{{this.dataValues.Technician.current_job}}</td>
-                    <td>{{this.dataValues.Technician.job_status}}</td>
-                    
+                    <td class="Monthlytd">{{this.dataValues.TechnicianId}}</td>
+                    <td class="Monthlytd">{{this.dataValues.client_name}}</td>
+                    <td class="Monthlytd">{{this.dataValues.createdAt}}</td>
+                    <td class="Monthlytd">{{this.dataValues.services}}</td>
+                    <td class="Monthlytd">{{this.dataValues.Technician.location}}</td>
+                    <td class="Monthlytd">{{this.dataValues.Technician.current_job}}</td>
+                    <td class="Monthlytd">{{this.dataValues.Technician.job_status}}</td>
+
                      <!-- <td>{{ this.subject }}</td> -->
                 </tr>
                 {{/each}}
-                </tbody> 
+                </tbody>
             </table>
         </div>
 
@@ -117,7 +115,6 @@
 
 
 <script type="text/javascript">
-
  $(document).ready(function(){
 var startDate = new Date();
 var fechaFin = new Date();
@@ -132,8 +129,7 @@ $('.from').datepicker({
         startDate = new Date(selected.date.valueOf());
         startDate.setDate(startDate.getDate(new Date(selected.date.valueOf())));
         $('.to').datepicker('setStartDate', startDate);
-    }); 
-
+    });
 $('.to').datepicker({
     autoclose: true,
     startView: 1,
@@ -145,7 +141,6 @@ $('.to').datepicker({
         $('.from').datepicker('setEndDate', FromEndDate);
     });
 });
-
 //   $("#add-btn").on("click", function(event) {
 //       event.preventDefault();
 //       var newCharacter = {
@@ -159,6 +154,4 @@ $('.to').datepicker({
 //         // alert("Adding character...");
 //       });
 //     });
-
- </script> 
-
+ </script>

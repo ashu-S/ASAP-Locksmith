@@ -1,5 +1,7 @@
-<!-- Restructuring Navbar here to accomodate Admin View. Not including Services and contact in navbar instead including New Jobs, assign jobs, reports. -->
- <div class="collapse navbar-collapse" id="navbar-collapse">
+<!-------------------------->
+<!-- Still Working on this -->
+<!-------------------------->
+
 <!--Navigation Bar-->
   <nav class="navbar  navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -13,54 +15,82 @@
         </button>
      </div>
      <div class="collapse navbar-collapse" id="navbar-collapse">
+
       <ul class="nav navbar-nav">
-		 <li><a href="/">HOME</a></li>
-		          <!-- <li><a href="/api/accept">NEW JOBS</a></li> -->
-		 <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">JOBS <b class="caret"></b></a>
+         <li><a href="/admin">HOME</a></li>
+                  <!-- <li><a href="/api/accept">NEW JOBS</a></li> -->
+         <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">JOBS <b class="caret"></b></a>
 
              <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
-             	<li ><a href="/api/accept" style="text-decoration: none;">NEW JOBS</a></li>
-                <li><a href="">ASSIGN JOBS </a></li>
-               	<li><a href="/api/jobs">VIEW JOBS</a></li> 
+                <li ><a href="/api/accept" style="text-decoration: none;">ACCEPT JOBS</a></li>
+                <li><a href="">ASSIGN JOBS</a></li>
+                <li><a href="/api/jobs">VIEW JOBS</a></li>
              </ul>
          </li>
-		 <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">REPORTS <b class="caret"></b></a>
+         <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">REPORTS <b class="caret"></b></a>
              <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
-             	<li ><a href="/api/getDate" style="text-decoration: none;"> Periodic Report</a></li>
-                <li><a href="/api/getDetails">Monthly Report </a></li>
+                <li ><a href="/api/getDate" style="text-decoration: none;"> PERIODIC REPORT</a></li>
+                <li><a href="/api/getDetails">WEEKLY REPORT</a></li>
              </ul>
          </li>
-	 </ul>
-	 <ul class="nav navbar-nav navbar-right admin-nav">
-		 <button type="submit" class="btn btn-primary" id="adminLogin" data-toggle="modal" data-delay = "50" onclick="location.href = '/logout'">Log Out<i class="sign-out" aria-hidden="true"></i></button>
-	 </ul>
-
-     </div><!-- /.navbar-collapse -->
+     </ul>
+     <ul class="nav navbar-nav navbar-right admin-nav">
+         <button type="submit" class="btn btn-primary" id="adminLogin" data-toggle="modal" data-delay = "50" data-target="/">Log Out<i class="fa fa-key" aria-hidden="true"></i></button>
+     </ul>
+      </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
-</nav> <!--End Nav-->
+  </nav> <!--End Nav-->
 
 <!--Webpage Body-->
-<div class="body-webpage">
-	<div class="jumbotron services-jumbotron">
-			<div class="container">
-				<h2 class="service-header">Welcome</h2>
-		      <!-- START THE FEATURETTES -->
-		      <hr class="featurette-divider">
-		      <!-- Collect the nav links, forms, and other content for toggling -->
-		      <div class="collapse navbar-collapse" id="navbar-collapse">
-
-
-		      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-<!--End Nav-->
-
-		      <div class="row featurette">
-
-		      </div>
-
-		      <hr class="featurette-divider">
-
-
-	</div> <!-- END SERVICES JUMBOTRON-->
-</div> <!-- End WEBPAGE BODY -->
+  <div class="body-webpage admin-page">
+    <div class="jumbotron admin-jumbo">
+      <div class="container">
+        <h1 class="admin-header">Get Started</h1>
+      </br>
+        <p class="admin-text">
+          Start with the 'Jobs' tab. Accept or deny new job requests coming in, update an ongoing request, or view all jobs with the assigned technicians whether complete or incomplete. Then head over to the reports tab to get a weekly or monthly report of all the requests based on your selection of dates.
+        </p>
+      </div>
+    </div>
+    <div class="container admin-cont">
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="panel panel-default admin-panel incoming-panel">
+            <div class="panel-body accept-body">
+              <h3 class="accept-job-panel">Accept Incoming Jobs</h3>
+              <center><a href="/api/accept" type="button" class="btn btn-default admin-btn">Start</a></center>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="panel panel-default admin-panel view-panel">
+            <div class="panel-body accept-body">
+              <h3 class="accept-job-panel">View All Jobs</h3>
+              <center><a href="/api/jobs" type="button" class="btn btn-default admin-btn">Start</a></center>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="panel panel-default admin-panel todo-panel">
+            <div class="panel-body">
+              <h2 id="heading">To Do</h2>
+              <div class='tasks'>
+              </div>
+              <div class="row">
+                <div class='col-xs-12'>
+                  <button class="add">
+                      <img class='plus' src='http://uxrepo.com/download.php?img=static/icon-sets/dripicons/svg/plus.svg&color=1E90FF'></img>
+                    </button>
+                  <div class="input-row">
+                    <input id="input-form" type="text" name="newTask" placeholder="Add a new task">
+                  </div>
+                </div>
+              </div>
+              <div class='completed'>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- End WEBPAGE BODY -->
