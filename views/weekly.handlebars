@@ -1,17 +1,18 @@
 <!-- Latest compiled and minified CSS -->
-<!--  jQuery -->
-<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
-<!-- Bootstrap Date-Picker Plugin -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+ <!--  jQuery -->
+ <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+ <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+ <!-- Bootstrap Date-Picker Plugin -->
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">   
+ <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+ 
 <!-- for table filters -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.bootstrap.css"/>
- 
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
@@ -45,20 +46,26 @@
      <div class="collapse navbar-collapse" id="navbar-collapse">
 
       <ul class="nav navbar-nav">
-         <li><a href="/">HOME</a></li>
+         <li><a href="/admin">HOME</a></li>
                   <!-- <li><a href="/api/accept">NEW JOBS</a></li> -->
          <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">JOBS <b class="caret"></b></a>
 
              <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
+<<<<<<< HEAD
                 <li ><a href="/api/accept" style="text-decoration: none;">NEW JOBS</a></li>
                 <li><a href="/api/assign">ASSIGN JOBS </a></li>
                 <li><a href="/api/jobs">VIEW JOBS</a></li> 
+=======
+                <li ><a href="/api/accept" style="text-decoration: none;">ACCEPT JOBS</a></li>
+                <li><a href="">ASSIGN JOBS </a></li>
+                <li><a href="/api/jobs">VIEW JOBS</a></li>
+>>>>>>> 64fb7f07ca136a1448da32d0487f312adaf30856
              </ul>
          </li>
          <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">REPORTS <b class="caret"></b></a>
              <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
-             	<li ><a href="/api/getDate" > Periodic Report</a></li>
-                <li><a href="/api/getDetails">Monthly Report </a></li>
+             	<li ><a href="/api/getDate" > PERIODIC REPORTS</a></li>
+                <li><a href="/api/getDetails">MONTHLY REPORTS </a></li>
              </ul>
          </li>
      </ul>
@@ -120,16 +127,16 @@
                 <tr>
                     <td class="Monthlytd">{{this.dataValues.TechnicianId}}</td>
                     <td class="Monthlytd">{{this.dataValues.client_name}}</td>
-                    <td class="Monthlytd">{{this.dataValues.createdAt}}</td> 
+                    <td class="Monthlytd">{{this.dataValues.createdAt}}</td>
                     <td class="Monthlytd">{{this.dataValues.services}}</td>
                     <td class="Monthlytd">{{this.dataValues.Technician.location}}</td>
                     <td class="Monthlytd">{{this.dataValues.Technician.current_job}}</td>
                     <td class="Monthlytd">{{this.dataValues.Technician.job_status}}</td>
-                    
+
                      <!-- <td>{{ this.subject }}</td> -->
                 </tr>
                 {{/each}}
-                </tbody> 
+                </tbody>
             </table>
         </div>
 
@@ -161,7 +168,7 @@ $('.from').datepicker({
         startDate = new Date(selected.date.valueOf());
         startDate.setDate(startDate.getDate(new Date(selected.date.valueOf())));
         $('.to').datepicker('setStartDate', startDate);
-    }); 
+    });
 
 $('.to').datepicker({
     autoclose: true,
@@ -179,7 +186,7 @@ var table = $('#example').DataTable( {
         lengthChange: false,
         buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
     } );
- 
+
     table.buttons().container()
         .appendTo( '#example_wrapper .col-sm-6:eq(0)' );
 //   $("#add-btn").on("click", function(event) {
@@ -198,5 +205,4 @@ var table = $('#example').DataTable( {
 
 
 
- </script> 
-
+ </script>

@@ -138,6 +138,12 @@ body {
   margin-bottom: 0px !important;
 }
 
+.modal-label{
+  position: inherit !important;
+  top: inherit !important;
+  padding-left: 0 !important;
+}
+
 .services-jumbotron{
   background-color: transparent !important;
   background-image: url(../images/absurditytile.png);
@@ -780,7 +786,7 @@ label{
   font-size: 30px !important;
   margin-left: -9px !important;
   font-family: "" !important;
- 
+
 }
 
 .view-row{
