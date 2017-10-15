@@ -19,13 +19,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    // 'access_level' field stores user's access level
-    // 0 - admin level access
-    // 1 - technician level access
-    access_level:{
-      type:DataTypes.INTEGER,
-      allowNull: false
-    },
     last_login: {
       type: DataTypes.DATE
     },

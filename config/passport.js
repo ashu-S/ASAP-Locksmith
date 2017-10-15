@@ -66,6 +66,3 @@ module.exports = function(passport, user) {
     )
   );
 };
-
-// Exporting our configured passport
-// module.exports = passport;

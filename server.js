@@ -41,14 +41,7 @@ app.set("view engine", "handlebars");
 require("./config/passport.js")(passport);
 // Routes
 // =============================================================
-
-// require("./routes/html-routes.js", function(){
-// 	console.log('routes in')
-
-// })(app);
-
 require("./routes/html-routes.js")(app);
-
 require("./routes/api-routes.js")(app);
 require("./routes/auth-routes.js")(app);
 

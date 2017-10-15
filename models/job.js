@@ -38,21 +38,11 @@ module.exports = function(sequelize, DataTypes) {
 
   });
 
-//
-// //A Job belongsTo Technician
-
-  Job.associate = function(models){
-    Job.belongsTo(models.Technician, {foreignKey: {
-       allowNull: false
-
 
 //A Job belongsTo Technician
 
   Job.associate = function(models){
-
-
-       // allowNull: false
-
+      // allowNull: false
     Job.belongsTo(models.Technician, {foreignKey: {
        allowNull: true
       }

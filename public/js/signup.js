@@ -13,28 +13,18 @@ $(document).ready(function() {
         // console.log(passwordInput);
         var roleInput = $("#role");
         // console.log(roleInput);
-        var access_level = 0; //access_level 0(admin) or 1(tech)
-        // if (roleInput == 'admin')
-        // {
-        //   access_level = 0;
-        // }
-        // else
-        // {
-        //   access_level = 1;
-        // }
         // When the form is submitted, we validate there's an user_name and password entered
 
         event.preventDefault();
         var userData = {
             user_name: userNameInput.val().trim(),
             password: passwordInput.val().trim(),
-            role: roleInput.val().trim(),
-            access_level: access_level
+            role: roleInput.val().trim()
         };
 
         console.log(userData);
 
-        // if (!userData.user_name || !userData.password || !userData.role || !userData.access_level) {
+        // if (!userData.user_name || !userData.password || !userData.role) {
         //   console.log("in err");
         //     return;
         // }

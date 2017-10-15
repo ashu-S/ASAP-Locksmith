@@ -25,8 +25,7 @@ module.exports = function(app) {
             user_name: req.body.user_name,
             password: pass,
             role: req.body.role,
-            access_level: req.body.access_level
-        }).then(function() {
+          }).then(function() {
             res.redirect(301, "/login");
         }).catch(function(err) {
             console.log(err);
