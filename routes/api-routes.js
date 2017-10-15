@@ -109,7 +109,7 @@ app.get("/api/getDate", function(req, res) {
         console.log("...................")
         console.log('line 28',result)
         console.log("...................")
-      res.render("report",{Job:result});
+      res.render("weekly",{Job:result});
 
     });
 });

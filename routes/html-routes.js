@@ -54,7 +54,7 @@ module.exports = function(app) {
     res.render("accept.handlebars");
   })
   app.get("/admin/report", function(req, res) {
-    res.render("report.handlebars");
+    res.render("weekly.handlebars");
   });
   app.get("/admin/monthly", function(req, res) {
     res.render("monthlyReport.handlebars");

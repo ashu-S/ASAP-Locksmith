@@ -70,27 +70,34 @@
   </nav> <!--End Nav-->
 <!--End Nav-->
 <div class="body-webpage">
-<div class="text-right">
-<div class="container form-container" style="position: relative;left: -63px">
-    <div class="form-group row" >
+<div class="text-right report-form-container" >
+     <div class="container form-container ">
+        <div class="form-group row" >
 
-   <form method="GET" action="/api/getDetails" class="month-size">
-   <label style="position: relative;top: 5px;font-size: 13px">Create Date:</label>
+            <form method="GET" action="/api/getDate" class="form-align">
+             <label for="example-datetime-local-input" class=" col-form-label startDateLabel">Start Date</label>
+  <!-- <div class="col-4"> -->
+             <input class="form-control start-date-form" type="datetime-local" value="2011-08-19T13:45:00" id="date1" name="startdate" >
+        </div>
+        <div class="form-group row">
+            <label for="example-date-input" class="col-form-label endDateLabel">End Date</label>
+  <!-- <div class="col-4"> -->
+            <input class="form-control end-date-form" type="datetime-local" value="2011-08-19T13:45:00" id="date2" name="endDate" style="position: relative;left: 775px;top: -181px;width: 260px">
+         </div>
 
-	<input type="text"  class="form-control form-control-2 input-sm to create" placeholder="Enter Month" id="date3" name="date3" />
-	<button type="submit" class="btn btn-default button-report">Generate Report</button>
-	</form>
+    <!-- <div class="text-right"> -->
+    <button type="submit" class="btn btn-default button-report" style="position: relative;top: -228px;left: 243px">Generate Report</button>
+    <!-- </div> -->
+    </form>
     </div>
  </div>
 
 <!-- <div class="container"> -->
     <!-- <div class="row featurette month-row" > -->
-      <div class="panel panel-primary filterable monthly-panel">
+      <div class="panel panel-primary filterable weekly-panel">
         <div class="panel-heading month-heading">
-          <h3 class="panel-title Monthly-panel-title" >Monthly Report</h3>
-          
-            <!-- <div class="pull-left">
-            </div> -->
+          <h3 class="panel-title weekly-panel-title" >Periodic Report</h3>
+            <!-- <div class="pull-right"> -->
                 <!-- <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button> -->
             <!-- </div> -->
         </div>
