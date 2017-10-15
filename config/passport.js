@@ -6,26 +6,18 @@ var LocalStrategy = require("passport-local").Strategy;
 var db = require("../models");
 
 module.exports = function(passport, user) {
-  //var User = user;
   passport.serializeUser(function(user, done) {
     done(null, user.id);
   });
 
   // used to deserialize the user
-  passport.deserializeUser(function(id, done) {
-    db.User.findById(id).then(function(user) {
-      if (user) {
-        done(null, user.get());
-      } else {
-        done(user.errors, null);
-      }
-    });
+  passport.deserializeUser(function(obj, cb) {
+    cb(null, obj);
   });
 
   //LOCAL SIGNIN
   passport.use(
-    // "local-login",
-    new LocalStrategy(
+      new LocalStrategy(
       {
         // by default, local strategy uses username and password, we will override with user_name
         usernameField: "user_name",
