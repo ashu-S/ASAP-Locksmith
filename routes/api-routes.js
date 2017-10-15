@@ -13,8 +13,6 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-//
-
   // GET route for getting all of the jobs
   app.get("/api/jobs", function(req, res) {
   	console.log('admin view')
@@ -26,18 +24,16 @@ module.exports = function(app) {
   	  db.Job.findAll({
   	   attributes:['TechnicianId','client_name','services'],
        include: [{ model: db.Technician, attributes: ['id','location','current_job','job_status']}],
-      
+
       }).then(function(dbJob) {
       	console.log('line 28',dbJob)
       	console.log("...................")
-      	// console.log(dataValues.description)
-      // res.json(dbJob);
-     	 res.render("viewjob",{Job:dbJob});
+        res.render("viewjob",{Job:dbJob});
     });
   });
 
   // POST route for saving a new job
- 
+
   // If a user sends data to add a new job...
   app.post("/api/new", function(req, res) {
 
@@ -115,18 +111,18 @@ app.get("/api/getDate", function(req, res) {
 });
 
 
- // Get for monthly report 
+ // Get for monthly report
   app.get("/api/getDetails", function(req, res) {
     var sequelize=require('sequelize');
     db.Job.findAll({
      attributes:['TechnicianId','client_name','services',[sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'),'%m-%d-%Y'),'createdAt']],
-     where: 
+     where:
      //{createdAt:'2016-01-11T00:00:00.000Z'},
        sequelize.where(sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'),'%b-%Y'),req.query.date3),
        include: [{ model: db.Technician, attributes: ['location','current_job','job_status']}]
       }).then(function(result) {
         console.log('line 28',result)
-        console.log("...................") 
+        console.log("...................")
       // res.redirect("/api/month/");
       res.render("monthlyReport",{Job:result});
       // res.render("report",{Job:result});
@@ -135,4 +131,3 @@ app.get("/api/getDate", function(req, res) {
   });
 
 };
-

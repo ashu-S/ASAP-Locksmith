@@ -26,17 +26,12 @@ module.exports = function(app) {
             password: pass,
             role: req.body.role,
         }).then(function() {
-            res.redirect(301, "/login");
-            // res.json('/login');
-        }).catch(function(err) {
-            console.log(err);
-            res.json(err);
-            // res.status(422).json(err.errors[0].message);
+            res.redirect('/login');
         });
     });
 
     // logout route
-    app.get("api/logout", function(req, res) {
+    app.get("/logout", function(req, res) {
         req.session.destroy(function(err) {
             res.redirect("/");
         });
