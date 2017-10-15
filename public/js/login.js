@@ -7,14 +7,14 @@ $(document).ready(function(){
         console.log("inside submit click");
         var loginForm = $("form#Login");
         console.log(loginForm);
-        var userNameInput = $("input#userName");
+        var userNameInput = $("#user_name");
         console.log(userNameInput);
-        var passwordInput = $("input#password");
+        var passwordInput = $("#password");
         console.log(passwordInput);
-        
+
       // When the form is submitted, we validate there's an email and password entered
-       
-        event.preventDefault(); 
+
+        event.preventDefault();
         var userData = {
             user_name: userNameInput.val().trim(),
             password: passwordInput.val().trim()
@@ -29,7 +29,7 @@ $(document).ready(function(){
         loginUser(userData.user_name, userData.password);
         userNameInput.val("");
         passwordInput.val("");
-      
+
     });
 
       // loginUser does a post to our "api/login" route and if successful, redirects us the the admin page
@@ -38,12 +38,12 @@ $(document).ready(function(){
           user_name: user_name,
           password: password
         }).then(function(data) {
-        
+
           window.location.replace(data);
                 // If there's an error, log the error
         }).catch(function(err) {
           console.log(err);
         });
-      }
+      };
 
 });

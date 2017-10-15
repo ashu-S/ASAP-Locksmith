@@ -6,11 +6,11 @@
 // ==============================================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var passport = require("passport");
 var dotenv = require("dotenv");
 var session = require("express-session");
 const path = require("path");
 const methodOverride = require("method-override");
-var passport = require("./config/passport");
 // ==============================================================================
 // Sets up the Express App
 // ==============================================================================
@@ -38,8 +38,9 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Routes
-// =============================================================
+require("./config/passport.js")(passport);
+
+
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 require("./routes/auth-routes.js")(app);

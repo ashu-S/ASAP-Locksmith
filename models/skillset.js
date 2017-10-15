@@ -1,8 +1,12 @@
 // Model structure for Skillset 
-
+'use strict';
 module.exports = function(sequelize, DataTypes) {
   var Skillset = sequelize.define("Skillset", {
+
+    // 'service_type' field stores different types of services eg. Residential, Commercial,Car etc. 
+
     // 'service_type' field stores different types of services eg. Residential, Commercial,Car etc.
+
     service_type: {
       type: DataTypes.STRING,
       allowNull: false,

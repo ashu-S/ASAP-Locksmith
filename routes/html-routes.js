@@ -14,7 +14,6 @@ module.exports = function(app) {
 
   // index route loads home.html
   app.get("/", function(req, res) {
-    //res.sendFile(path.join(__dirname, "../views/layouts/main.handlebars"));
     res.render("index.handlebars");
   });
 
@@ -29,6 +28,11 @@ module.exports = function(app) {
     res.render("login.handlebars");
   });
 
+  //logout route
+  app.get("/logout", function(req, res) {
+    res.render("index.handlebars");
+  });
+
   // signup route loads admin.html
   app.get("/signup", function(req, res) {
     res.render("signup.handlebars");
@@ -40,8 +44,24 @@ module.exports = function(app) {
     res.render("admin.handlebars");
   });
 
+  // accept route loads accept.html
+  app.get("/admin/view", function(req, res) {
+    res.render("viewjob.handlebars");
+  });
+
   app.get("/admin/accept", function(req, res){
     res.render("accept.handlebars");
+  })
+  app.get("/admin/report", function(req, res) {
+    res.render("report.handlebars");
+  });
+  app.get("/admin/monthly", function(req, res) {
+    res.render("monthlyReport.handlebars");
+  });
+
+  // assign route loads accept.html
+  app.get(" /admin/assign", function(req, res){
+    res.render("assign.handlebars");
   })
 
 };

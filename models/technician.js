@@ -1,5 +1,5 @@
 // Model structure for Technicians 
-
+'use strict';
 module.exports = function(sequelize, DataTypes) {
   var Technician = sequelize.define("Technician", {
     // 'name' field stores Technician's name
@@ -11,6 +11,10 @@ module.exports = function(sequelize, DataTypes) {
     location: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    skills:{
+      type: DataTypes.STRING,
+      allowNull:false
     },
     // 'phNo' field stores Technician's phone number
     phNo: {

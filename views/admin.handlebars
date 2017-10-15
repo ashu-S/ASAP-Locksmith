@@ -1,6 +1,7 @@
 <!-------------------------->
 <!-- Still Working on this -->
 <!-------------------------->
+
 <!--Navigation Bar-->
   <nav class="navbar  navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -14,232 +15,82 @@
         </button>
      </div>
      <div class="collapse navbar-collapse" id="navbar-collapse">
-         <ul class="nav navbar-nav">
-		          <li><a href="/">HOME</a></li>
-		          <li><a href="/api/accept">ACCEPT</a></li>
-		          <li><a href="/assignJobs">ASSIGN</a></li>
-		          <li><a href="/viewJobs">VIEW</a></li>
-		          <li><a href="/reports">REPORTS</a></li>
-		     </ul>
-				<ul class="nav navbar-nav navbar-right admin-nav">
-							<button type="submit" class="btn btn-primary" id="adminLogin" data-toggle="modal" data-delay = "50" data-target="/">Log Out<i class="fa fa-key" aria-hidden="true"></i></button>
-						</ul>
+
+      <ul class="nav navbar-nav">
+         <li><a href="/admin">HOME</a></li>
+                  <!-- <li><a href="/api/accept">NEW JOBS</a></li> -->
+         <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">JOBS <b class="caret"></b></a>
+
+             <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
+                <li ><a href="/api/accept" style="text-decoration: none;">ACCEPT JOBS</a></li>
+                <li><a href="">ASSIGN JOBS</a></li>
+                <li><a href="/api/jobs">VIEW JOBS</a></li>
+             </ul>
+         </li>
+         <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">REPORTS <b class="caret"></b></a>
+             <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
+                <li ><a href="" style="text-decoration: none;"> PERIODIC REPORT</a></li>
+                <li><a href="/api/getDetails">WEEKLY REPORT</a></li>
+             </ul>
+         </li>
+     </ul>
+     <ul class="nav navbar-nav navbar-right admin-nav">
+         <button type="submit" class="btn btn-primary" id="adminLogin" data-toggle="modal" data-delay = "50" data-target="/">Log Out<i class="fa fa-key" aria-hidden="true"></i></button>
+     </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
-</nav> <!--End Nav-->
+  </nav> <!--End Nav-->
 
 <!--Webpage Body-->
-<div class="body-webpage admin-page">
-	<div class="container">
-    <div class="row">
-      <div class="col-xs-6">
-        <div class="panel panel-success admin-panel">
-          <div class="panel-heading">
-            <h3 class="panel-title admin-title">Jobs</h3>
-          </div>
-          <div class="panel-body">
-            <h4 class="admin-h4-text">Accept Jobs:</h4>
-              <p class="admin-h4-text">
-                List requests coming from the homepage. This is where requests are either accepted or denied.
-              </p>
-            <br />
-            <h4 class="admin-h4-text">Assign Jobs:</h4>
-              <p class="admin-h4-text">
-                Assign the job requests to specific technicians. Administrator can also update jobs in this page to check as complete.
-              </p>
-            <br />
-            <h4 class="admin-h4-text">View Jobs:</h4>
-              <p class="admin-h4-text">
-                View all ongoing accepted jobs assigned to technicians and whether or not they are completed.
-              </p>
-            <br />
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-6">
-        <div class="panel panel-success admin-panel">
-          <div class="panel-heading">
-            <h3 class="panel-title admin-title">Reports Panel</h3>
-          </div>
-          <div class="panel-body">
-            <h4 class="admin-h4-text">Monthly Reports</h4>
-              <p class="admin-h4-text">
-                Select a month and return all job requests from that month.
-              </p>
-            <br />
-            <h4 class="admin-h4-text">Weekly Reports</h4>
-              <p class="admin-h4-text">
-                Retrieve information of job requests after a week.
-              </p>
-            <br />
-          </div>
-        </div>
+  <div class="body-webpage admin-page">
+    <div class="jumbotron admin-jumbo">
+      <div class="container">
+        <h1 class="admin-header">Get Started</h1>
+      </br>
+        <p class="admin-text">
+          Start with the 'Jobs' tab. Accept or deny new job requests coming in, update an ongoing request, or view all jobs with the assigned technicians whether complete or incomplete. Then head over to the reports tab to get a weekly or monthly report of all the requests based on your selection of dates.
+        </p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-4">
-        <div class="panel panel-default admin-panel">
-          <div class="panel-body">
-            Basic panel example
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-4">
-        <div class="panel panel-default admin-panel">
-          <div class="panel-body">
-            Basic panel example
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-4">
-        <div class="panel panel-default admin-panel">
-          <div class="panel-body">
-            <h2 id="heading">To do</h2>
-            <div class='tasks'>
+    <div class="container admin-cont">
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="panel panel-default admin-panel incoming-panel">
+            <div class="panel-body accept-body">
+              <h3 class="accept-job-panel">Accept Incoming Jobs</h3>
+              <center><a href="/api/accept" type="button" class="btn btn-default admin-btn">Start</a></center>
             </div>
-            <div class="row">
-              <div class='col-xs-12'>
-                <button class="add">
-                    <img class='plus' src='http://uxrepo.com/download.php?img=static/icon-sets/dripicons/svg/plus.svg&color=1E90FF'></img>
-                  </button>
-                <div class="input-row">
-                  <input id="input-form" type="text" name="newTask" placeholder="Add a new task">
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="panel panel-default admin-panel view-panel">
+            <div class="panel-body accept-body">
+              <h3 class="accept-job-panel">View All Jobs</h3>
+              <center><a href="/api/jobs" type="button" class="btn btn-default admin-btn">Start</a></center>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="panel panel-default admin-panel todo-panel">
+            <div class="panel-body">
+              <h2 id="heading">To Do</h2>
+              <div class='tasks'>
+              </div>
+              <div class="row">
+                <div class='col-xs-12'>
+                  <button class="add">
+                      <img class='plus' src='http://uxrepo.com/download.php?img=static/icon-sets/dripicons/svg/plus.svg&color=1E90FF'></img>
+                    </button>
+                  <div class="input-row">
+                    <input id="input-form" type="text" name="newTask" placeholder="Add a new task">
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class='completed'>
+              <div class='completed'>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div> <!-- End WEBPAGE BODY -->
-
-<style>
-
-.admin-h4-text{
-  /*text-align: center;*/
-  font-family: 'Quicksand', cursive;
-}
-
-.admin-page{
-  position: relative;
-  top: 100px;
- }
-
-.admin-panel {
-    margin-left: 0px !important;
-    margin-top: 0px !important;
-    border-radius: 3px !important;
-    background-color: #fff !important;
-  }
-
-.admin-title {
-    font-size: 20px !important;
-    font-family: 'Quicksand' !important;
-    text-align: center !important;
-    /*margin-left: 0px !important;*/
-  }
-
-#heading {
-  text-align: center;
-  font-size: 20px;
-  font-family: 'Quicksand';
-}
-
-.to-do {
-  margin-top: 10px;
-}
-
-.check-button{
-  position: relative;
-  top: 3px;
-  left: -7px;
-}
-
-.check-btn {
-  width: 100%;
-  height: 30px;
-  background-color: #FF9999;
-  text-align: center;
-  border-style: none;
-  border-radius: 2px;
-  -webkit-box-shadow: 0 0 5px #AAA;
-  box-shadow: 0 0 5px #AAA;
-  font-family: 'Raleway', sans-serif;
-  margin-top: 10px;
-}
-
-.checkmark {
-  height: 24px;
-}
-
-.check-btn {
-  color: #555;
-  font-weight: bold;
-  margin-top: 5px;
-}
-
-.add {
-  background-color: white;
-  height: 30px;
-  width: 30px;
-  text-align: center;
-  -webkit-box-shadow: 0 0 5px #AAA;
-  box-shadow: 0 0 5px #AAA;
-  border-radius: 6px;
-  border-style: none;
-  margin-top: 10px;
-  float: left;
-}
-
-.add:active {
-  background-color: #EEE;
-}
-
-.plus {
-  height: 16px;
-  color: #0099FF;
-}
-
-input[type=text] {
-  width: 100%;
-  height: 30px;
-  border-radius: 2px;
-  -webkit-box-shadow: 0 0 5px #AAA;
-  box-shadow: 0 0 5px #AAA;
-  border: none;
-  padding-left: 5px;
-  font-family: 'Raleway', sans-serif;
-}
-.input-row {
-  margin-top: 10px;
-}
-
-#input-form {
-  float: right;
-  width: calc(100% - 40px);
-}
-
-</style>
-
-<script>
-$('.add').click(function() {
-  var task = $('#input-form').val();
-  var newDiv = "<div class='row'><div class='col-md-9'><input class='to-do' type='text' name='task' placeholder='Edit your task' value='" + task + "'></div><div class='col-md-3 check-button'><button class='check-btn' type='button' onclick='check()'><p class='check-text'>Check</p></div></div></div>";
-
-  $(newDiv).appendTo(".tasks");
-  $('#input-form').val('');
-});
-
-$(document).on('click', '.check-btn', function() {
-  if (!$('img', this).length) {
-    var checkmarkImage = "<img class='checkmark' src='http://uxrepo.com/download.php?img=static/icon-sets/ionicons/svg/checkmark.svg&color=FFFFF0'></img>";
-    $('.check-text', this).hide();
-    $(checkmarkImage).appendTo(this);
-  }
-  $(this).parents().eq(1).find('.to-do').css('background-color', '#E0FFEB');
-  $(this).parents().eq(1).appendTo('.completed');
-});
-</script>
+  </div> <!-- End WEBPAGE BODY -->
