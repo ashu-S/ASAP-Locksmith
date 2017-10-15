@@ -13,8 +13,6 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-//
-
   // GET route for getting all of the jobs
   app.get("/api/jobs", function(req, res) {
   	console.log('admin view')
@@ -30,9 +28,7 @@ module.exports = function(app) {
       }).then(function(dbJob) {
       	console.log('line 28',dbJob)
       	console.log("...................")
-      	// console.log(dataValues.description)
-      // res.json(dbJob);
-     	 res.render("viewjob",{Job:dbJob});
+        res.render("viewjob",{Job:dbJob});
     });
   });
 

@@ -37,6 +37,7 @@ module.exports = function(passport, user) {
           .then(function(user) {
             if (!user) {
               return done(null, false, { message: "Username does not exist" });
+              console.log("Username does not exist");
             }
 
             if (!isValidPassword(password,user.password)) {
@@ -58,3 +59,4 @@ module.exports = function(passport, user) {
     )
   );
 };
+
