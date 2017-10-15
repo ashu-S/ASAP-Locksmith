@@ -28,9 +28,7 @@ module.exports = function(app) {
       }).then(function(dbJob) {
       	console.log('line 28',dbJob)
       	console.log("...................")
-      	// console.log(dataValues.description)
-      // res.json(dbJob);
-     	 res.render("viewjob",{Job:dbJob});
+        res.render("viewjob",{Job:dbJob});
     });
   });
 

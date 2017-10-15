@@ -26,9 +26,6 @@ module.exports = function(passport, user) {
       },
 
       function(req, user_name, password, done) {
-        console.log(user_name)
-        // var User = user;
-
         var isValidPassword = function(userpass, password) {
           return bCrypt.compareSync(userpass, password);
         };
@@ -37,6 +34,7 @@ module.exports = function(passport, user) {
           .then(function(user) {
             if (!user) {
               return done(null, false, { message: "Username does not exist" });
+              console.log("Username does not exist");
             }
 
             if (!isValidPassword(password,user.password)) {
@@ -44,7 +42,6 @@ module.exports = function(passport, user) {
             }
 
             var userinfo = user.get();
-            console.log(userinfo);
             return done(null, user);
           })
           .catch(function(err) {
@@ -58,3 +55,4 @@ module.exports = function(passport, user) {
     )
   );
 };
+

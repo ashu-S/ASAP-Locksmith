@@ -3,31 +3,6 @@ $(document).ready(function() {
     $('#signupModal').modal('show');
 
     $("#signupButton").on("click", function(event) {
-
-        // Validate signup form
-        function validateForm() {
-            var isValid = true;
-            $('#signup').each(function() {
-                if ($(this).val() === '')
-                    isValid = false;
-            });
-            // $('.form-control').each(function() {
-            //     if ($(this).val() === "")
-            //         isValid = false
-            // })
-            return isValid;
-        }
-        // If all required fields are filled
-        if (validateForm() == true) {
-            // Create an object for the user's data
-            var userData = {
-                user_name: $("#user_name").val().trim(),
-                password: $("#password").val().trim(),
-                role: $("#role").val().trim()
-            }
-        }
-
-
         // Getting references to our form and inputs
         console.log("inside submit click");
         var signupForm = $("form#signup");
@@ -38,13 +13,14 @@ $(document).ready(function() {
         // console.log(passwordInput);
         var roleInput = $("#role");
         // console.log(roleInput);
+      
         // When the form is submitted, we validate there's an user_name and password entered
 
         event.preventDefault();
         var userData = {
             user_name: userNameInput.val().trim(),
             password: passwordInput.val().trim(),
-            role: roleInput.val().trim()
+            role: roleInput.val().trim(),
         };
 
         console.log(userData);
@@ -55,7 +31,7 @@ $(document).ready(function() {
         // }
         // If we have an user_name and password, run the signUpUser function
         console.log("calling signUpUser");
-        signUpUser(userData.user_name, userData.password, userData.role, userData.access_level);
+        signUpUser(userData.user_name, userData.password, userData.role);
 
         userNameInput.val("");
         passwordInput.val("");
@@ -72,14 +48,9 @@ $(document).ready(function() {
             user_name: user_name,
             password: password,
             role: role,
-            access_level: access_level
         }).then(function(data) {
             window.location.replace(data);
             // If there's an error, handle it by throwing up a boostrap alert
-        }).catch(handleLoginErr);
-    }
-    function handleLoginErr(err) {
-        $("#alert .msg").text(err.responseJSON);
-        $("#alert").fadeIn(500);
+        })
     }
 });

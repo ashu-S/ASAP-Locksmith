@@ -766,32 +766,39 @@ text-align: center !important;
 
  }
 
+.form1{
+  margin-top: 15px;
+}
 .contact-text {
   font-size: 30px;
-  font-family: 'Lobster Two', cursive;
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 20px;
+  margin-top: 65px;
   margin-left: 150px;
 
 }
 
 .contact-panel{
-  margin-left: 50px;
-  margin-top: 50px;
-  border-radius:15px;
-  background-color: transparent;
 
+  margin-left: 100px;
+  margin-top: 60px;
+  border: none;
+  background-color: transparent;
 }
 
 #bud{
-
-  text-align: left;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+  margin-top: 10  px;
+  text-align: center;
 }
 
 .contact-title{
-
+  text-align: center;
   font-size: 30px;
-  font-family: 'Lobster Two', cursive;
-  margin-left: -80px;
+  font-family: 'Poppins', sans-serif;
+  margin-left: -35px;
 
 }
 
