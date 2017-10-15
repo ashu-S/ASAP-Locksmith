@@ -445,25 +445,31 @@ text-align: center !important;
   top: 50px;
   color: black;
 }
-.job-row{
-      position: relative;
-    left: 6px;
-    top: 58px;
-    color: black;
-}
+
 .month-size{
   position: relative;
-    top: -75px;
-    left: 56px;
+    top: 68px;
+    left: -149px;
     width: 260px;
     color: black;
 }
+.Monthly-panel-title{
+  font-size: 30px !important;
+  margin-left: -9px !important;
+  font-family: "" !important;
+  left: -760px !important;
+}
 /*CSS Style for view page*/
-.
+.view-panel-title{
+  font-size: 30px !important;
+  margin-left: -9px !important;
+  font-family: "" !important;
+}
+
 .view-row{
   position: relative;
-  left: 6px;
-  top: -30px;
+  left: 10px;
+  top: 58px;
   color: black;
 }
 .view-jumbotron{
@@ -474,58 +480,44 @@ text-align: center !important;
   background-color: dimgrey;
 }
 /*css style for report date input form*/
-/*.report-container{
-    background-color: dimgrey;
 
-}*/
-.col-form-label{
+.report-panel-title{
+  font-size: 30px !important;
+  margin-left: -9px !important;
+  font-family: "" !important;
+}
+.startDateLabel{
   width: 200px;
   left:56px;
   position: relative;
   top: 21px;
   color: black;
 }
-.col-form-label1{
+.endDateLabel{
   width: 200px;
   left:-252px;
   position: relative;
-  top: -144px;
+  top: -147px;
   color: black;
 }
-/*.rowData{
-  position: relative;
-  top: -193px;
-}*/
-/*.form1{
-  position: relative;
-  left:162px;
-  top: -105px;
-  width: 260px;
-}
-.form2{
-  position: relative;
-  left:577px;
-  top: -179px;
-  width: 260px;
-}*/
-.button-size{
+.form-align{
     position: relative;
     top: -96px;
     width: 260px;
 }
 .label-name{
-      position: relative;
+    position: relative;
     top: 5px;
 }
 .button-report{
-      position: relative;
+    position: relative;
     top: -56px;
     left: 430px;
     height: 30px;
 }
-.form-container{
+.report-form-container{
     position: relative;
-    top: 153px;
+    top: 158px;
     left: -218px;
 }
 .create{
@@ -535,12 +527,20 @@ text-align: center !important;
     left: 281px;
     width: 212px;
 }
-.th{
+.thWidth{
   width: 150px;
+  /*text-align: center;*/
 }
-
-
+.report-row{
+    position: relative;
+    left: 12px;
+    top: -43px;
+    color: black;
+}
+.Monthlytd{
+  text-align: center;
  /*  Stylying for the contact page*/
+}
 
 #men1{
 
@@ -567,7 +567,7 @@ text-align: center !important;
 }
 
 
-.panel{
+.contact-panel{
   margin-left: 50px;
   margin-top: 50px;
   border-radius:15px;
@@ -601,79 +601,5 @@ padding-top: 5px;
   margin-left: 8px;
   margin-top: 4px;
 
-}
-
-/*Assign job page*/
-
-.assignForm-group{
-  margin-right: 50%;
-  position: relative;
-
-}
-#assignJobs{
-  background-color: transparent;
-  border-style: solid;
-  border-width: 0.5px;
-  border-color: #657539;
-  position: relative; 
-  top: 60px;
-  padding: 2%;
-}
-
-#getJobDetails{
-  background-color: transparent;
-  border-style: solid;
-  border-width: 0.5px;
-  border-color: #657539;
-  position: relative; 
-  top: 60px;
-  margin-bottom: 5%;
-  padding: 2%;
-}
-
-#jobId{
-  width: 30%;
-}
-
-.formHeader{
-  float: left;
-  margin-left: 0%;
-  margin-bottom: 5%:;
-  font-size: 30px;
-  font-family: 'Poppins', sans-serif;
-}
-
-fieldset{
-  display: block;
-  margin-left: 17%;
-  border-width: 2px;
-  border-style: groove;
-  border-color: threedface;
-  border-image: initial;
-  width: 30%;
-  margin-bottom: 5%;
-}
-
-legend {
-    color: white;
-    background-color: black;
-    padding: 5px 10px;
-    margin-left: 5%;
-    border-radius: 0;
-    border: 0;
-    font-size: 14px;
-    width: 50%;
-}
-
-#fieldsetData {
-    display: flex;
-    align-items: flex-start;
-    margin-left: 35px;
-    margin-bottom: 5px;
-}
-
-#fieldsetData1 {
-    margin-left: 30px;
-    margin-bottom: 5px;
 }
 

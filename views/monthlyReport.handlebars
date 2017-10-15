@@ -68,7 +68,7 @@
     <div class="row featurette month-row" >
       <div class="panel panel-primary filterable">
         <div class="panel-heading month-heading">
-          <h3 class="panel-title" style="position: relative;left: -830px">Monthly Report</h3>
+          <h3 class="panel-title Monthly-panel-title" style="position: relative;left: -830px">Monthly Report</h3>
             <div class="pull-right">
                 <!-- <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button> -->
             </div>
@@ -77,26 +77,26 @@
          <table class="table ">
             <thead>
                 <tr class="filters">
-                    <th class="th">Technician Id</th>
-                    <th class="th">Client Name</th>
-                    <th class="th">Date</th>
-                    <th class="th">Services</th>
-                    <th class="th">Location</th>
-                    <th class="th">Current Job</th>
-                    <th class="th">Job Status</th>
+                    <th class="thWidth">Technician Id</th>
+                    <th class="thWidth">Client Name</th>
+                    <th class="thWidth">Date</th>
+                    <th class="thWidth">Services</th>
+                    <th class="thWidth">Location</th>
+                    <th class="thWidth">Current Job</th>
+                    <th class="thWidth">Job Status</th>
                     <!-- <th>Subject</th> -->
                 </tr>
                 </thead>
                 <tbody>
                 {{#each Job}}
                 <tr>
-                    <td>{{this.dataValues.TechnicianId}}</td>
-                    <td>{{this.dataValues.client_name}}</td>
-                    <td>{{this.dataValues.createdAt}}</td> 
-                    <td>{{this.dataValues.services}}</td>
-                    <td>{{this.dataValues.Technician.location}}</td>
-                    <td>{{this.dataValues.Technician.current_job}}</td>
-                    <td>{{this.dataValues.Technician.job_status}}</td>
+                    <td class="Monthlytd">{{this.dataValues.TechnicianId}}</td>
+                    <td class="Monthlytd">{{this.dataValues.client_name}}</td>
+                    <td class="Monthlytd">{{this.dataValues.createdAt}}</td> 
+                    <td class="Monthlytd">{{this.dataValues.services}}</td>
+                    <td class="Monthlytd">{{this.dataValues.Technician.location}}</td>
+                    <td class="Monthlytd">{{this.dataValues.Technician.current_job}}</td>
+                    <td class="Monthlytd">{{this.dataValues.Technician.job_status}}</td>
                     
                      <!-- <td>{{ this.subject }}</td> -->
                 </tr>

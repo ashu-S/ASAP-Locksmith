@@ -24,7 +24,7 @@ module.exports = function(app) {
     }
 
   	  db.Job.findAll({
-  	   attributes:['TechnicianId','client_name','description'],
+  	   attributes:['TechnicianId','client_name','services'],
        include: [{ model: db.Technician, attributes: ['id','location','current_job','job_status']}],
       
       }).then(function(dbJob) {
