@@ -105,7 +105,7 @@ module.exports = function(app) {
             console.log("...................")
             console.log('line 28', result)
             console.log("...................")
-            res.render("report", { Job: result });
+            res.render("weekly", { Job: result });
 
         });
     });
@@ -129,7 +129,6 @@ module.exports = function(app) {
 
         });
     });
-
     //----------------------------------------
     // Routes for assign page
     //----------------------------------------  
@@ -186,12 +185,10 @@ module.exports = function(app) {
                 where: {
                     id: req.body.Technician,
                 }
-            })
-            .then(function(result) {
+            }).then(function(result) {
                 console.log(result);
                 res.json(result);
-
-            })
+            });
     });
 
 };

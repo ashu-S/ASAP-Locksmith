@@ -62,4 +62,19 @@ module.exports = function(app) {
         res.render("assign.handlebars");
     })
 
+  app.get("/admin/accept", function(req, res){
+    res.render("accept.handlebars");
+  })
+  app.get("/admin/report", function(req, res) {
+    res.render("weekly.handlebars");
+  });
+  app.get("/admin/monthly", function(req, res) {
+    res.render("monthlyReport.handlebars");
+  });
+
+  // assign route loads accept.html
+  app.get(" /admin/assign", function(req, res){
+    res.render("assign.handlebars");
+  })
+
 };

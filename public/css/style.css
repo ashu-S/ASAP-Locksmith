@@ -547,6 +547,43 @@ input[type=text] {
 text-align: center !important;
 }
 
+.accepting-btn{
+  position: relative;
+  top: -10.5px;
+}
+
+.ac-btn{
+    color: #fff;
+    background-color: #657539;
+}
+
+.ac-btn:hover{
+    background-color: #53602d;
+    color: #fff;
+}
+
+.ac-btn:active{
+    background-color: #414c23 !important;
+    color: #fff !important;
+}
+
+.accept-table-whole{
+  border: .5px solid #c5d6ba;
+}
+
+.table-head-accept{
+  background-color: #bad1a7;
+}
+
+.table-accept{
+  background-color: #e9f2e3;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #fff;
+ }
+
 /*Sticky Footer*/
 .footer {
   position: absolute;
@@ -613,13 +650,110 @@ text-align: center !important;
 }
 
 /*css for monthly report*/
+.filterable {
+    margin-top: 15px;
+}
+.filterable .panel-heading .pull-right {
+    margin-top: -20px;
+}
+.filterable .filters input[disabled] {
+    background-color: transparent;
+    border: none;
+    cursor: auto;
+    box-shadow: none;
+    padding: 0;
+    height: auto;
+}
+.filterable .filters input[disabled]::-webkit-input-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]::-moz-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]:-ms-input-placeholder {
+    color: #333;
+}
+
+
 .month-row{
   position: relative;
   left: 6px;
   top: 35px;
   color: black;
 }
+.month-heading{
+  background-color: #414c23 ! important;
+  /*border-color: #414c23 ! important;*/
+}
 
+.monthly-panel{
+  padding-bottom: 30px;
+  border-color:#414c23 ! important ;
+  position: relative;top: 30px;
+}
+#myTable_wrapper{
+  position: relative;
+  top: -39px;
+}
+#myTable_length{
+  position: relative;
+    top: 44px !important;
+    left: 350px !important;
+}
+#myTable_filter{
+  position: relative;
+  top: 41px !important;
+}
+#example_filter{
+  position: relative;
+    top: 48px;
+    color: black;
+}
+.btn-group{
+  position: absolute !important;
+  left: 17px !important;
+}
+
+#example_wrapper{
+      position: relative;
+    top: 26px;
+}
+#example_info{
+  position: relative;
+  color: black;
+  left: -240px;
+}
+.pagination>.active>a{
+  background-color: #414c23 ! important ;
+}
+.dataTables_empty{
+  color: black;
+}
+/*#myTable_info{
+  position: relative;
+  bottom: -74px !important;
+}
+#myTable_previous{
+   position: relative;
+  bottom: -74px !important;
+}
+#myTable_next{
+   position: relative;
+  bottom: -74px !important;
+}*/
+/*a{
+     position: relative;
+  bottom: -64px !important;
+}*/
+/*dataTables_wrapper .dataTables_paginate .paginate_button{
+  position: relative;
+  top: 63px !important;
+}*/
+label{
+  position: relative;
+  top: -40px;
+  padding-left: 180px;
+}
 .month-size{
   position: relative;
     top: 80px;
@@ -628,7 +762,15 @@ text-align: center !important;
     color: black;
 }
 .Monthly-panel-title{
+  position: relative;
   font-size: 30px !important;
+  margin-left: -9px !important;
+  font-family: "" !important;
+  left: -829px !important;
+}
+.weekly-panel-title{
+  /*position: relative;*/
+   font-size: 30px !important;
   margin-left: -9px !important;
   font-family: "" !important;
   left: -760px !important;
@@ -638,6 +780,7 @@ text-align: center !important;
   font-size: 30px !important;
   margin-left: -9px !important;
   font-family: "" !important;
+ 
 }
 
 .view-row{
@@ -654,7 +797,14 @@ text-align: center !important;
   background-color: dimgrey;
 }
 /*css style for report date input form*/
-
+/*.btn1{
+  position: relative;
+  left: 213px !important;
+}*/
+/*label{
+  position: relative;
+  right: 215px;
+}*/
 .report-panel-title{
   font-size: 30px !important;
   margin-left: -9px !important;
@@ -666,6 +816,7 @@ text-align: center !important;
   position: relative;
   top: 21px;
   color: black;
+    white-space: nowrap;
 }
 .endDateLabel{
   width: 200px;
@@ -673,7 +824,20 @@ text-align: center !important;
   position: relative;
   top: -147px;
   color: black;
+  white-space: nowrap;
 }
+.start-date-form{
+  position: relative;
+  left: 378px;
+  top: -10px;
+  width: 260px;
+}
+/*.end-date-form{
+  position: relative;
+  left: 740px;
+  top: -181px;
+  width: 260px;
+}*/
 .form-align{
     position: relative;
     top: -96px;
@@ -691,8 +855,8 @@ text-align: center !important;
 }
 .report-form-container{
     position: relative;
-    top: 158px;
-    left: -218px;
+    top: 150px;
+    left: -319px;
 }
 .create{
    position: relative;
@@ -703,6 +867,8 @@ text-align: center !important;
 }
 .thWidth{
   width: 150px;
+  color: black;
+
   /*text-align: center;*/
 }
 .report-row{
@@ -713,8 +879,26 @@ text-align: center !important;
 }
 .Monthlytd{
   text-align: center;
+  color:black;
 }
- /*  Stylying for the contact page*/
+  /*css for weekly report*/
+.view{
+   border-color:#414c23 ! important ;
+}
+  .weekly-panel{
+  position: relative;
+  top: -73px;
+  padding-bottom: 30px;
+  border-color:#414c23 ! important ;
+  }
+
+/*.view-panel{
+border-color:#414c23 ! important ;
+
+}*/
+/*.viewjobs-panel{
+  border-color:#414c23 ! important ;
+}*/
 #menu1{
   background-color:#f2f2f2 ;
   width:465px;
