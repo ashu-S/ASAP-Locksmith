@@ -26,9 +26,6 @@ module.exports = function(passport, user) {
       },
 
       function(req, user_name, password, done) {
-        console.log(user_name)
-        // var User = user;
-
         var isValidPassword = function(userpass, password) {
           return bCrypt.compareSync(userpass, password);
         };
@@ -45,7 +42,6 @@ module.exports = function(passport, user) {
             }
 
             var userinfo = user.get();
-            console.log(userinfo);
             return done(null, user);
           })
           .catch(function(err) {

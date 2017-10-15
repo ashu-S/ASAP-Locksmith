@@ -25,10 +25,10 @@ $(document).ready(function() {
 
         console.log(userData);
 
-        if (!userData.user_name || !userData.password || !userData.role) {
-          console.log("in err");
-            return;
-        }
+        // if (!userData.user_name || !userData.password || !userData.role) {
+        //   console.log("in err");
+        //     return;
+        // }
         // If we have an user_name and password, run the signUpUser function
         console.log("calling signUpUser");
         signUpUser(userData.user_name, userData.password, userData.role);
@@ -51,11 +51,6 @@ $(document).ready(function() {
         }).then(function(data) {
             window.location.replace(data);
             // If there's an error, handle it by throwing up a boostrap alert
-        }).catch(handleLoginErr);
-    }
-
-    function handleLoginErr(err) {
-        $("#alert .msg").text(err.responseJSON);
-        $("#alert").fadeIn(500);
+        })
     }
 });
