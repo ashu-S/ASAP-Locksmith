@@ -34,7 +34,7 @@ module.exports = function(app) {
 
     //logout route
     app.get("/logout", function(req, res) {
-        res.render("index.handlebars");
+        res.redirect("/");
     });
 
     // admin route loads admin.html
@@ -57,8 +57,8 @@ module.exports = function(app) {
         res.render("monthlyReport.handlebars");
     });
 
-    // assign route loads accept.html
-    app.get(" /admin/assign", function(req, res) {
+    // assign route loads assign.html
+    app.get("/admin/assign", function(req, res) {
         res.render("assign.handlebars");
     })
 
