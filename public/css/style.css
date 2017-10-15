@@ -780,7 +780,7 @@ label{
   font-size: 30px !important;
   margin-left: -9px !important;
   font-family: "" !important;
- 
+
 }
 
 .view-row{
@@ -878,7 +878,7 @@ label{
     color: black;
 }
 .Monthlytd{
-  text-align: center;
+  text-align: left;
   color:black;
 }
   /*css for weekly report*/
@@ -890,6 +890,12 @@ label{
   top: -73px;
   padding-bottom: 30px;
   border-color:#414c23 ! important ;
+  }
+  .end-date-form{
+position: relative;
+left: 775px;
+top: -181px;
+width: 260px;
   }
 
 /*.view-panel{
