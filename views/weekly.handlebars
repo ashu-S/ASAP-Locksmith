@@ -51,20 +51,14 @@
          <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">JOBS <b class="caret"></b></a>
 
              <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
-<<<<<<< HEAD
-                <li ><a href="/api/accept" style="text-decoration: none;">NEW JOBS</a></li>
-                <li><a href="/api/assign">ASSIGN JOBS </a></li>
-                <li><a href="/api/jobs">VIEW JOBS</a></li> 
-=======
                 <li ><a href="/api/accept" style="text-decoration: none;">ACCEPT JOBS</a></li>
-                <li><a href="">ASSIGN JOBS </a></li>
+                <li><a href="/api/assign">ASSIGN JOBS </a></li>
                 <li><a href="/api/jobs">VIEW JOBS</a></li>
->>>>>>> 64fb7f07ca136a1448da32d0487f312adaf30856
              </ul>
          </li>
          <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">REPORTS <b class="caret"></b></a>
              <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
-             	<li ><a href="/api/getDate" > PERIODIC REPORTS</a></li>
+              <li ><a href="/api/getDate" > PERIODIC REPORTS</a></li>
                 <li><a href="/api/getDetails">MONTHLY REPORTS </a></li>
              </ul>
          </li>
@@ -153,7 +147,6 @@
 
 
 <script type="text/javascript">
-
  $(document).ready(function(){
 var startDate = new Date();
 var fechaFin = new Date();
@@ -169,7 +162,6 @@ $('.from').datepicker({
         startDate.setDate(startDate.getDate(new Date(selected.date.valueOf())));
         $('.to').datepicker('setStartDate', startDate);
     });
-
 $('.to').datepicker({
     autoclose: true,
     startView: 1,
@@ -186,7 +178,6 @@ var table = $('#example').DataTable( {
         lengthChange: false,
         buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
     } );
-
     table.buttons().container()
         .appendTo( '#example_wrapper .col-sm-6:eq(0)' );
 //   $("#add-btn").on("click", function(event) {
@@ -202,7 +193,4 @@ var table = $('#example').DataTable( {
 //         // alert("Adding character...");
 //       });
 //     });
-
-
-
  </script>

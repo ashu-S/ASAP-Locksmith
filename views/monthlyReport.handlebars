@@ -1,16 +1,4 @@
 <!-- Latest compiled and minified CSS -->
-<<<<<<< HEAD
-<!--  jQuery -->
-<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
-<!-- Bootstrap Date-Picker Plugin -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-
-
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">   
-=======
  <!--  jQuery -->
  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -20,7 +8,6 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
->>>>>>> 64fb7f07ca136a1448da32d0487f312adaf30856
 <!-- for table filters -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.bootstrap.css"/>
@@ -70,7 +57,7 @@
          </li>
          <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">REPORTS <b class="caret"></b></a>
              <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
-             	<li ><a href="/api/getDate" > PERIODIC REPORTS</a></li>
+              <li ><a href="/api/getDate" > PERIODIC REPORTS</a></li>
                 <li><a href="/api/getDetails">MONTHLY REPORTS </a></li>
              </ul>
          </li>
@@ -90,9 +77,9 @@
    <form method="GET" action="/api/getDetails" class="month-size">
    <label class="monthly-label" style="position: relative;top: 5px;font-size: 13px">Create Date:</label>
 
-	<input type="text"  class="form-control form-control-2 input-sm to create" placeholder="Enter Month" id="date3" name="date3" />
-	<button type="submit" class="btn btn-default button-report">Generate Report</button>
-	</form>
+  <input type="text"  class="form-control form-control-2 input-sm to create" placeholder="Enter Month" id="date3" name="date3" />
+  <button type="submit" class="btn btn-default button-report">Generate Report</button>
+  </form>
     </div>
  </div>
 
@@ -178,15 +165,12 @@ $('.to').datepicker({
         $('.from').datepicker('setEndDate', FromEndDate);
     });
 });
-
 var table = $('#example').DataTable( {
         lengthChange: false,
         buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
     } );
-
     table.buttons().container()
         .appendTo( '#example_wrapper .col-sm-6:eq(0)' );
-
 //   $("#add-btn").on("click", function(event) {
 //       event.preventDefault();
 //       var newCharacter = {
@@ -200,8 +184,5 @@ var table = $('#example').DataTable( {
 //         // alert("Adding character...");
 //       });
 //     });
-
-
-
-
  </script>
+© 2017 Git

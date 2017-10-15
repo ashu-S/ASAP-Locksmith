@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "sqldev11",
-=======
-    "password": "",
->>>>>>> 64fb7f07ca136a1448da32d0487f312adaf30856
     "database": "ASAP_Locksmith_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
