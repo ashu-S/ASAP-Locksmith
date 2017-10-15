@@ -780,6 +780,7 @@ label{
   font-size: 30px !important;
   margin-left: -9px !important;
   font-family: "" !important;
+ 
 }
 
 .view-row{
@@ -881,7 +882,9 @@ label{
   color:black;
 }
   /*css for weekly report*/
-
+.view{
+   border-color:#414c23 ! important ;
+}
   .weekly-panel{
   position: relative;
   top: -73px;
@@ -889,8 +892,13 @@ label{
   border-color:#414c23 ! important ;
   }
 
-}
- /*  Stylying for the contact page*/
+/*.view-panel{
+border-color:#414c23 ! important ;
+
+}*/
+/*.viewjobs-panel{
+  border-color:#414c23 ! important ;
+}*/
 #menu1{
   background-color:#f2f2f2 ;
   width:465px;
