@@ -138,6 +138,12 @@ body {
   margin-bottom: 0px !important;
 }
 
+.modal-label{
+  position: inherit !important;
+  top: inherit !important;
+  padding-left: 0 !important;
+}
+
 .services-jumbotron{
   background-color: transparent !important;
   background-image: url(../images/absurditytile.png);
@@ -897,14 +903,11 @@ left: 775px;
 top: -181px;
 width: 260px;
   }
+  .dropdown-menu > .active > a {
+background-color: #414c23 ! important ;
+  }
 
-/*.view-panel{
-border-color:#414c23 ! important ;
 
-}*/
-/*.viewjobs-panel{
-  border-color:#414c23 ! important ;
-}*/
 #menu1{
   background-color:#f2f2f2 ;
   width:465px;
