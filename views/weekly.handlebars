@@ -1,11 +1,7 @@
-
 <!-- Navigation Bar -->
 <div class="collapse navbar-collapse" id="navbar-collapse">
-
-<!--Navigation Bar-->
   <nav class="navbar  navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
@@ -47,24 +43,19 @@
 
             <form method="GET" action="/api/getDate" class="form-align">
              <label for="example-datetime-local-input" class=" col-form-label startDateLabel">Start Date</label>
-  <!-- <div class="col-4"> -->
+ 
              <input class="form-control start-date-form" type="datetime-local" value="2011-08-19T13:45:00" id="date1" name="startdate" >
         </div>
         <div class="form-group row">
             <label for="example-date-input" class="col-form-label endDateLabel">End Date</label>
-  <!-- <div class="col-4"> -->
+ 
             <input class="form-control end-date-form" type="datetime-local" value="2011-08-19T13:45:00" id="date2" name="endDate" style="position: relative;left: 775px;top: -181px;width: 260px">
          </div>
 
-    <!-- <div class="text-right"> -->
     <button type="submit" class="btn btn-default button-report" style="position: relative;top: -228px;left: 243px">Generate Report</button>
-    <!-- </div> -->
     </form>
     </div>
  </div>
-
-<!-- <div class="container"> -->
-    <!-- <div class="row featurette month-row" > -->
       <div class="panel panel-primary filterable weekly-panel">
         <div class="panel-heading month-heading">
           <h3 class="panel-title weekly-panel-title" >Periodic Report</h3>
@@ -81,7 +72,7 @@
                     <th class="thWidth">Location</th>
                     <th class="thWidth">Current Job</th>
                     <th class="thWidth">Job Status</th>
-                    <!-- <th>Subject</th> -->
+                   
                 </tr>
                 </thead>
                 <tbody>
@@ -94,8 +85,6 @@
                     <td class="Monthlytd">{{this.dataValues.Technician.location}}</td>
                     <td class="Monthlytd">{{this.dataValues.Technician.current_job}}</td>
                     <td class="Monthlytd">{{this.dataValues.job_status}}</td>
-                    
-                     <!-- <td>{{ this.subject }}</td> -->
                 </tr>
                 {{/each}}
                 </tbody> 
@@ -103,47 +92,12 @@
         </div>
 
               <hr class="featurette-divider">
-
-
-    <!-- </div>  END SERVICES JUMBOTRON -->
-<!-- </div> -->
-
-<!-- </div> -->
 </div>
-
-
-
 
 <script type="text/javascript">
 
  $(document).ready(function(){
-var startDate = new Date();
-var fechaFin = new Date();
-var FromEndDate = new Date();
-var ToEndDate = new Date();
-$('.from').datepicker({
-    autoclose: true,
-    startView: 1,
-    minViewMode: 1,
-    format: 'mm/yyyy'
-}).on('changeDate', function(selected){
-        startDate = new Date(selected.date.valueOf());
-        startDate.setDate(startDate.getDate(new Date(selected.date.valueOf())));
-        $('.to').datepicker('setStartDate', startDate);
-    }); 
-
-$('.to').datepicker({
-    autoclose: true,
-    startView: 1,
-    minViewMode: 1,
-    format: 'M-yyyy'
-}).on('changeDate', function(selected){
-        FromEndDate = new Date(selected.date.valueOf());
-        FromEndDate.setDate(FromEndDate.getDate(new Date(selected.date.valueOf())));
-        $('.from').datepicker('setEndDate', FromEndDate);
-    });
-});
-
+ // Code for Table Buttons
 var table = $('#example').DataTable( {
         lengthChange: false,
         buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
@@ -151,6 +105,6 @@ var table = $('#example').DataTable( {
  
     table.buttons().container()
         .appendTo( '#example_wrapper .col-sm-6:eq(0)' );
-
+})
  </script> 
 

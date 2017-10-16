@@ -13,16 +13,9 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-//
-
   // GET route for getting all of the jobs
   app.get("/api/jobs", function(req, res) {
   	console.log('admin view')
-  	 // var query = {};
-    // if (req.query.id) {
-    //   query.TechnicianId = req.query.id;
-    // }
-
   	  db.Job.findAll({
 
   	   attributes:['TechnicianId','client_name','services','job_status'],
@@ -95,13 +88,12 @@ module.exports = function(app) {
        res.redirect("/api/accept")
      })
   });
-
+// Get Route for Periodic Reports
 app.get("/api/getDate", function(req, res) {
   console.log('req.body');
   var sequelize=require('sequelize');
   db.Job.findAll({
- attributes:['TechnicianId','client_name','services',[sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'),'%m-%d-%Y-%h%m%s'),'createdAt'],'job_status'],
-   // attributes:['TechnicianId','client_name','services','createdAt'],
+ attributes:['TechnicianId','client_name','services',[sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'),'%m-%d-%Y'),'createdAt'],'job_status'],
      where : {
      createdAt: {
         $between: [req.query.startdate, req.query.endDate]
@@ -115,23 +107,18 @@ app.get("/api/getDate", function(req, res) {
 
     });
 });
-
-
  // Get for monthly report 
   app.get("/api/getDetails", function(req, res) {
     var sequelize=require('sequelize');
     db.Job.findAll({
      attributes:['TechnicianId','client_name','services',[sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'),'%m-%d-%Y'),'createdAt'],'job_status'],
      where: 
-     //{createdAt:'2016-01-11T00:00:00.000Z'},
        sequelize.where(sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'),'%b-%Y'),req.query.date3),
        include: [{ model: db.Technician, attributes: ['location','current_job','job_status']}]
       }).then(function(result) {
         console.log('line 28',result)
         console.log("...................") 
-      // res.redirect("/api/month/");
       res.render("monthlyReport",{Job:result});
-      // res.render("report",{Job:result});
 
     });
   });
