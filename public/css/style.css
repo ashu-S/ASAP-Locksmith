@@ -884,7 +884,7 @@ label{
     color: black;
 }
 .Monthlytd{
-  text-align: center;
+  text-align: left;
   color:black;
 }
   /*css for weekly report*/
@@ -897,14 +897,17 @@ label{
   padding-bottom: 30px;
   border-color:#414c23 ! important ;
   }
+  .end-date-form{
+position: relative;
+left: 775px;
+top: -181px;
+width: 260px;
+  }
+  .dropdown-menu > .active > a {
+background-color: #414c23 ! important ;
+  }
 
-/*.view-panel{
-border-color:#414c23 ! important ;
 
-}*/
-/*.viewjobs-panel{
-  border-color:#414c23 ! important ;
-}*/
 #menu1{
   background-color:#f2f2f2 ;
   width:465px;

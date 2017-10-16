@@ -13,21 +13,26 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
+    //
+
     // GET route for getting all of the jobs
     app.get("/api/jobs", function(req, res) {
         console.log('admin view')
-        var query = {};
-        if (req.query.id) {
-            query.TechnicianId = req.query.id;
-        }
+        // var query = {};
+        // if (req.query.id) {
+        //   query.TechnicianId = req.query.id;
+        // }
 
         db.Job.findAll({
-            attributes: ['TechnicianId', 'client_name', 'services'],
-            include: [{ model: db.Technician, attributes: ['id', 'location', 'current_job', 'job_status'] }],
+
+            attributes: ['TechnicianId', 'client_name', 'services', 'job_status'],
+            include: [{ model: db.Technician, attributes: ['location', 'current_job'] }],
 
         }).then(function(dbJob) {
             console.log('line 28', dbJob)
             console.log("...................")
+            // console.log(dataValues.description)
+            // res.json(dbJob);
             res.render("viewjob", { Job: dbJob });
         });
     });
@@ -36,9 +41,7 @@ module.exports = function(app) {
 
     // If a user sends data to add a new job...
     app.post("/api/new", function(req, res) {
-
         // Then add the job to the database using sequelize
-
         db.Job.create({
                 client_name: req.body.client_name,
                 client_location: req.body.client_location,
@@ -92,9 +95,10 @@ module.exports = function(app) {
 
     app.get("/api/getDate", function(req, res) {
         console.log('req.body');
+        var sequelize = require('sequelize');
         db.Job.findAll({
-
-            attributes: ['TechnicianId', 'client_name', 'services', 'createdAt'],
+            attributes: ['TechnicianId', 'client_name', 'services', [sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%m-%d-%Y-%h%m%s'), 'createdAt'], 'job_status'],
+            // attributes:['TechnicianId','client_name','services','createdAt'],
             where: {
                 createdAt: {
                     $between: [req.query.startdate, req.query.endDate]
@@ -111,11 +115,25 @@ module.exports = function(app) {
     });
 
 
-    // Get for monthly report
+    // Get for monthly report 
     app.get("/api/getDetails", function(req, res) {
         var sequelize = require('sequelize');
+        app.get("/api/assignjob/", function(req, res) {
+            db.Job.findAll({
+                    where: {
+                        job_status: "accepted"
+                    }
+                })
+                .then(function(result) {
+                    console.log(result);
+                    // return res.json(result);
+                    res.render("assignjob", { Job: result });
+                });
+        });
+
+
         db.Job.findAll({
-            attributes: ['TechnicianId', 'client_name', 'services', [sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%m-%d-%Y'), 'createdAt']],
+            attributes: ['TechnicianId', 'client_name', 'services', [sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%m-%d-%Y'), 'createdAt'], 'job_status'],
             where:
                 //{createdAt:'2016-01-11T00:00:00.000Z'},
                 sequelize.where(sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%b-%Y'), req.query.date3),
@@ -129,6 +147,7 @@ module.exports = function(app) {
 
         });
     });
+
     //----------------------------------------
     // Routes for assign page
     //----------------------------------------  
