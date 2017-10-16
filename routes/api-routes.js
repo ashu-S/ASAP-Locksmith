@@ -154,7 +154,7 @@ module.exports = function(app) {
     app.get("/api/Technicians", function(req, res) {
         // findAll returns all entries for a table when used with no options
         db.Technician.findAll({}).then(function(dbTechnician) {
-            // We have access to the todos as an argument inside of the callback function
+            // We have access to the technicians as an argument inside of the callback function
             console.log(dbTechnician);
             res.json(dbTechnician);
         });
@@ -162,6 +162,11 @@ module.exports = function(app) {
 
     app.post("/api/update2", function(req, res) {
 
+        console.log("skill: " + req.body.skill);
+        console.log("job id: " + req.body.ID);
+        console.log("job_status: " + req.body.Status);
+        console.log("Technician: " + req.body.Technician); 
+      
         // Then add the job to the database using sequelize
         db.Job.update({
                 job_status: req.body.Status,
@@ -173,7 +178,7 @@ module.exports = function(app) {
             }),
             db.Technician.update({
                 job_status: req.body.Status,
-                current_job: req.body.Skill,
+                current_job: req.body.ID,
             }, {
                 where: {
                     id: req.body.Technician,

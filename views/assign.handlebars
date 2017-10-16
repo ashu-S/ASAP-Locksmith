@@ -58,9 +58,7 @@
             </div>
         </div>
     </div>
-    {{/each}}
-</div>
-<!-- assign modal -->
+    <!-- assign modal -->
 <div class="modal fade" id="assign-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -74,10 +72,11 @@
                 <div class="row reg-body">
                     <div class="col-md-12">
                         <form class="full-update-form">
-                            <div class="form-group">
+                           <!--  <div class="form-group">
                                 <label for="jobId" class="modal-label">JOB ID</label>
                                 <input type="text" class="form-control chosen-select" id="jobId" aria-describedby="emailHelp" placeholder="1">
-                            </div>
+                            </div> -->
+                            <p><strong>JOB ID:</strong> {{this.id}} </p>
                             <div class="form-group">
                                 <label for="selectSkill" class="modal-label"> Skills </label>
                                 <select class="form-control chosen-select" id="selectSkill" name="selectSkill">
@@ -93,10 +92,10 @@
                             <div class="form-group">
                                 <label for="checkboxStatus" class="modal-label">Status</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="assign" id="assign" value="assign">Assign
-                                    <input class="form-check-input" type="radio" name="inProgress" id="inProgress" value="inProgress">In Progress
-                                    <input class="form-check-input" type="radio" name="hold" id="hold" value="hold"> On Hold
-                                    <input class="form-check-input" type="radio" name="completed" id="completed" value="completed"> Completed
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="assign" value="assign">Assign
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inProgress" value="inProgress">In Progress
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="hold" value="hold"> On Hold
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="completed" value="completed"> Completed
                                 </div>
                             </div>
                             <div class="row">
@@ -118,6 +117,8 @@
         <!--End Modal Content-->
     </div>
     <!--End Modal Dialogue-->
+</div>
+    {{/each}}
 </div>
 <!--End Modal-->
 <script type="text/javascript">

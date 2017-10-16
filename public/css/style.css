@@ -35,7 +35,7 @@ body {
 
 /* Admin login */
 
-#adminLogin{
+#adminLogin, #adminLogout{
   padding-left: 18px !important;
   padding-right: 18px !important;
   position: relative;
@@ -78,6 +78,12 @@ body {
 
 .form-horizontal{
   padding-top: 15px;
+}
+
+.loginLbl {
+    /*position: relative;*/
+    top: -2px;
+    /*padding-left: 180px;*/
 }
 
 /**/

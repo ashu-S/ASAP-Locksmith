@@ -5,4 +5,4 @@ $(document).ready(function(){
 		$("#assignJobs").show;
 	})
 
-}); //End Document.ready
+}); //End Document.ready	
