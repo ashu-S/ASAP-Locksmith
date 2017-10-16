@@ -1,10 +1,7 @@
 <!-- Navigation Bar -->
 <div class="collapse navbar-collapse" id="navbar-collapse">
-
-<!--Navigation Bar-->
   <nav class="navbar  navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
@@ -16,13 +13,13 @@
      <div class="collapse navbar-collapse" id="navbar-collapse">
 
       <ul class="nav navbar-nav">
-         <li><a href="/">HOME</a></li>
+         <li><a href="/admin">HOME</a></li>
          <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">JOBS <b class="caret"></b></a>
 
              <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
                 <li ><a href="/api/accept" style="text-decoration: none;">NEW JOBS</a></li>
                 <li><a href="">ASSIGN JOBS </a></li>
-                <li><a href="/api/jobs">VIEW JOBS</a></li> 
+                <li><a href="/api/jobs">VIEW JOBS</a></li>
              </ul>
          </li>
          <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">REPORTS <b class="caret"></b></a>
@@ -46,28 +43,23 @@
 
             <form method="GET" action="/api/getDate" class="form-align">
              <label for="example-datetime-local-input" class=" col-form-label startDateLabel">Start Date</label>
-  <!-- <div class="col-4"> -->
+
              <input class="form-control start-date-form" type="datetime-local" value="2011-08-19T13:45:00" id="date1" name="startdate" >
         </div>
         <div class="form-group row">
             <label for="example-date-input" class="col-form-label endDateLabel">End Date</label>
-  <!-- <div class="col-4"> -->
+
             <input class="form-control end-date-form" type="datetime-local" value="2011-08-19T13:45:00" id="date2" name="endDate" style="position: relative;left: 775px;top: -181px;width: 260px">
          </div>
 
-    <!-- <div class="text-right"> -->
     <button type="submit" class="btn btn-default button-report" style="position: relative;top: -228px;left: 243px">Generate Report</button>
-    <!-- </div> -->
     </form>
     </div>
  </div>
-
-<!-- <div class="container"> -->
-    <!-- <div class="row featurette month-row" > -->
       <div class="panel panel-primary filterable weekly-panel">
         <div class="panel-heading month-heading">
           <h3 class="panel-title weekly-panel-title" >Periodic Report</h3>
- 
+
         </div>
         {{description}}
          <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -80,7 +72,7 @@
                     <th class="thWidth">Location</th>
                     <th class="thWidth">Current Job</th>
                     <th class="thWidth">Job Status</th>
-                    <!-- <th>Subject</th> -->
+
                 </tr>
                 </thead>
                 <tbody>
@@ -88,33 +80,23 @@
                 <tr>
                     <td class="Monthlytd">{{this.dataValues.TechnicianId}}</td>
                     <td class="Monthlytd">{{this.dataValues.client_name}}</td>
-                    <td class="Monthlytd">{{this.dataValues.createdAt}}</td> 
+                    <td class="Monthlytd">{{this.dataValues.createdAt}}</td>
                     <td class="Monthlytd">{{this.dataValues.services}}</td>
                     <td class="Monthlytd">{{this.dataValues.Technician.location}}</td>
                     <td class="Monthlytd">{{this.dataValues.Technician.current_job}}</td>
                     <td class="Monthlytd">{{this.dataValues.job_status}}</td>
-                    
-                     <!-- <td>{{ this.subject }}</td> -->
                 </tr>
                 {{/each}}
-                </tbody> 
+                </tbody>
             </table>
         </div>
 
               <hr class="featurette-divider">
-
-
-    <!-- </div>  END SERVICES JUMBOTRON -->
-<!-- </div> -->
-
-<!-- </div> -->
 </div>
-
-
-
 
 <script type="text/javascript">
  $(document).ready(function(){
+<<<<<<< HEAD
 var startDate = new Date();
 var fechaFin = new Date();
 var FromEndDate = new Date();
@@ -140,11 +122,19 @@ $('.to').datepicker({
         $('.from').datepicker('setEndDate', FromEndDate);
     });
 });
+=======
+ // Code for Table Buttons
+>>>>>>> f73dc7cf1e4ac2ffdaa5ae466ccb228aa7427f64
 var table = $('#example').DataTable( {
         lengthChange: false,
         buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
     } );
- 
+
     table.buttons().container()
         .appendTo( '#example_wrapper .col-sm-6:eq(0)' );
+<<<<<<< HEAD
  </script> 
+=======
+})
+ </script>
+>>>>>>> f73dc7cf1e4ac2ffdaa5ae466ccb228aa7427f64

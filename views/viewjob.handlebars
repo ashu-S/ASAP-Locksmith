@@ -1,21 +1,7 @@
-
-<!-- Restructuring Navbar here to accomodate Admin View. Not including Services and contact in navbar instead including New Jobs, assign jobs, reports. -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
-
-<!-- Bootstrap Date-Picker Plugin -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-
- <div class="collapse navbar-collapse" id="navbar-collapse">
- <div class="collapse navbar-collapse" id="navbar-collapse">
-
 <!--Navigation Bar-->
+ <div class="collapse navbar-collapse" id="navbar-collapse">
   <nav class="navbar  navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
@@ -28,7 +14,6 @@
 
       <ul class="nav navbar-nav">
          <li><a href="/admin">HOME</a></li>
-                  <!-- <li><a href="/api/accept">NEW JOBS</a></li> -->
          <li> <a href="" class="dropdown-toggle" data-toggle="dropdown">JOBS <b class="caret"></b></a>
 
              <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
@@ -52,39 +37,25 @@
   </nav> <!--End Nav-->
 
   <!--Webpage Body-->
-<!-- <div class="body-webpage"> -->
 <div class="container">
-
-         <div class="row featurette view-row">
-            <div class="panel panel-primary filterable view">
+  <div class="row featurette view-row">
+     <div class="panel panel-primary filterable view">
         <div class="panel-heading" style=" background-color: #414c23 ! important ;">
           <h3 class="panel-title view-panel-title">All Jobs</h3>
             <div class="pull-right">
                 <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
-
-
             </div>
         </div>
               {{description}}
                 <table class="table ">
                 <thead>
-               <!--  <tr>
-                    <th>Technician Id</th>
-                    <th>Client Name</th>
-                    <th>Description</th>
-                    <th>Location</th>
-                    <th>Current Job</th>
-                    <th>Job Status</th>
-
-                </tr> -->
                   <tr class="filters">
-                      <!--   <th><input type="text" class="form-control" placeholder="#" disabled></th> -->
-                        <th><input type="text" class="form-control" placeholder="Technician Id" disabled  data-sortable="true"></th>
-                        <th><input type="text" class="form-control" placeholder="Client Name" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Description" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Location" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="current job" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Job Status" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="Technician Id" disabled  data-sortable="true"></th>
+                    <th><input type="text" class="form-control" placeholder="Client Name" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="Description" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="Location" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="current job" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="Job Status" disabled></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -96,26 +67,19 @@
                     <td>{{this.dataValues.Technician.location}}</td>
                     <td>{{this.dataValues.Technician.current_job}}</td>
                     <td>{{this.dataValues.job_status}}</td>
-
-                     <!-- <td>{{ this.subject }}</td> -->
                 </tr>
                 {{/each}}
                 </tbody>
             </table>
-
-
-              </div>
+       </div>
 
               <hr class="featurette-divider">
-
-
     </div> <!-- END SERVICES JUMBOTRON -->
-
-
-</div> <!-- End WEBPAGE BODY -->
+ </div> <!-- End WEBPAGE BODY -->
 </div>
 <script type="text/javascript">
     $(document).ready(function(){
+// code for filters        
     $('.filterable .btn-filter').click(function(){
         var $panel = $(this).parents('.filterable'),
         $filters = $panel.find('.filters input'),
@@ -148,7 +112,7 @@
         });
         /* Clean previous no-result if exist */
         $table.find('tbody .no-result').remove();
-        /* Show all rows, hide filtered ones (never do that outside of a demo ! xD) */
+        /* Show all rows, hide filtered ones  */
         $rows.show();
         $filteredRows.hide();
         /* Prepend no-result row if all rows are filtered */
