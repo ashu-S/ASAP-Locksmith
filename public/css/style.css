@@ -1005,3 +1005,13 @@ padding-top: 5px;
   margin-top: 4px;
 
 }
+
+/* assign modal*/
+
+.assign-head{
+ margin-top: 45px;
+ margin-left: 50px;
+}
+.assign-select{
+  margin-top: -10px;
+}
