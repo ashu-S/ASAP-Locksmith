@@ -75,12 +75,12 @@
                     <div class="col-md-12">
                         <form class="full-update-form">
                             <div class="form-group">
-                                <label for="exampleInputnumber" class="modal-label">JOB ID</label>
-                                <input type="number" class="form-control chosen-select" id="exampleInputNumber" aria-describedby="emailHelp" placeholder="1">
+                                <label for="jobId" class="modal-label">JOB ID</label>
+                                <input type="text" class="form-control chosen-select" id="jobId" aria-describedby="emailHelp" placeholder="1">
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1" class="modal-label"> Skills </label>
-                                <select class="form-control chosen-select" id="exampleFormControlSelect1" name="exampleFormControlSelect1">
+                                <label for="selectSkill" class="modal-label"> Skills </label>
+                                <select class="form-control chosen-select" id="selectSkill" name="selectSkill">
                                     <option value="">-Choose one- </option>
                                 </select>
                             </div>
@@ -91,12 +91,12 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputCheckbox2" class="modal-label">Status</label>
+                                <label for="checkboxStatus" class="modal-label">Status</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="assign" id="assign" value="Assign">Assign
-                                    <input class="form-check-input" type="radio" name="inProgress" id="inProgress" value="In Progress">In Progress
-                                    <input class="form-check-input" type="radio" name="hold" id="hold" value="Hold"> On Hold
-                                    <input class="form-check-input" type="radio" name="completed" id="completed" value="Completed"> Completed
+                                    <input class="form-check-input" type="radio" name="assign" id="assign" value="assign">Assign
+                                    <input class="form-check-input" type="radio" name="inProgress" id="inProgress" value="inProgress">In Progress
+                                    <input class="form-check-input" type="radio" name="hold" id="hold" value="hold"> On Hold
+                                    <input class="form-check-input" type="radio" name="completed" id="completed" value="completed"> Completed
                                 </div>
                             </div>
                             <div class="row">
@@ -132,7 +132,7 @@ $(document).ready(function() {
                 for (var i = 0; i < data.length; i++) {
                     console.log(data[i].skill);
                     var newselect = $('<option value=' + data[i].skill + '>' + data[i].skill + '</option>');
-                    $('#exampleFormControlSelect1').append(newselect);
+                    $('#selectSkill').append(newselect);
                 }
             }
         })
@@ -171,9 +171,9 @@ $(document).ready(function() {
         if (validateForm() == true) {
             // Create an object for the user's data
             var UpdateData = {
-                ID: $("#exampleInputNumber").val().trim(),
-                Skill: $("#exampleFormControlSelect1").val().trim(),
-                Technician: $("#exampleFormControlSelect2").val().trim(),
+                ID: $("#jobId").val().trim(),
+                Skill: $("#selectSkill").val().trim(),
+                Technician: $("#technician").val().trim(),
                 Status: $('input:radio[name="inlineRadioOptions1"]:checked').val().trim(),
             }
             console.log(UpdateData);

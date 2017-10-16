@@ -107,7 +107,7 @@ module.exports = function(app) {
 
         });
     });
-    // Get for monthly report 
+    // Get for monthly report
     app.get("/api/getDetails", function(req, res) {
         var sequelize = require('sequelize');
         db.Job.findAll({
@@ -124,7 +124,7 @@ module.exports = function(app) {
 
     //----------------------------------------
     // Routes for assign page
-    //----------------------------------------  
+    //----------------------------------------
     app.get("/api/assign/", function(req, res) {
         db.Job.findAll({
                 where: {
