@@ -53,7 +53,7 @@
                 <div class="col-xs-6 assignjob-form">
                     <input input type="hidden" type="text" name="job_id" value={{this.id}}>
                     <br>
-                    <button type="submit" class="btn btn-success" id="firstassign" data-toggle="modal" data-delay="50" data-target="#assign-modal"> Assign </button>
+                    <button type="submit" class="btn btn-success" id="firstassign" data-toggle="modal" data-delay="50" data-target="#assign-modal"> Assign/Update</button>
                 </div>
             </div>
         </div>
@@ -72,21 +72,21 @@
                 <div class="row reg-body">
                     <div class="col-md-12">
                         <form class="full-update-form">
-                           <!--  <div class="form-group">
+                            <div class="form-group">
                                 <label for="jobId" class="modal-label">JOB ID</label>
                                 <input type="text" class="form-control chosen-select" id="jobId" aria-describedby="emailHelp" placeholder="1">
-                            </div> -->
-                            <p><strong>JOB ID:</strong> {{this.id}} </p>
+                            </div>
+                            <!-- <p><strong>JOB ID:</strong> {{this.id}} </p> -->
                             <div class="form-group">
                                 <label for="selectSkill" class="modal-label"> Skills </label>
                                 <select class="form-control chosen-select" id="selectSkill" name="selectSkill">
-                                    <option value="">-Choose one- </option>
+                                    <option value=""> -Choose one- </option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="technician" class="modal-label"> Technician </label>
                                 <select class="form-control chosen-select" id="technician" name="technician">
-                                    <option value="">-Choose Technician- </option>
+                                    <option value=""> -Choose Technician- </option>
                                 </select>
                             </div>
                             <div class="form-group">
