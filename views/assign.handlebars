@@ -156,20 +156,20 @@ $(document).ready(function() {
     // Capture the form inputs
     $("#submitupdate").on("click", function() {
         // Form validation
-        function validateForm() {
-            var isValid = true;
-            $('.chosen-select').each(function() {
-                if ($(this).val() === '')
-                    isValid = false;
-            });
-            $('.check-input').each(function() {
-                if ($(this).val() === "")
-                    isValid = false
-            })
-            return isValid;
-        }
-        // If all required fields are filled
-        if (validateForm() == true) {
+        // function validateForm() {
+        //     var isValid = true;
+        //     $('.chosen-select').each(function() {
+        //         if ($(this).val() === '')
+        //             isValid = false;
+        //     });
+        //     $('.check-input').each(function() {
+        //         if ($(this).val() === "")
+        //             isValid = false
+        //     })
+        //     return isValid;
+        // }
+        // // If all required fields are filled
+        // if (validateForm() == true) {
             // Create an object for the user's data
             var UpdateData = {
                 ID: $("#jobId").val().trim(),
@@ -188,11 +188,11 @@ $(document).ready(function() {
             alert("Done. Thank you!");
             $('.full-update-form').trigger('reset');
             $('#assign-modal').modal('hide');
-        } else {
-
-            alert("Please fill out all fields before submitting!");
-        }
-        return false;
+        // } else {
+        //
+        //     alert("Please fill out all fields before submitting!");
+        // }
+        // return false;
     });
 });
 </script>
