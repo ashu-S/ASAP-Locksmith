@@ -18,7 +18,7 @@
 
              <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
                 <li ><a href="/api/accept" style="text-decoration: none;">ACCEPT JOBS</a></li>
-                <li><a href="">ASSIGN JOBS</a></li>
+                <li><a href="/api/assign">ASSIGN JOBS</a></li>
                 <li><a href="/api/jobs">VIEW JOBS</a></li>
              </ul>
          </li>
@@ -79,7 +79,7 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function(){
-// code for filters        
+// code for filters
     $('.filterable .btn-filter').click(function(){
         var $panel = $(this).parents('.filterable'),
         $filters = $panel.find('.filters input'),
