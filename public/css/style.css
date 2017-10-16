@@ -134,6 +134,36 @@ body {
   font-size: 18px !important;
 }
 
+.submitReq{
+  color: #fff;
+  background-color: #657539;
+}
+
+.submitReq:hover{
+  background-color: #53602d;
+  color: #fff;
+}
+
+.submitReq:active{
+  background-color: #414c23 !important;
+  color: #fff !important;
+}
+
+.custom-modal{
+  width: 93%;
+  height: 510px !important;
+  position: relative;
+    left: 5%;
+}
+
+.full-services-form{
+  width: 96%;
+  position: relative;
+    left: 2%;
+    top: 9px;
+
+}
+
 .jumbotron{
   margin-bottom: 0px !important;
 }
@@ -163,7 +193,7 @@ body {
   margin-top: 30px;
   padding-bottom: 15px;
   font-size: 48px;
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: 'Candal', sans-serif;
   font-weight: bold;
 }
 
@@ -209,6 +239,11 @@ body {
   padding: 20px;
   position: relative;
   top: 3px;
+}
+
+.service-feat{
+  position: relative;
+  top: 25px;
 }
 
 /*Reviews Section*/
