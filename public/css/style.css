@@ -863,10 +863,9 @@ label{
     white-space: nowrap;
 }
 .endDateLabel{
-  width: 200px;
-  left:-252px;
   position: relative;
   top: -147px;
+  left: -35%;
   color: black;
   white-space: nowrap;
 }
