@@ -17,7 +17,9 @@ module.exports = function(app) {
     app.get("/api/jobs", function(req, res) {
         console.log('admin view')
         db.Job.findAll({
-
+            where: {
+              job_status: ["inProgress","accepted","hold","assign","completed"]
+            },
             attributes: ['TechnicianId', 'client_name', 'specific_service', 'client_location', 'job_status'],
             include: [{ model: db.Technician, attributes: ['name'] }],
 
