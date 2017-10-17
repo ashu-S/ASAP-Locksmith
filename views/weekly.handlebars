@@ -65,8 +65,8 @@
                         <th class="thWidth">Client Name</th>
                         <th class="thWidth">Date</th>
                         <th class="thWidth">Services</th>
+                        <th class="thWidth">Technician</th>
                         <th class="thWidth">Location</th>
-                        <th class="thWidth">Current Job</th>
                         <th class="thWidth">Job Status</th>
                     </tr>
                 </thead>
@@ -76,9 +76,9 @@
                         <td class="Monthlytd">{{this.dataValues.TechnicianId}}</td>
                         <td class="Monthlytd">{{this.dataValues.client_name}}</td>
                         <td class="Monthlytd">{{this.dataValues.createdAt}}</td>
-                        <td class="Monthlytd">{{this.dataValues.services}}</td>
-                        <td class="Monthlytd">{{this.dataValues.Technician.location}}</td>
-                        <td class="Monthlytd">{{this.dataValues.Technician.current_job}}</td>
+                        <td class="Monthlytd">{{this.dataValues.specific_service}}</td>
+                        <td class="Monthlytd">{{this.dataValues.Technician.name}}</td>
+                        <td class="Monthlytd">{{this.dataValues.client_location}}</td>
                         <td class="Monthlytd">{{this.dataValues.job_status}}</td>
                     </tr>
                     {{/each}}

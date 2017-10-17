@@ -53,8 +53,8 @@
                     <th><input type="text" class="form-control" placeholder="Technician Id" disabled  data-sortable="true"></th>
                     <th><input type="text" class="form-control" placeholder="Client Name" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Description" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="Technician Name" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Location" disabled></th>
-                    <th><input type="text" class="form-control" placeholder="current job" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Job Status" disabled></th>
                     </tr>
                 </thead>
@@ -63,9 +63,9 @@
                 <tr>
                     <td>{{this.dataValues.TechnicianId}}</td>
                     <td>{{this.dataValues.client_name}}</td>
-                    <td>{{this.dataValues.services}}</td>
-                    <td>{{this.dataValues.Technician.location}}</td>
-                    <td>{{this.dataValues.Technician.current_job}}</td>
+                    <td>{{this.dataValues.specific_service}}</td>
+                    <td>{{this.dataValues.Technician.name}}</td>
+                    <td>{{this.dataValues.client_location}}</td>
                     <td>{{this.dataValues.job_status}}</td>
                 </tr>
                 {{/each}}

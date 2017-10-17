@@ -18,8 +18,8 @@ module.exports = function(app) {
         console.log('admin view')
         db.Job.findAll({
 
-            attributes: ['TechnicianId', 'client_name', 'services', 'job_status'],
-            include: [{ model: db.Technician, attributes: ['location', 'current_job'] }],
+            attributes: ['TechnicianId', 'client_name', 'specific_service', 'client_location', 'job_status'],
+            include: [{ model: db.Technician, attributes: ['name'] }],
 
         }).then(function(dbJob) {
             console.log('line 28', dbJob)
@@ -92,13 +92,13 @@ module.exports = function(app) {
         console.log('req.body');
         var sequelize = require('sequelize');
         db.Job.findAll({
-            attributes: ['TechnicianId', 'client_name', 'services', [sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%m-%d-%Y'), 'createdAt'], 'job_status'],
+            attributes: ['TechnicianId', 'client_name', 'specific_service', 'client_location', [sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%m-%d-%Y'), 'createdAt'], 'job_status'],
             where: {
                 createdAt: {
                     $between: [req.query.startdate, req.query.endDate]
                 }
             },
-            include: [{ model: db.Technician, attributes: ['location', 'current_job', 'job_status'] }]
+            include: [{ model: db.Technician, attributes: ['name'] }]
         }).then(function(result) {
             console.log("...................")
             console.log('line 28', result)
@@ -111,9 +111,9 @@ module.exports = function(app) {
     app.get("/api/getDetails", function(req, res) {
         var sequelize = require('sequelize');
         db.Job.findAll({
-            attributes: ['TechnicianId', 'client_name', 'services', [sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%m-%d-%Y'), 'createdAt'], 'job_status'],
+            attributes: ['TechnicianId', 'client_name', 'specific_service', 'client_location', [sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%m-%d-%Y'), 'createdAt'], 'job_status'],
             where: sequelize.where(sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%b-%Y'), req.query.date3),
-            include: [{ model: db.Technician, attributes: ['location', 'current_job', 'job_status'] }]
+            include: [{ model: db.Technician, attributes: ['name'] }]
         }).then(function(result) {
             console.log('line 28', result)
             console.log("...................")
