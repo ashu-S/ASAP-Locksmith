@@ -165,8 +165,8 @@ module.exports = function(app) {
         console.log("skill: " + req.body.skill);
         console.log("job id: " + req.body.ID);
         console.log("job_status: " + req.body.Status);
-        console.log("Technician: " + req.body.Technician); 
-      
+        console.log("Technician: " + req.body.Technician);
+
         // Then add the job to the database using sequelize
         db.Job.update({
                 job_status: req.body.Status,
