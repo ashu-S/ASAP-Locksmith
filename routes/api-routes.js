@@ -13,13 +13,17 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
+
     // GET route for getting all of the jobs
     app.get("/api/jobs", function(req, res) {
         console.log('admin view')
-        db.Job.findAll({
-
-            attributes: ['TechnicianId', 'client_name', 'services', 'job_status'],
+var sequelize = require('sequelize');
+   db.Job.findAll({
+          
+            attributes:  [[sequelize.fn('IFNULL', sequelize.col('TechnicianId'), 'Not Assigned'),'TechnicianId'],'client_name', 'services', 'job_status'],
             include: [{ model: db.Technician, attributes: ['location', 'current_job'] }],
+
+            // [sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%m-%d-%Y'), 'createdAt']
 
         }).then(function(dbJob) {
             console.log('line 28', dbJob)

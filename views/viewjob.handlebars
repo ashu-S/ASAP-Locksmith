@@ -60,7 +60,10 @@
                 </thead>
                 <tbody>
                 {{#each Job}}
+
+
                 <tr>
+
                     <td>{{this.dataValues.TechnicianId}}</td>
                     <td>{{this.dataValues.client_name}}</td>
                     <td>{{this.dataValues.services}}</td>
@@ -120,5 +123,7 @@
             $table.find('tbody').prepend($('<tr class="no-result text-center"><td colspan="'+ $table.find('.filters th').length +'">No result found</td></tr>'));
         }
     });
+
+
 });
 </script>
