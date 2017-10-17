@@ -17,11 +17,20 @@ module.exports = function(app) {
     // GET route for getting all of the jobs
     app.get("/api/jobs", function(req, res) {
         console.log('admin view')
+
 var sequelize = require('sequelize');
    db.Job.findAll({
           
-            attributes:  [[sequelize.fn('IFNULL', sequelize.col('TechnicianId'), 'Not Assigned'),'TechnicianId'],'client_name', 'services', 'job_status'],
-            include: [{ model: db.Technician, attributes: ['location', 'current_job'] }],
+            // attributes:  [[sequelize.fn('IFNULL', sequelize.col('TechnicianId'), 'Not Assigned'),'TechnicianId'],'client_name', 'services', 'job_status'],
+            // include: [{ model: db.Technician, attributes: ['location', 'current_job'] }],
+
+        
+            where: {
+              job_status: ["inProgress","accepted","hold","assign","completed"]
+            },
+            attributes: [[sequelize.fn('IFNULL', sequelize.col('TechnicianId'), 'Not Assigned'),'TechnicianId'], 'client_name', 'specific_service', 'client_location', 'job_status'],
+            include: [{ model: db.Technician, attributes: ['name'] }],
+
 
             // [sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%m-%d-%Y'), 'createdAt']
 
@@ -96,13 +105,13 @@ var sequelize = require('sequelize');
         console.log('req.body');
         var sequelize = require('sequelize');
         db.Job.findAll({
-            attributes: ['TechnicianId', 'client_name', 'services', [sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%m-%d-%Y'), 'createdAt'], 'job_status'],
+            attributes: [[sequelize.fn('IFNULL', sequelize.col('TechnicianId'), 'Not Assigned'),'TechnicianId'],'client_name', 'specific_service', 'client_location', [sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%m-%d-%Y'), 'createdAt'], 'job_status'],
             where: {
                 createdAt: {
                     $between: [req.query.startdate, req.query.endDate]
                 }
             },
-            include: [{ model: db.Technician, attributes: ['location', 'current_job', 'job_status'] }]
+            include: [{ model: db.Technician, attributes: ['name'] }]
         }).then(function(result) {
             console.log("...................")
             console.log('line 28', result)
@@ -115,9 +124,9 @@ var sequelize = require('sequelize');
     app.get("/api/getDetails", function(req, res) {
         var sequelize = require('sequelize');
         db.Job.findAll({
-            attributes: ['TechnicianId', 'client_name', 'services', [sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%m-%d-%Y'), 'createdAt'], 'job_status'],
+            attributes: [[sequelize.fn('IFNULL', sequelize.col('TechnicianId'), 'Not Assigned'),'TechnicianId'], 'client_name', 'specific_service', 'client_location', [sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%m-%d-%Y'), 'createdAt'], 'job_status'],
             where: sequelize.where(sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%b-%Y'), req.query.date3),
-            include: [{ model: db.Technician, attributes: ['location', 'current_job', 'job_status'] }]
+            include: [{ model: db.Technician, attributes: ['name'] }]
         }).then(function(result) {
             console.log('line 28', result)
             console.log("...................")
@@ -132,7 +141,7 @@ var sequelize = require('sequelize');
     app.get("/api/assign/", function(req, res) {
         db.Job.findAll({
                 where: {
-                    job_status: "accepted"
+                    job_status: ["hold","accepted","assign","inProgress"]
                 }
             })
             .then(function(result) {
@@ -169,8 +178,8 @@ var sequelize = require('sequelize');
         console.log("skill: " + req.body.skill);
         console.log("job id: " + req.body.ID);
         console.log("job_status: " + req.body.Status);
-        console.log("Technician: " + req.body.Technician); 
-      
+        console.log("Technician: " + req.body.Technician);
+
         // Then add the job to the database using sequelize
         db.Job.update({
                 job_status: req.body.Status,

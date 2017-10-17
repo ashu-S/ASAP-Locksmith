@@ -38,88 +38,101 @@
 </nav>
 <!--End Nav-->
 <!--Webpage Body-->
-<div class="container" style="position: relative; top: 45px;">
-    {{#each Job}}
-    <div class="panel panel-default job-panel">
-        <div class="panel-body">
-            <div class="row accept-row">
-                <div class="col-xs-6">
-                    <p><strong>JOB ID:</strong> {{this.id}}</p>
-                    <p><strong>NAME:</strong> {{this.client_name}}</p>
-                    <p><strong>CONTACT:</strong> {{this.client_contact}}</p>
-                    <p><strong>SERVICE TYPE:</strong> {{this.services}}</p>
-                    <p><strong>DESCRIPTION:</strong> {{this.specific_service}}</p>
-                </div>
-                <div class="col-xs-6 assignjob-form">
-                    <input input type="hidden" type="text" name="job_id" value={{this.id}}>
-                    <br>
-                    <button type="submit" class="btn btn-success" id="firstassign" data-toggle="modal" data-delay="50" data-target="#assign-modal"> Assign/Update</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- assign modal -->
-<div class="modal fade" id="assign-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: #000">
-                    ×</button>
-                <h4 class="modal-title" id="firstassign-modal-label">
-                       ASSIGN/UPDATE </h4>
-            </div>
-            <div class="modal-body">
-                <div class="row reg-body">
-                    <div class="col-md-12">
-                        <form class="full-update-form">
-                            <div class="form-group">
-                                <label for="jobId" class="modal-label">JOB ID</label>
-                                <input type="text" class="form-control chosen-select" id="jobId" aria-describedby="emailHelp" placeholder="1">
-                            </div>
-                            <!-- <p><strong>JOB ID:</strong> {{this.id}} </p> -->
-                            <div class="form-group">
-                                <label for="selectSkill" class="modal-label"> Skills </label>
-                                <select class="form-control chosen-select" id="selectSkill" name="selectSkill">
-                                    <option value=""> -Choose one- </option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="technician" class="modal-label"> Technician </label>
-                                <select class="form-control chosen-select" id="technician" name="technician">
-                                    <option value=""> -Choose Technician- </option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="checkboxStatus" class="modal-label">Status</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="assign" value="assign">Assign
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inProgress" value="inProgress">In Progress
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="hold" value="hold"> On Hold
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="completed" value="completed"> Completed
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-10">
-                                    <form method="POST" action="/api/update2" class="button-size">
-                                        <input input type="hidden" type="text" name="job_id" value={{this.id}}>
-                                        <br>
-                                        <button type="submit" class="btn btn-success" id="submitupdate">Submit</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <!--End Row-->
-            </div>
-            <!--End Modal Body-->
-        </div>
-        <!--End Modal Content-->
-    </div>
-    <!--End Modal Dialogue-->
+<!--Webpage Body-->
+<div class="container" style="position: relative; top: 85px;">
+  <table class="table table-striped accept-table-whole">
+    <thead class="table-head-accept">
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>LOCATION</th>
+        <th>CONTACT</th>
+        <th>SERVICES</th>
+        <th>DESCRIPTION</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody class="table-accept">
+      {{#each Job}}
+      <tr>
+        <td>{{this.id}}</td>
+        <td>{{this.client_name}}</td>
+        <td>{{this.client_location}}</td>
+        <td>{{this.client_contact}}</td>
+        <td>{{this.services}}</td>
+        <td>{{this.specific_service}}</td>
+        <td>
+          <input input type="hidden" type="text" name="job_id" value={{this.id}}>
+          <br>
+          <button type="submit" class="btn btn-success" id="firstassign" data-toggle="modal" data-delay="50" data-target="#assign-modal"> Assign/Update</button>
+        </td>
+      </tr>
+      <!-- assign modal -->
+      <div class="modal fade" id="assign-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: #000">
+                      ×</button>
+                  <h4 class="modal-title" id="firstassign-modal-label">
+                         ASSIGN/UPDATE </h4>
+              </div>
+              <div class="modal-body">
+                  <div class="row reg-body">
+                      <div class="col-md-12">
+                          <form class="full-update-form">
+                              <div class="form-group">
+                                  <label for="jobId" class="modal-label">JOB ID</label>
+                                  <input type="text" class="form-control chosen-select" id="jobId" aria-describedby="emailHelp" placeholder="1">
+                              </div>
+                              <!-- <p><strong>JOB ID:</strong> {{this.id}} </p> -->
+                              <div class="form-group">
+                                  <label for="selectSkill" class="modal-label"> Skills </label>
+                                  <select class="form-control chosen-select" id="selectSkill" name="selectSkill">
+                                      <option value=""> -Choose one- </option>
+                                  </select>
+                              </div>
+                              <div class="form-group">
+                                  <label for="technician" class="modal-label"> Technician </label>
+                                  <select class="form-control chosen-select" id="technician" name="technician">
+                                      <option value=""> -Choose Technician- </option>
+                                  </select>
+                              </div>
+                              <div class="form-group">
+                                  <label for="checkboxStatus" class="modal-label">Status</label>
+                                  <div class="form-check form-check-inline">
+                                      <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="assign" value="assign"> Assign
+                                      <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inProgress" value="inProgress"> In Progress
+                                      <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="hold" value="hold"> On Hold
+                                      <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="completed" value="completed"> Completed
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-sm-10">
+                                      <form method="POST" action="/api/update2" class="button-size">
+                                          <input input type="hidden" type="text" name="job_id" value={{this.id}}>
+                                          <br>
+                                          <button type="submit" class="btn btn-success" id="submitupdate">Submit</button>
+                                      </form>
+                                  </div>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+                  <!--End Row-->
+              </div>
+              <!--End Modal Body-->
+          </div>
+          <!--End Modal Content-->
+      </div>
+      <!--End Modal Dialogue-->
+      </div>
+
+      {{/each}}
+    </tbody>
+  </table>
 </div>
-    {{/each}}
-</div>
+
 <!--End Modal-->
 <script type="text/javascript">
 $(document).ready(function() {
@@ -156,20 +169,20 @@ $(document).ready(function() {
     // Capture the form inputs
     $("#submitupdate").on("click", function() {
         // Form validation
-        function validateForm() {
-            var isValid = true;
-            $('.chosen-select').each(function() {
-                if ($(this).val() === '')
-                    isValid = false;
-            });
-            $('.check-input').each(function() {
-                if ($(this).val() === "")
-                    isValid = false
-            })
-            return isValid;
-        }
-        // If all required fields are filled
-        if (validateForm() == true) {
+        // function validateForm() {
+        //     var isValid = true;
+        //     $('.chosen-select').each(function() {
+        //         if ($(this).val() === '')
+        //             isValid = false;
+        //     });
+        //     $('.check-input').each(function() {
+        //         if ($(this).val() === "")
+        //             isValid = false
+        //     })
+        //     return isValid;
+        // }
+        // // If all required fields are filled
+        // if (validateForm() == true) {
             // Create an object for the user's data
             var UpdateData = {
                 ID: $("#jobId").val().trim(),
@@ -188,11 +201,11 @@ $(document).ready(function() {
             alert("Done. Thank you!");
             $('.full-update-form').trigger('reset');
             $('#assign-modal').modal('hide');
-        } else {
-            
-            alert("Please fill out all fields before submitting!");
-        }
-        return false;
+        // } else {
+        //
+        //     alert("Please fill out all fields before submitting!");
+        // }
+        // return false;
     });
 });
 </script>

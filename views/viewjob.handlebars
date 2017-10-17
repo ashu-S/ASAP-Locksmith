@@ -18,7 +18,7 @@
 
              <ul class="dropdown-menu nav navbar-nav" style="top: 53px;background-color: #222">
                 <li ><a href="/api/accept" style="text-decoration: none;">ACCEPT JOBS</a></li>
-                <li><a href="">ASSIGN JOBS</a></li>
+                <li><a href="/api/assign">ASSIGN JOBS</a></li>
                 <li><a href="/api/jobs">VIEW JOBS</a></li>
              </ul>
          </li>
@@ -53,8 +53,8 @@
                     <th><input type="text" class="form-control" placeholder="Technician Id" disabled  data-sortable="true"></th>
                     <th><input type="text" class="form-control" placeholder="Client Name" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Description" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="Technician Name" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Location" disabled></th>
-                    <th><input type="text" class="form-control" placeholder="current job" disabled></th>
                     <th><input type="text" class="form-control" placeholder="Job Status" disabled></th>
                     </tr>
                 </thead>
@@ -66,9 +66,9 @@
 
                     <td>{{this.dataValues.TechnicianId}}</td>
                     <td>{{this.dataValues.client_name}}</td>
-                    <td>{{this.dataValues.services}}</td>
-                    <td>{{this.dataValues.Technician.location}}</td>
-                    <td>{{this.dataValues.Technician.current_job}}</td>
+                    <td>{{this.dataValues.specific_service}}</td>
+                    <td>{{this.dataValues.Technician.name}}</td>
+                    <td>{{this.dataValues.client_location}}</td>
                     <td>{{this.dataValues.job_status}}</td>
                 </tr>
                 {{/each}}
@@ -82,7 +82,7 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function(){
-// code for filters        
+// code for filters
     $('.filterable .btn-filter').click(function(){
         var $panel = $(this).parents('.filterable'),
         $filters = $panel.find('.filters input'),
