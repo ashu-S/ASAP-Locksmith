@@ -61,7 +61,7 @@
             <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                     <tr>
-                        <th class="thWidth">Technician Id</th>
+                        <th class="thWidth">Job Id</th>
                         <th class="thWidth">Client Name</th>
                         <th class="thWidth">Date</th>
                         <th class="thWidth">Services</th>
@@ -73,7 +73,7 @@
                 <tbody>
                     {{#each Job}}
                     <tr>
-                        <td class="Monthlytd">{{this.dataValues.TechnicianId}}</td>
+                        <td class="Monthlytd">{{this.dataValues.id}}</td>
                         <td class="Monthlytd">{{this.dataValues.client_name}}</td>
                         <td class="Monthlytd">{{this.dataValues.createdAt}}</td>
                         <td class="Monthlytd">{{this.dataValues.specific_service}}</td>

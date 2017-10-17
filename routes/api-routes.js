@@ -28,7 +28,7 @@ var sequelize = require('sequelize');
             where: {
               job_status: ["inProgress","accepted","hold","assign","completed"]
             },
-            attributes: [[sequelize.fn('IFNULL', sequelize.col('TechnicianId'), 'Not Assigned'),'TechnicianId'], 'client_name', 'specific_service', 'client_location', 'job_status'],
+            attributes: ['id', 'client_name', 'specific_service', 'client_location', 'job_status'],
             include: [{ model: db.Technician, attributes: ['name'] }],
 
 
@@ -105,7 +105,7 @@ var sequelize = require('sequelize');
         console.log('req.body');
         var sequelize = require('sequelize');
         db.Job.findAll({
-            attributes: [[sequelize.fn('IFNULL', sequelize.col('TechnicianId'), 'Not Assigned'),'TechnicianId'],'client_name', 'specific_service', 'client_location', [sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%m-%d-%Y'), 'createdAt'], 'job_status'],
+            attributes: ['id','client_name', 'specific_service', 'client_location', [sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%m-%d-%Y'), 'createdAt'], 'job_status'],
             where: {
                 createdAt: {
                     $between: [req.query.startdate, req.query.endDate]
@@ -124,7 +124,7 @@ var sequelize = require('sequelize');
     app.get("/api/getDetails", function(req, res) {
         var sequelize = require('sequelize');
         db.Job.findAll({
-            attributes: [[sequelize.fn('IFNULL', sequelize.col('TechnicianId'), 'Not Assigned'),'TechnicianId'], 'client_name', 'specific_service', 'client_location', [sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%m-%d-%Y'), 'createdAt'], 'job_status'],
+            attributes: ['id', 'client_name', 'specific_service', 'client_location', [sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%m-%d-%Y'), 'createdAt'], 'job_status'],
             where: sequelize.where(sequelize.fn('DATE_FORMAT', sequelize.col('Job.createdAt'), '%b-%Y'), req.query.date3),
             include: [{ model: db.Technician, attributes: ['name'] }]
         }).then(function(result) {
