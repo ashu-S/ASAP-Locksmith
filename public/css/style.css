@@ -813,14 +813,11 @@ label{
   font-size: 30px !important;
   margin-left: -9px !important;
   font-family: "" !important;
-  left: -829px !important;
+  left: -85% !important;
 }
 .weekly-panel-title{
-  /*position: relative;*/
-   font-size: 30px !important;
-  margin-left: -9px !important;
+  font-size: 30px !important;
   font-family: "" !important;
-  left: -760px !important;
 }
 /*CSS Style for view page*/
 .view-panel-title{
