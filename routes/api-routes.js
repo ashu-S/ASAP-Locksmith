@@ -128,7 +128,7 @@ module.exports = function(app) {
     app.get("/api/assign/", function(req, res) {
         db.Job.findAll({
                 where: {
-                    job_status: "accepted"
+                    job_status: ["hold","accepted","assign","inProgress"]
                 }
             })
             .then(function(result) {
